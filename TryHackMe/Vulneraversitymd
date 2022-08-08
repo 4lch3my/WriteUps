@@ -1,0 +1,45 @@
+///TASK2///
+Q:Scan the box, how many ports are open?
+** nmap  -sC -sV 10.10.144.193
+A: 6
+===
+Q: What version of the squid proxy is running on the machine?
+** nmap  -sC -sV 10.10.144.193
+A: 3.5.12
+===
+Q: How many ports will nmap scan if the flag -p-400 was used?
+A: 400
+===
+Q: Using the nmap flag -n what will it not resolve?
+** nmap --help
+A: DNS
+===
+Q: What is the most likely operating system this machine is running?
+** nmap -sC -sV 10.10.144.193 -O
+A: Ubuntu
+===
+Q: What port is the web server running on?
+** nmap  -sC -sV 10.10.144.193
+A: 3333
+===
+///TASK3///
+Q: What is the directory that has an upload form page?
+** gobuster dir -u http://10.10.144.193:3333 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+A: /internal
+///TASK4///
+Q: Try upload a few file types to the server, what common extension seems to be blocked?
+A: .php
+===
+Q: Run this attack, what extension is allowed?
+A: .phtml
+===
+Q: What is the name of the user who manages the webserver?
+A: bill
+===
+Q: What is the user flag?
+**
+A: 8bd7992fbe8a6ad22a63361004cfcedb
+
+
+===
+
