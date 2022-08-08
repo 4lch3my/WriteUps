@@ -1,0 +1,56 @@
+Network Tools
+===
+	* Network analysis
+		- WireShark
+		- NetWitness (p)
+		- NetworkMiner (/p)
+		- IPinfo - https://ipinfo.io/
+		- URL scan - https://urlscan.io/
+		- TalosIntel - https://talosintelligence.com/reputation
+		- URL2PNG - https://www.url2png.com/
+		- Browser simulation - https://www.wannabrowser.net/
+		- URL extractor - https://www.convertcsv.com/
+		
+	* FILE/DATA
+	
+		- VT - https://www.virustotal.com/gui/home/search
+		- TalosFile - https://talosintelligence.com/talos_file_reputation
+		- Reversing Labs - https://register.reversinglabs.com/file_reputation
+		- Run Any App - https://app.any.run/
+		- Joes Security - https://www.joesecurity.org/
+		
+	* Email
+		- Google Admin Toolbox - https://toolbox.googleapps.com/apps/messageheader/analyzeheader
+		- MailHeader.org - https://mailheader.org/
+		- Azure Email Header Toolbox - https://mha.azurewebsites.net/
+		- Automated Phising Analysis  - https://www.phishtool.com/
+		- MX checker - https://mxtoolbox.com/
+		- Phis tank - https://phishtank.com/?
+		- SpamHaus - https://www.spamhaus.org/
+		
+	* Operating Systems	
+		- Kali
+		- Parrot
+		- Ubuntu
+		- Windows 10/11
+		
+	* MISC/OTHER
+		- CyberChef - https://gchq.github.io/CyberChef/
+		- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(p) = Paid
+(/p) = Has Paid Part
