@@ -18,6 +18,7 @@ Network Tools
 		- Reversing Labs - https://register.reversinglabs.com/file_reputation
 		- Run Any App - https://app.any.run/
 		- Joes Security - https://www.joesecurity.org/
+		- File hashes and examples - https://hashcat.net/wiki/doku.php?id=example_hashes
 		
 	* Email
 		- Google Admin Toolbox - https://toolbox.googleapps.com/apps/messageheader/analyzeheader
