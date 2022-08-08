@@ -11,7 +11,7 @@ Network Tools
 		- Browser simulation - https://www.wannabrowser.net/
 		- URL extractor - https://www.convertcsv.com/
 		
-	* FILE/DATA
+	* FILE/DATA  
 	
 		- VT - https://www.virustotal.com/gui/home/search
 		- TalosFile - https://talosintelligence.com/talos_file_reputation
