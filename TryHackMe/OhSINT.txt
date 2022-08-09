@@ -1,7 +1,31 @@
 What is this users avatar of?
 ===
-Q:
-**
-A:
+Q: What is this users avatar of?
+** https://exifdata.com/exif.php > upload > Copyright tab: OWoodflint > Twitter
+A: cat
+===
+Q: What city is this person in?
+** Googled OWoodflint > GitHub 
+A: London
+===
+Q: Whats the SSID of the WAP he connected to?
+** Wigle wifi > View > Advanced search > BSSID B4:5D:50:AA:86:41
+A: UnileverWiFi
+===
+Q: What is his personal email address?
+** Googled OWoodflint > GitHub > Pull requests > Check Updates
+A: OWoodflint@gmail.com
+===
+Q: What site did you find his email address on?
+** Googled OWoodflint > GitHub > Pull requests > Check Updates
+A: GitHub
+===
+Q: Where has he gone on holiday?
+** Googled OWoodflint > Wordpress site
+A: New York
+===
+Q: What is this persons password?
+** Googled OWoodflint > Wordpress site
+A: pennYDr0pper.!
 ===
 

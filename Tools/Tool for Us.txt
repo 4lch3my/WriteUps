@@ -36,6 +36,8 @@ FILE AND DATA
 
 	* HASHES & HASHING 
 		- File hashes and examples - https://hashcat.net/wiki/doku.php?id=example_hashes
+		- Online Hash Cracker - https://hashes.com/en/decrypt/hash
+		- Hash Indentifier - https://www.tunnelsup.com/hash-analyzer/
 		
 	* Email
 		- Google Admin Toolbox - https://toolbox.googleapps.com/apps/messageheader/analyzeheader

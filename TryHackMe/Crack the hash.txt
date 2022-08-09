@@ -1,0 +1,39 @@
+///TASK1///
+Q: 48bb6e862e54f2a795ffc4e541caed4d
+** https://hashes.com/en/decrypt/hash > MD5
+A: easy 
+===
+Q: CBFDAC6008F9CAB4083784CBD1874F76618D2A97 
+** https://hashes.com/en/decrypt/hash > SHA1
+A: password123
+===
+Q: 1C8BFE8F801D79745C4631D09FFF36C82AA37FC4CCE4FC946683D7B336B63032
+** https://hashes.com/en/decrypt/hash > SHA256PLAIN
+A: letmein
+===
+Q: $2y$12$Dwt1BZj6pcyc3Dy1FWZ5ieeUznr71EeNkJkUlypTsgbX1H68wsRom
+** https://www.tunnelsup.com/hash-analyzer/ > bcrypt > HashCat > 
+A:
+===
+Q: 279412f945939ba78ce0758d3fd83daa
+** https://hashes.com/en/tools/hash_identifier > MD4
+A: Eternity22 
+===
+///TASK2///
+===
+Q:
+**
+A:
+===
+Q:
+**
+A:
+===
+Q:
+**
+A:
+===
+Q:
+**
+A:
+===
