@@ -33,7 +33,6 @@ FILE AND DATA
 ===
 
 	* FILE/DATA  
-	
 		- VT - https://www.virustotal.com/gui/home/search
 		- TalosFile - https://talosintelligence.com/talos_file_reputation
 		- Reversing Labs - https://register.reversinglabs.com/file_reputation
@@ -51,7 +50,20 @@ FILE AND DATA
 		- Redline - https://fireeye.market/
 		- DumpIt.exe - https://github.com/thimbleweed/All-In-USB/tree/master/utilities/DumpIt
 		- win32dd.exe / win64dd.exe (MS built in pruduct)- https://bit.ly/3QbdruW
+
+	* OS ANALYSIS
+		- KAPE - https://www.kroll.com/en/services/cyber-risk/incident-response-litigation-support/kroll-artifact-parser-extractor-kape
+		- AutoSpy - https://www.autopsy.com/
+		- FTK Imager - https://www.exterro.com/ftk-imager
+		- Velociraptor - https://docs.velociraptor.app/
 		
+	* REGISTRY ANALYSIS
+		- Registry Viewer - https://accessdata.com/product-download/registry-viewer-2-0-0
+		- Zimmerman's Registry Explorer - https://ericzimmerman.github.io/#!index.md
+		- RegRipper - https://github.com/keydet89/RegRipper3.0
+
+
+
 ===	
 EMAIL
 ===

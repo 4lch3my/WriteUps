@@ -1,0 +1,5 @@
+Compelte these modules first:
+
+Windows Forensics 1
+Windows Forensics 2
+KAPE

@@ -1,0 +1,119 @@
+///TASK 1///
+===
+Q: What is the most used Desktop Operating System right now?
+A: Microsoft Windows
+///TASK 2///
+===
+Q: What is the short form for HKEY_LOCAL_MACHINE?
+A: HKLM
+///TASK 3///
+===
+Q: What is the path for the five main registry hives, DEFAULT, SAM, SECURITY, SOFTWARE, and SYSTEM?
+A: C:\Windows\System32\Config
+===
+Q: What is the path for the AmCache hive?
+A: C:\Windows\AppCompat\Programs\Amcache.hve
+===
+///TASK 6///
+===
+Q: What is the Current Build Number of the machine whose data is being investigated?
+** SOFTWARE\Microsoft\Windows NT\CurrentVersion
+A: 19044
+===
+Q: Which ControlSet contains the last known good configuration?
+** SYSTEM\ControlSet001
+A: 1
+===
+Q: What is the Computer Name of the computer?
+** SYSTEM\CurrentControlSet\Control\ComputerName\ComputerName
+A: THM-4n6
+===
+Q: What is the value of the TimeZoneKeyName?
+** SYSTEM\CurrentControlSet\Control\TimeZoneInformation > TimeZoneKeyName
+A: Pakistan Standard Time
+===
+Q: What is the DHCP IP address
+** SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces > DhcpIPAddress
+A: 192.168.100.58
+===
+Q: What is the RID of the Guest User account?
+** cmd >> wmic useraccount get name,sid
+A: 501 
+===
+///TASK 7///
+Q:
+**
+A:
+===
+Q:
+**
+A:
+===
+Q:
+**
+A:
+===
+///TASK 8///
+
+
+
+
+
+
+
+
+
+###GENERAL info, learned topics###
+
+- NTUSER.DAT hive > C:\Users\<username>\.
+- USRCLASS.DAT hive > C:\Users\<username>\AppData\Local\Microsoft\Windows
+            (both are hidden files)
+- Amcache Hive > C:\Windows\AppCompat\Programs\Amcache.hve
+- Registry backups > C:\Windows\System32\Config (every 10 days > C:\Windows\System32\Config\RegBack)
+- Transaction logs > C:\Windows\System32\Config
+
+OS version: SOFTWARE\Microsoft\Windows NT\CurrentVersion
+Computer Name: SYSTEM\CurrentControlSet\Control\ComputerName\ComputerName 
+Time Zone Information:SYSTEM\CurrentControlSet\Control\TimeZoneInformation
+Network Interfaces and Past Networks: 
+            - SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces
+            - SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Signatures\Unmanaged
+            - SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Signatures\Managed
+Autostart Programs (Autoruns):
+            - NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Run
+            - NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\RunOnce
+            - SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce
+            - SOFTWARE\Microsoft\Windows\CurrentVersion\policies\Explorer\Run
+            - SOFTWARE\Microsoft\Windows\CurrentVersion\Run
+Services: SYSTEM\CurrentControlSet\Services
+SAM hive and user information: SAM\Domains\Account\Users
+
+Recent files: 
+            - NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs
+            - NTUSER.DAT\Software\Microsoft\Office\VERSION
+            - NTUSER.DAT\Software\Microsoft\Office\15.0\Word
+            - NTUSER.DAT\Software\Microsoft\Office\VERSION\UserMRU\LiveID_####\FileMRU
+
+ShellBags:
+            - USRCLASS.DAT\Local Settings\Software\Microsoft\Windows\Shell\Bags
+            - USRCLASS.DAT\Local Settings\Software\Microsoft\Windows\Shell\BagMRU
+            - NTUSER.DAT\Software\Microsoft\Windows\Shell\BagMRU
+            - NTUSER.DAT\Software\Microsoft\Windows\Shell\Bags
+
+Open/Save and LastVisited Dialog MRUs
+            - NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\OpenSavePIDlMRU
+            - NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\LastVisitedPidlMRU
+
+Windows Explorer Address/Search Bars:
+            - NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\TypedPaths
+            - NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\WordWheelQuer
+
+
+
+
+
+
+
+
+
+
