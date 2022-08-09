@@ -36,14 +36,23 @@ FILE AND DATA
 		- Reversing Labs - https://register.reversinglabs.com/file_reputation
 		- Run Any App - https://app.any.run/
 		- Joes Security - https://www.joesecurity.org/
-		- 
 
 	* HASHES & HASHING 
 		- File hashes and examples - https://hashcat.net/wiki/doku.php?id=example_hashes
-		- Online Hash Cracker - https://hashes.com/en/decrypt/hash
 		- Online Hash Indentifier - https://www.tunnelsup.com/hash-analyzer/
+		- Online Hash Cracker - https://hashes.com/en/decrypt/hash
 		
-	* Email
+
+	* MEMORY ANALYSIS
+		- FTK Imager - https://accessdata.com/product-download/ftk-imager-version-4-2-0
+		- Redline - https://fireeye.market/
+		- DumpIt.exe - https://github.com/thimbleweed/All-In-USB/tree/master/utilities/DumpIt
+		- win32dd.exe / win64dd.exe (MS built in pruduct)- https://bit.ly/3QbdruW
+		
+===	
+EMAIL
+===
+	* GENERIC EMAIL
 		- Google Admin Toolbox - https://toolbox.googleapps.com/apps/messageheader/analyzeheader
 		- MailHeader.org - https://mailheader.org/
 		- Azure Email Header Toolbox - https://mha.azurewebsites.net/
