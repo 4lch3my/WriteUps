@@ -1,12 +1,15 @@
 ===
-Network Tools
+NETWORK & NETWORK TOOLS
 ===
 	* Network analysis
 		- WireShark
 		- NetWitness 
 		- NetworkMiner 
 		- IPinfo - https://ipinfo.io/
+		- Shodan - https://www.shodan.io/
 		- URL scan - https://urlscan.io/
+		- RiskIQ - https://community.riskiq.com/
+		- AbuseIPDB - https://www.abuseipdb.com/
 		- TalosIntel - https://talosintelligence.com/reputation
 		- URL2PNG - https://www.url2png.com/
 		- Browser simulation - https://www.wannabrowser.net/
