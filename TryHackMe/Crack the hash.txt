@@ -21,19 +21,19 @@ A: Eternity22
 ===
 ///TASK2///
 ===
-Q:
+Q: F09EDCB1FCEFC6DFB23DC3505A882655FF77375ED8AA2D1C13F640FCCC2D0C85
+** https://hashes.com/en/decrypt/hash > 7061756c65 > CyberChef > From HEX
+A: paule
+===
+Q: 1DFECA0C002AE40B8619ECF94819CC1B
+** https://hashes.com/en/decrypt/hash > 6e3633756d79386c6b663469 > CyberChef > From HEX
+A: n63umy8lkf4i
+===
+Q: Hash: $6$aReallyHardSalt$6WKUTqzq.UQQmrm0p/T7MPpMbGNnzXPMAXi4bJMl9be.cfi3/qxIf.hsGpS41BqMhSrHVXgMpdjS6xeKZAs02. SALT:aReallyHardSalt
 **
 A:
 ===
-Q:
-**
-A:
-===
-Q:
-**
-A:
-===
-Q:
+Q: Hash: e5d8870e5bdd26602cab8dbe07a942c8669e56d6 SALT: tryhackme
 **
 A:
 ===
