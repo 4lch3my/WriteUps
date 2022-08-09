@@ -65,6 +65,7 @@ This is a compiled list of all tools and resources that I use on a daily basis f
   * [Writing Kernel Drivers](http://freesoftwaremagazine.com/articles/drivers_linux/)
   * [willsroot.io](https://www.willsroot.io/)
 
+
 #### Tools
 
 <!-- ------------------------------------------------------- -->

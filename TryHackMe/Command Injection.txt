@@ -1,0 +1,39 @@
+///TASK 2///
+===
+Q: What variable stores the user's input in the PHP code snippet in this task?
+A: $title
+===
+Q: What HTTP method is used to retrieve data submitted by a user in the PHP code snippet?
+A: get
+===
+Q: If I wanted to execute the id command in the Python code snippet, what route would I need to visit?
+A: /id
+===
+///TASK 3///
+===
+Q: What payload would I use if I wanted to determine what user the application is running as?
+A: whoami
+===
+Q:  What popular network tool would I use to test for blind command injection on a Linux machine?
+A: ping
+===
+Q: What payload would I use to test a Windows machine for blind command injection?
+A: timeout
+===
+///TASK 4///
+===
+Q: What is the term for the process of "cleaning" user input that is provided to an application?
+A: sanitisation
+===
+///TASK 5///
+===
+Q: What user is this application running as?
+** & whoami
+A: www-data
+===
+Q: What payload would I use to test a Windows machine for blind command injection?
+** & cat /home/tryhackme/flag.txt
+A: THM{COMMAND_INJECTION_COMPLETE}
+
+
+
