@@ -30,10 +30,10 @@ Q: 1DFECA0C002AE40B8619ECF94819CC1B
 A: n63umy8lkf4i
 ===
 Q: Hash: $6$aReallyHardSalt$6WKUTqzq.UQQmrm0p/T7MPpMbGNnzXPMAXi4bJMl9be.cfi3/qxIf.hsGpS41BqMhSrHVXgMpdjS6xeKZAs02. SALT:aReallyHardSalt
-**
-A:
+** https://hashcat.net/wiki/doku.php?id=example_hashes > $6$ > sha512crypt > hashcat ""
+A: waka99
 ===
 Q: Hash: e5d8870e5bdd26602cab8dbe07a942c8669e56d6 SALT: tryhackme
-**
-A:
+** Online search hash me still puzzled
+A: 481616481616
 ===
