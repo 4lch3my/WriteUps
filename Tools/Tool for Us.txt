@@ -1,15 +1,19 @@
+===
 Network Tools
 ===
 	* Network analysis
 		- WireShark
-		- NetWitness (p)
-		- NetworkMiner (/p)
+		- NetWitness 
+		- NetworkMiner 
 		- IPinfo - https://ipinfo.io/
 		- URL scan - https://urlscan.io/
 		- TalosIntel - https://talosintelligence.com/reputation
 		- URL2PNG - https://www.url2png.com/
 		- Browser simulation - https://www.wannabrowser.net/
 		- URL extractor - https://www.convertcsv.com/
+
+	* Physical Network 
+		- Wigle Wifi & Cell checker - https://wigle.net/
 
 	* Network SIEM
 		- Splunk
@@ -37,7 +41,7 @@ FILE AND DATA
 	* HASHES & HASHING 
 		- File hashes and examples - https://hashcat.net/wiki/doku.php?id=example_hashes
 		- Online Hash Cracker - https://hashes.com/en/decrypt/hash
-		- Hash Indentifier - https://www.tunnelsup.com/hash-analyzer/
+		- Online Hash Indentifier - https://www.tunnelsup.com/hash-analyzer/
 		
 	* Email
 		- Google Admin Toolbox - https://toolbox.googleapps.com/apps/messageheader/analyzeheader
@@ -57,15 +61,17 @@ FILE AND DATA
 	* MISC/OTHER
 		- CyberChef - https://gchq.github.io/CyberChef/
 
-	* VULNERABILITY & VULNERABILITY DATABASES
+===	
+VULNERABILITY & VULNERABILITY DATABASES
+===
 
-		* VULNERABILITY SCANNING
+	* VULNERABILITY SCANNING
 
 		- Nessus
 		- Metasploit 
 
 
-		* VULNERABILITY DATABASES
+	* VULNERABILITY DATABASES
 
 		- NVD (NITS) - https://nvd.nist.gov/vuln/full-listing
 		- Exploit database - exploit‑db.com
