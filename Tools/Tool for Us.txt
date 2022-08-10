@@ -37,7 +37,7 @@ FILE & DATA
 		- TalosFile - https://talosintelligence.com/talos_file_reputation
 		- Reversing Labs - https://register.reversinglabs.com/file_reputation
 		- Run Any App - https://app.any.run/
-		- Joes Security - https://www.joesecurity.org/
+		- Joe's Security - https://www.joesecurity.org/
 
 	* HASHES & HASHING 
 		- File hashes and examples - https://hashcat.net/wiki/doku.php?id=example_hashes
@@ -105,7 +105,11 @@ VULNERABILITY & VULNERABILITY DATABASES
 		- GitHub (community uploads)
 		- Searchsploit
 
-
+	*THREAT INTELLIGANCE
+	
+		- Mandiant Advantage
+		- Ontic
+		- CrowdStrike Falcon
 
 
 

@@ -1,0 +1,45 @@
+///TASK 5///
+Q: How many Command and Control techniques are employed by Carbanak? 
+A: 2
+===
+Q: What signed binary did Carbanak use for defense evasion?
+A: rundll32
+===
+Q: What Initial Access technique is employed by Carbanak? 
+A: valid accounts
+===
+///TASK 7///
+===
+Q: Once the chain is complete and you have received the flag, submit it below.
+** PowerShell, Spearphishing Attachment, External Remote Services, BITS Jobs, DNS, Keylogging
+A: THM{7HR347_1N73L_12_4w35om3}
+===
+Q: What web shell is APT 41 known to use? 
+** https://attack.mitre.org/groups/G0096/
+A: ASPXSpy
+===
+Q: What LOLBAS (Living Off The Land Binaries and Scripts) tool does APT 41 use to aid in file transfers? 
+** https://attack.mitre.org/groups/G0096/
+A: certutil
+===
+Q: What tool does APT 41 use to mine and monitor SMS traffic? 
+** https://attack.mitre.org/groups/G0096/
+A: MESSAGETAP
+===
+
+
+
+
+###EXTERNAL MATERIAL###
+
+* TIBER-EU Framework
+        https://www.ecb.europa.eu/pub/pdf/other/ecb.tiber_eu_framework.en.pdf
+        https://www.ecb.europa.eu/pub/pdf/other/ecb.tiber_eu_framework.en.pdf
+        https://www.crest-approved.org/tiber-eu/index.html
+        https://www.fireeye.com/content/dam/fireeye-www/services/pdfs/pf/ms/sb-tiber-eu.pdf
+
+* TTP Mapping
+        https://attack.mitre.org/groups/G0087/
+        https://attack.mitre.org/
+        https://mitre-attack.github.io/attack-navi
+        https://www.intezer.com/ost-map/
