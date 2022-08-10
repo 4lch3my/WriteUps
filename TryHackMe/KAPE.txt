@@ -1,0 +1,12 @@
+///TASK 2///
+Q: Which binary is used to run GUI version of KAPE?
+A: gkape.exe 
+===
+Q: 
+** 
+A: 
+===
+Q:
+**
+A:
+===
