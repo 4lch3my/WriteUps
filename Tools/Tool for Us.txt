@@ -29,10 +29,10 @@ NETWORK & NETWORK TOOLS
 		- SIEM "translator" - https://uncoder.io/
 
 ===	
-FILE AND DATA
+FILE & DATA
 ===
 
-	* FILE/DATA  
+	* GENERAL 
 		- VT - https://www.virustotal.com/gui/home/search
 		- TalosFile - https://talosintelligence.com/talos_file_reputation
 		- Reversing Labs - https://register.reversinglabs.com/file_reputation
@@ -62,6 +62,8 @@ FILE AND DATA
 		- Zimmerman's Registry Explorer - https://ericzimmerman.github.io/#!index.md
 		- RegRipper - https://github.com/keydet89/RegRipper3.0
 
+	*FILE RECOVERY
+		- Autopsy - https://www.autopsy.com/
 
 
 ===	
@@ -76,7 +78,7 @@ EMAIL
 		- Phis tank - https://phishtank.com/?
 		- SpamHaus - https://www.spamhaus.org/
 		
-	* Operating Systems	
+	* OPERATINYG SYSTEMS	
 		- Kali
 		- Parrot
 		- Ubuntu

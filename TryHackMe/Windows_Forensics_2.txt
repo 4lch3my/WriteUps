@@ -1,0 +1,62 @@
+///TASK 2///
+Q: How many addressable bits are there in the FAT32 file system
+A: 28 bits
+===
+Q: What is the maximum file size supported by the FAT32 file system?
+A: 4GB
+===
+Q: Which file system is used by digital cameras and SD cards?
+A: ExFAT
+===
+///TASK 3///
+===
+Q: What is the Size of the file located?
+** Tool will not Load, from online for now
+A: 49152
+===
+Q: 
+What is the size of the cluster for the volume from which this triage was taken
+** Tool will not Load, from online for now
+A: 4096
+===
+///TASK 4///
+===
+Q: There is another xlsx file that was deleted. What is the full name of that file?
+** Load USB file from Desktop > Follow Screenshots
+A: TryHackme.xlsx
+===
+Q: What is the name of the TXT file that was deleted from the disk?
+** Load USb file from Desktop > Follow Screenshots
+A: TryHackMe2.txt
+===
+Q: Recover the TXT file from Question #2. What was written in this txt file?
+** Load USB file from Desktop > Follow Screenshots
+A: THM-4n6-2-4
+===
+///TASK 5///
+===
+Q: How many times was gkape.exe executed?
+A: 
+===
+Q: What is the last execution time of gkape.exe
+A: 12/01/2021 13:04
+===
+Q: When Notepad.exe was opened on 11/30/2021 at 10:56, how long did it remain in focus?
+A: 00:00:41
+===
+Q: What program was used to open C:\Users\THM-4n6\Desktop\KAPE\KAPE\ChangeLog.txt?
+A: notepad.exe
+===
+///TASK 6///
+===
+Q: When was the folder C:\Users\THM-4n6\Desktop\regripper last opened?
+A: 12/1/2021 13:01
+===
+Q: When was the above-mentioned folder first opened?
+A: 12/1/2021 12:31
+===
+///TASK 7///
+Q: 
+Which artifact will tell us the first and last connection times of a removable drive?
+A: setupapi.dev.log
+===
