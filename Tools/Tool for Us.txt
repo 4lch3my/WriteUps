@@ -62,7 +62,10 @@ FILE & DATA
 		- Zimmerman's Registry Explorer - https://ericzimmerman.github.io/#!index.md
 		- RegRipper - https://github.com/keydet89/RegRipper3.0
 
-	*FILE RECOVERY
+	* IMAGE ANALYSIS
+		- EXIFdata - https://exifdata.com/exif.php
+
+	* FILE RECOVERY
 		- Autopsy - https://www.autopsy.com/
 
 
@@ -85,7 +88,7 @@ EMAIL
 		- Windows 10
 		
 	* MISC/OTHER
-		- CyberChef - https://gchq.github.io/CyberChef/
+		
 
 ===	
 VULNERABILITY & VULNERABILITY DATABASES
@@ -105,13 +108,11 @@ VULNERABILITY & VULNERABILITY DATABASES
 		- GitHub (community uploads)
 		- Searchsploit
 
-	*THREAT INTELLIGANCE
-	
+	* THREAT INTELLIGANCE
+
 		- Mandiant Advantage
 		- Ontic
 		- CrowdStrike Falcon
-
-
 
 
 
