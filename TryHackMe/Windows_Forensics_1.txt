@@ -41,19 +41,79 @@ Q: What is the RID of the Guest User account?
 A: 501 
 ===
 ///TASK 7///
-Q:
-**
-A:
+Q: When was EZtools opened?
+** Look at Screenshots in the tasks, not the actual machine
+A: 2021-12-01 13:00:34
 ===
-Q:
-**
-A:
+Q: At what time was My Computer last interacted with?
+** Look at Screenshots in the tasks, not the actual machine
+A: 2021-12-01 13:06:47
 ===
-Q:
-**
-A:
+Q: What is the Absolute Path of the file opened using notepad.exe?
+** Look at Screenshots in the tasks, not the actual machine
+A: C:\Program Files\Amazon\Ec2ConfigService\Settings
+===
+Q: When was this file opened?
+** Look at Screenshots in the tasks, not the actual machine
+A: 2021-11-30 10:56:19
 ===
 ///TASK 8///
+Q: How many times was the File Explorer launched?
+** Look at Screenshots in the tasks, not the actual machine
+A: 26
+===
+Q: What is another name for ShimCache?
+** SYSTEM\CurrentControlSet\Control\Session Manager\AppCompatCache (last part))
+A: AppCompatCache
+===
+Q: Which of the artifacts also saves SHA1 hashes of the executed programs?
+A: AmCache
+===
+Q: Which of the artifacts saves the full path of the executed programs?
+A: BAM/DAM
+===
+///TASK 9///
+===
+Q: What is the serial number of the device from the manufacturer 'Kingston'?
+** Screenshots!
+A: 1C6F654E59A3B0C179D366AE&0
+===
+Q: What is the name of this device?
+** Screenshots!
+A: Kingston DataTraveler 2.0 USB Device
+===
+Q: 
+What is the friendly name of the device from the manufacturer 'Kingston'?
+** Screenshots!
+A: USB
+===
+///TASK 10///
+===
+Q: How many user created accounts are present on the system
+** 
+A: 3
+===
+Q: What is the username of the account that has never been logged in?
+** SAM\Domains\Account\Users
+A: thm-user2
+===
+Q: What's the password hint for the user THM-4n6?
+** SAM\Domains\Account\Users\Names > find THM-4n6 > Look at Value Type (RegUnknown (0x3E9, 1001 decimal) > go back to Users > find "3E9" >> 63-00-6F-00-75-00-6E-00-74-00 > cyber chef from HEX
+A: count
+===
+Q: When was the file 'Changelog.txt' accessed?
+** NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs
+A: 2021-11-24 18:18:48
+===
+Q: What is the complete path from where the python 3.8.2 installer was run? 
+** Needed to Google > https://sky9262.tistory.com/entry/Windows-Forensics-1-TryHackMe
+A: Z:\setups\python-3.8.2.exe
+===
+Q: When was the USB device with the friendly name 'USB' last connected?
+** SYSTEM\ROOT\ControlSet001\Enum\USBTOR > last connected field
+A: 2021-11-24 18:40:06
+===
+
 
 
 
@@ -107,6 +167,29 @@ Open/Save and LastVisited Dialog MRUs
 Windows Explorer Address/Search Bars:
             - NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\TypedPaths
             - NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\WordWheelQuer
+
+UserAssist: NTUSER.DAT\Software\Microsoft\Windows\Currentversion\Explorer\UserAssist\{GUID}\Count
+
+ShimCache: SYSTEM\CurrentControlSet\Control\Session Manager\AppCompatCache
+
+AmCache: C:\Windows\appcompat\Programs\Amcache.hve
+
+BAM/DAM:
+            - SYSTEM\CurrentControlSet\Services\bam\UserSettings\{SID}
+            - SYSTEM\CurrentControlSet\Services\bam\UserSettings\{SID}
+
+Device identification:
+            - SYSTEM\CurrentControlSet\Enum\USBSTOR
+            - SYSTEM\CurrentControlSet\Enum\USB
+
+First/Last Times: SYSTEM\CurrentControlSet\Enum\USBSTOR\Ven_Prod_Version\USBSerial#\Properties\{83da6326-97a6-4088-9453-a19231573b29}\####
+
+USB device Volume Name: SOFTWARE\Microsoft\Windows Portable Devices\Devices
+
+
+
+
+
 
 
 
