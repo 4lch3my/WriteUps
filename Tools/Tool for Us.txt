@@ -67,6 +67,8 @@ FILE & DATA
 
 	* FILE RECOVERY
 		- Autopsy - https://www.autopsy.com/
+		- CyberChef - https://gchq.github.io/CyberChef/
+
 
 
 ===	
