@@ -40,20 +40,30 @@ A: 1
 
 ///TASK6/// - Operation Mode 2: Packet Logger Mode
 
-Q: 
-A: 
+Q:  What is the source port used to connect port 53?
+** cd /home/ubuntu/Desktop/Task-Exercises/Exercise-Files/TASK-6/145.254.160.237
+** ls
+A: 3009
 ===
-Q: 
-A: 
+Q: Read the snort.log file with Snort; what is the IP ID of the 10th packet?
+** cd .. (from the above question directory)
+** snort -r snort.log.1640048004 -n 10
+A: 49313
 ===
-Q: 
-A: 
+Q: Read the "snort.log.1640048004" file with Snort; what is the referer of the 4th packet?
+** snort -X -r snort.log.1640048004 -n 4
+A: http://www.ethereal.com/developement.html/ 
 ===
-Q: 
-A: 
+Q: Read the "snort.log.1640048004" file with Snort; what is the Ack number of the 8th packet?
+** snort -r snort.log.1640048004 -n 8
+A: 0x38AFFFF3
 ===
-Q: 
-A: 
+Q: Read the "snort.log.1640048004" file with Snort; what is the Ack number of the 8th packet?
+** snort -e -r snort.log.1640048004
+A: 41
+
+///TASK7/// - Operation Mode 2: Packet Logger Mode
+
 ===
 Q: 
 A: 
