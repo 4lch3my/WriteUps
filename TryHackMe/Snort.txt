@@ -1,2 +1,106 @@
 ROOM: https://tryhackme.com/room/snort
 ### 2022.11.14 ###
+
+///TASK2/// - Interactive Material and VM
+Q: Navigate to the Task-Exercises folder and run the command "./.easy.sh" and write the output
+A: Too Easy!
+
+///TASK3/// - Introduction to IDS/IPS
+Q: Which snort mode can help you stop the threats on a local machine?
+A: HIPS
+===
+Q: Which snort mode can help you detect threats on a local network?
+A: NIDS
+===
+Q: Which snort mode can help you detect the threats on a local machine?
+A: HIDS
+===
+Q: Which snort mode can help you stop the threats on a local network?
+A: NIPS
+===
+Q: Which snort mode works similar to NIPS mode?
+A: NBA
+===
+Q: According to the official description of the snort, what kind of NIPS is it?
+A: full-blown
+===
+Q: NBA training period is also known as ...
+A: baselining
+
+///TASK4/// - First Interaction with Snort
+
+Q: Run the Snort instance and check the build number.
+A: 149
+===
+Q: Test the current instance with "/etc/snort/snort.conf" file and check how many rules are loaded with the current build.
+A: 4151
+===
+Q: Test the current instance with "/etc/snort/snortv2.conf" file and check how many rules are loaded with the current build.
+A: 1
+
+///TASK6/// - Operation Mode 2: Packet Logger Mode
+
+Q: 
+A: 
+===
+Q: 
+A: 
+===
+Q: 
+A: 
+===
+Q: 
+A: 
+===
+Q: 
+A: 
+===
+Q: 
+A: 
+===
+Q: 
+A: 
+===
+Q: 
+A: 
+===
+Q: 
+A: 
+===
+Q: 
+A: 
+===
+Q: 
+A: 
+===
+Q: 
+A: 
+===
+
+
+
+
+
+
+PARAMETERS FOR SNORT:
+
+-V / --version >> Instance version
+-v >> Verbose. Display the TCP/IP output
+-c >> Identifying the configuration file
+-T >> Self-test parameter, you can test your setup
+-q >> Quiet mode, NO displaying the banner/ initial inf.
+-d >> Display the packet data (payload).
+-e >> Display the link-layer (TCP/IP/UDP/ICMP) headers. 
+-X >> Display the full packet details in HEX.
+-i >> Show a specific netw. interface to listen/sniff. 
+-l >> Logger mode, target log and alert output directory. Default output folder is /var/log/snort
+-K ASCII >>Log packets in ASCII format.
+-n >>Specify the number of packets that will process/read.
+-r >> Reading option, read the dumped logs in Snort.
+
+EXAMPLES:
+
+Use verbose mode >> ""sudo snort -v" 
+#provides tcpdump like output information
+
+Specify an interface w/ verb. mode >> "sudo snort -v -i eth0"
