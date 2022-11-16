@@ -92,7 +92,7 @@ A: 82
 Q: Investigate the mx-2.pcap and mx-3.pcap files with the default configuration file. >> What is the number of the generated alerts?
 A: 1020
 
-///TASK8/// - Operation Mode 4: PCAP Investigation
+///TASK9/// -  Snort Rule Structure
 
 ===
 Q: 
