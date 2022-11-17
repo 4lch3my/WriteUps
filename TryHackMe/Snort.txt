@@ -65,27 +65,41 @@ A: 41
 ///TASK7/// - Operation Mode 2: Packet Logger Mode
 
 ===
-Q: 
-A: 
+Q: What is the number of the detected HTTP GET methods?
+A: 2
+
+///TASK8/// - Operation Mode 4: PCAP Investigation
+
+===
+Q: What is the number of the generated alerts?
+A: 170
+===
+Q: Keep reading the output. How many TCP Segments are Queued?
+A: 18
+===
+Q: Keep reading the output.How many "HTTP response headers" were extracted?
+A: 3
+===
+Q: Investigate the mx-1.pcap file with the second configuration file. >> What is the number of the generated alerts? 
+A: 68
+===
+Q: Investigate the mx-2.pcap file with the default configuration file. >> What is the number of the generated alerts?
+A: 340
+===
+Q: Keep reading the output. What is the number of the detected TCP packets?
+A: 82
+===
+Q: Investigate the mx-2.pcap and mx-3.pcap files with the default configuration file. >> What is the number of the generated alerts?
+A: 1020
+
+///TASK9/// -  Snort Rule Structure
+
 ===
 Q: 
 A: 
 ===
-Q: 
-A: 
-===
-Q: 
-A: 
-===
-Q: 
-A: 
-===
-Q: 
-A: 
-===
-Q: 
-A: 
-===
+
+
 
 
 
@@ -96,17 +110,24 @@ PARAMETERS FOR SNORT:
 
 -V / --version >> Instance version
 -v >> Verbose. Display the TCP/IP output
--c >> Identifying the configuration file
--T >> Self-test parameter, you can test your setup
+-c >> Defining the configuration file
+-T >> Testing the configuration file.
 -q >> Quiet mode, NO displaying the banner/ initial inf.
 -d >> Display the packet data (payload).
 -e >> Display the link-layer (TCP/IP/UDP/ICMP) headers. 
 -X >> Display the full packet details in HEX.
 -i >> Show a specific netw. interface to listen/sniff. 
 -l >> Logger mode, target log and alert output directory. Default output folder is /var/log/snort
--K ASCII >>Log packets in ASCII format.
 -n >>Specify the number of packets that will process/read.
 -r >> Reading option, read the dumped logs in Snort.
+-N >> Disable logging
+-D >> Background mode
+-K ASCII >>Log packets in ASCII format.
+-A >> full, fast, console, cmg, none (use either one for different outputs)
+-r / --pcap-single= >> Read a single pcap
+--pcap-list=""	>> Read pcaps provided in command (space separated).
+--pcap-show	 >> Show pcap name on console during processing.
+
 
 EXAMPLES:
 
@@ -114,3 +135,6 @@ Use verbose mode >> ""sudo snort -v"
 #provides tcpdump like output information
 
 Specify an interface w/ verb. mode >> "sudo snort -v -i eth0"
+Analyze a single pcap >> "snort -r pcap_file.pcap"
+Analyze multiple pcaps >> "sudo snort -c /etc/snort/snort.conf -q --pcap-list="icmp-test.pcap http2.pcap" -A console -n 10"
+Use custom config. file to analyze >> "sudo snort -c /etc/snort/snort.conf -q -r icmp-test.pcap -A console -n 10"
