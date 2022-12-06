@@ -41,6 +41,3 @@ Q: Encode the following value using base64 {"id":1,"admin":true}
 ** CyberChef > to base64
 A: eyJpZCI6MSwiYWRtaW4iOnRydWV9
 ===
-
-
-

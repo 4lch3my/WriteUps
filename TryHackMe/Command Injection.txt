@@ -34,6 +34,3 @@ A: www-data
 Q: What payload would I use to test a Windows machine for blind command injection?
 ** & cat /home/tryhackme/flag.txt
 A: THM{COMMAND_INJECTION_COMPLETE}
-
-
-
