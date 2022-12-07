@@ -54,11 +54,19 @@ A: nay
 ===
 Q: When referring to Kerberos, what type of ticket allows us to request further tickets known as TGS?
 **
-A:
+A: Ticket Granting Ticket
 ===
 Q: When using NetNTLM, is a user's password transmitted over the network at any point? (yay/nay)
 **
-A:
+A: nay 
 ===
-
+///TASK 8///
+Q: What is a group of Windows domains that share the same namespace called?
+**
+A: true
+===
+Q: What should be configured between two domains for a user in Domain A to access a resource in Domain B?
+**
+A: a Trust Relationship
+===
 
