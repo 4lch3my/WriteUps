@@ -1,0 +1,42 @@
+///TASK 2///
+Q: In a Windows domain, credentials are stored in a centralised repository called...
+**
+A: Active Directory
+===
+Q: The server in charge of running the Active Directory services is called...
+**
+A: Domain Controller
+===
+///TASK 3///
+Q: Which group normally administrates all computers and resources in a domain?
+**
+A: Domain Admins
+===
+Q: What would be the name of the machine account associated with a machine named TOM-PC?
+**
+A: TOM-PC$
+===
+Q: What type of containers should we use to group all Quality Assurance users so that policies can be applied consistently to them?
+**
+A: Organizational Units
+===
+///TASK 4///
+Q: What was the flag found on Sophie's desktop?
+**
+A: THM{thanks_for_contacting_support}
+===
+Q: The process of granting privileges to a user over some OU or other AD Object is called...
+**
+A: Delegation
+===
+///TASK 5///
+Q: After organising the available computers, how many ended up in the Workstations OU?
+**
+A: 7
+===
+Q: Is it recommendable to create separate OUs for Servers and Workstations? (yay/nay)
+**
+A: yay
+===
+///TASK 6///
+
