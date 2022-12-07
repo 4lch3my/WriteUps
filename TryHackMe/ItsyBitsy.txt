@@ -1,0 +1,28 @@
+///TASK 2///
+Q: How many events were returned for the month of March 2022?
+** 
+A: 1482
+===
+Q: What is the IP associated with the suspected user in the logs?
+** 
+A: 192.166.65.54
+===
+Q: The user’s machine used a legit windows binary to download a file from the C2 server. What is the name of the binary?
+** 
+A: bitsadmin
+===
+Q: The infected machine connected with a famous filesharing site in this period, which also acts as a C2 server used by the malware authors to communicate. What is the name of the filesharing site?
+** 
+A: pastebin.com
+===
+Q: What is the full URL of the C2 to which the infected host is connected?
+** 
+A: pastebin.com/yTg0Ah6a
+===
+Q: A file was accessed on the filesharing site. What is the name of the file accessed?
+** 
+A: secret.txt
+===
+Q: The file contains a secret code with the format THM{_____}.
+** 
+A: THM{SECRET__CODE}

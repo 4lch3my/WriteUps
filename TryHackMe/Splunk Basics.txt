@@ -1,0 +1,29 @@
+///TASK3///
+===
+Q: Which component is used to collect and send data over the Splunk instance?
+** 
+A: Forwarder
+///TASK3///
+Q: In the Add Data tab, which option is used to collect data from files and ports?
+** 
+A: Monitor
+///TASK4///
+Q: Upload the data attached to this task and create an index "VPN_Logs". How many events are present in the log file?
+** 
+A: 2862
+===
+Q: How many log events by the user Maleena are captured?
+** 
+A: 60
+===
+Q: What is the name associated with IP 107.14.182.38?
+** 
+A: Smith
+===
+Q: What is the number of events that originated from all countries except France?
+** 
+A: 2814
+===
+Q: How many VPN Events were observed by the IP 107.3.206.58?
+** source="VPNlogs.json" host="VPN_connections" sourcetype="_json" Source_ip=107.3.206.58
+A: 14
