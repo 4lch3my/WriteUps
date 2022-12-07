@@ -120,6 +120,48 @@ Q: What is the subcategory of the file?
 A: macro_hunter
 ===
 ///TASK 11///
+Q: What is the version of CyberChef found in the attached VM?
+** 
+A: 9.49.0
+===
+Q: How many recipes were used to extract URLs from the malicious doc?
+**
+A: 10
+===
+Q: We found a URL that was downloading a suspicious file; what is the name of that malware?
+**
+A: mysterygift.exe
+===
+Q: What is the last defanged URL of the bandityeti domain found in the last step?
+**
+A: hxxps[://]cdn[.]bandityeti[.]THM/files/index/ 
+===
+Q: What is the ticket found in one of the domains? (Format: Domain/<GOLDEN_FLAG>)
+**
+A: THM_MYSTERY_FLAG
+===
+///TASK 12///
+===
+Q: 
+**
+A: 
+===
+Q: 
+**
+A: 
+===
+Q: 
+**
+A: 
+===
+Q: 
+**
+A: 
+===
+Q: 
+**
+A: 
+===
 
 
 
