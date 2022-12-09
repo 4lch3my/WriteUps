@@ -142,9 +142,21 @@ A: THM_MYSTERY_FLAG
 ===
 ///TASK 12///
 ===
-Q: 
-**
-A: 
+Q: Deploy the attached VM, and wait a few minutes. What ports are open?
+** nmap -T4 -A -Pn MACHINE_IP
+A: 80
+===
+Q: What framework is the web application developed with?
+** Open MACHINE_IP:80 > check bottom left
+A:  Laravel v8.26.1 (PHP v7.4.30) 
+===
+Q: What CVE is the application vulnerable to?
+** Quick google search
+A: CVE-2021-3129
+===
+Q: What command can be used to upgrade the last opened session to a Meterpreter session?
+** To check sessions: sessions
+A: sessions -u -1
 ===
 Q: 
 **
@@ -161,7 +173,6 @@ A:
 Q: 
 **
 A: 
-===
 
 
 
