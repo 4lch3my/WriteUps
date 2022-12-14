@@ -215,7 +215,45 @@ Q: Dump the contents of this binary. How many files are dumped?
 A: 16
 ===
 ///TASK 17///
-
-
-
+===
+Q: What is the architecture of the malware sample? (32-bit/64-bit)
+** Run Detect it Easy  on file > see under PE type
+A: 64-bit
+===
+Q: What is the packer used in the malware sample? (format: lowercase)
+** 
+A: upx
+===
+Q: What is the compiler used to build the malware sample? (format: lowercase)
+** capa mysterygift
+A: nim
+===
+Q: How many MITRE ATT&CK techniques have been discovered attributed to the DISCOVERY tactic?
+** capa mysterygift >> "ATT&CK Technique" section
+A: 2
+===
+Q: What is the registry key abused by the malware?
+** 
+A: 
+===
+Q: What is the value written on the registry key based on the previous question?
+** 
+A: 
+===
+Q: What are the names of two files created by the malware under the C:\Users\Administrator\ directory? (format: file1,file2 in alphabetical order)
+** 
+A: 
+===
+Q: What are the two domains wherein malware has initiated a network connection? (format: domain1,domain2 in alphabetical order)
+** 
+A: 
+===
+Q: Going back to strings inside the malware sample, what is the complete URL used to download the file hosted in the first domain accessed by the malware?
+** 
+A: 
+===
+Q: 
+** 
+A: 
+///TASK 18///
 
