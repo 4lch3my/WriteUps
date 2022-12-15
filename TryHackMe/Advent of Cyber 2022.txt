@@ -233,27 +233,75 @@ Q: How many MITRE ATT&CK techniques have been discovered attributed to the DISCO
 A: 2
 ===
 Q: What is the registry key abused by the malware?
-** 
-A: 
+** Follow instructions, see 1st time on list
+A: HKCU\Software\Microsoft\Windows\CurrentVersion\Run\
 ===
 Q: What is the value written on the registry key based on the previous question?
-** 
-A: 
+** Follow instructions, see 1st time on list
+A: C:\Users\Administrator\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\wishes.bat
 ===
 Q: What are the names of two files created by the malware under the C:\Users\Administrator\ directory? (format: file1,file2 in alphabetical order)
-** 
-A: 
+** Read from "File System" stream
+A: test.jpg, wishes.bat
 ===
 Q: What are the two domains wherein malware has initiated a network connection? (format: domain1,domain2 in alphabetical order)
-** 
-A: 
+** Read "Network Activity"
+A: bestfestivalcompany.thm, virustotal.com
 ===
 Q: Going back to strings inside the malware sample, what is the complete URL used to download the file hosted in the first domain accessed by the malware?
 ** 
-A: 
+A: http://bestfestivalcompany.thm/favicon.ico
 ===
-Q: 
-** 
-A: 
 ///TASK 18///
-
+===
+Q: What is the "Percent Packets" value of the "Hypertext Transfer Protocol"?
+** WireShark > Statistics > Protocol Hierarchy
+A: 0.3
+===
+Q: Which port number has received more than 1000 packets?
+** WireShark > Statistics > Conversations > select TCP
+A: 3389
+===
+Q: What is the service name of the used protocol that received more than 1000 packets?
+** port 3389 > common port
+A: RDP
+===
+Q: What are the domain names?
+** filter for 'dns' in WireShark
+A: bestfestivalcompany[.]thm,cdn[.]bandityeti[.]thm
+===
+Q: What are the names of the requested files?
+** filter for 'http' in WireShark
+A: favicon[.]ico,mysterygift[.]exe
+===
+Q: Which IP address downloaded the executable file?
+** filter for 'http' in WireShark >> source IP > cyberchef to defang
+A: 10[.]10[.]29[.]186
+===
+Q: Which domain address hosts the malicious file?
+** filter for 'http' in WireShark >> source IP > cyberchef to defang
+A: cdn[.]bandityeti[.]thm
+===
+Q: What is the "user-agent" value used to download the non-executable file?
+** filter for 'http' in WireShark >> click packet > hypertext > GET > [Expert > user-agent
+A: Nim httpclient/1.6.8
+===
+Q: What is the sha256 hash value of the executable file?
+** 1, WireShar on Desktop
+** 2, cd Desktop > sha256sum > mysterygift.exe
+A: 0ce160a54d10f8e81448d0360af5c2948ff6a4dbb493fe4be756fc3e2c3f900f
+===
+Q: What are the connected IP addresses?
+** Follow Task > first 3 what are not local (192.168) nor DNS (8.8)
+A: 20[.]99[.]133[.]109,20[.]99[.]184[.]37,23[.]216[.]147[.]76
+===
+///TASK 19///
+Q: What is the office number of Elf Pivot McRed?
+** IDOR meaning > testing the URl from '100.html' and above
+A: 134
+===
+Q: Not only profile pages but also stored images are vulnerable. Start with a URL of a valid profile image; what is the hidden flag?
+** 
+A: THM{CLOSE_THE_DOOR}
+===
+///TASK 20///
