@@ -349,12 +349,231 @@ Q: What is the value of Flag4?
 A: THM{SQLi_who???}
 ===
 ///TASK 22///
-Q: 
+Q: What is the Challenge #1 flag?
 ** 
-A: 
+A: THM{n0t_just_your_u$ser}
 ===
+Q: From the Challenge 1 log, what user account was created?
+** 
+A: BanditYetiMini
+===
+Q: What is the Challenge #2 flag?
+** 
+A: THM{wh@t_1s_Runn1ng_H3r3}
+===
+Q: What was the User's path in the Challenge #2 log file?
+** 
+A: SIGMA_AOC2022\Bandit Yeti
+===
+Q: What is the Challenge #3 flag?
+** 
+A: THM{sch3dule_0npo1nt_101}
+===
+Q: What was the MD5 hash associated with Challenge #3 logs?
+** 
+A: 2F6CE97FAF2D5EEA919E4393BDD416A7
+===
+///TASK 23///
+Q: What device can be used to probe the signals being sent on electrical wires between two devices?
+** 
+A: Logic Analyser
+===
+Q: USART is faster than SPI for communication? (Yea,Nay)
+** 
+A: Nay
+===
+Q: USART communication uses fewer wires than SPI? (Yea,Nay)
+** 
+A: Yay
+===
+Q: USART is faster than I2C for communication? (Yea,Nay)
+** 
+A: Nay
+===
+Q: I2C uses more wires than SPI for communication? (Yea,Nay)
+** 
+A: Nay
+===
+Q: SPI is faster than I2C for communication? (Yea,Nay)
+** 
+A: Yea
+===
+Q: What is the maximum number of devices that can be connected on a single pair of I2C lines?
+** 
+A: 1008
+===
+Q: What is the new baud rate that is negotiated between the microprocessor and ESP32 chip?
+** 
+A: 9600
+===
+Q: What is the flag that is transmitted once the new baud rate was accepted?
+** 
+A: THM{Hacking.Hardware.Is.Fun}
+===
+///TASK 24///
+Q: What is the flag value after reversing the file firmwarev2.2-encrypted.gpg?
+** 
+A: THM{WE_GOT_THE_FIRMWARE_CODE}
+===
+Q: What is the Paraphrase value for the binary firmwarev1.0_unsigned?
+** 
+A: Santa@2022
+===
+Q: After reversing the encrypted firmware, can you find the build number for rootfs?
+** ls -lah *
+A: 2.6.31
+===
+///TASK 25///
+Q: What port is Mosquitto running on? 
+** 
+A: 1883
+===
+Q: Is the device/init topic enumerated by Nmap during a script scan of all ports? (y/n)
+** 
+A: y
+===
+Q: What flag is obtained from viewing the RTSP stream? 
+** 
+A: THM{UR_CAMERA_IS_MINE}
+===
+///TASK 26///
+Q: Case 1: What is the password for Santa’s Vault?
+** 
+A: S3cr3tV@ultPW
+===
+Q: Case 1: What is the Flag?
+**
+A: THM{EZ_fl@6!}
+===
+Q: Case 2: What is Santa’s favourite thing?
+**
+A: MilkAndCookies
+===
+Q: Case 2: What is the password for Santa’s Vault?
+**
+A: 3XtrR@_S3cr3tV@ultPW
+===
+Q: Case 2: What is the Flag?
+**
+A: THM{m0@r_5t3pS_n0w!}
+===
+Q: Case 3: What is the Executive Assistant’s favourite thing?
+**
+A: BanoffeePie
+===
+Q: Case 3: What is Santa’s previous password?
+**
+A: H0tCh0coL@t3_01
+===
+Q: Case 3: What is Santa’s current password?
+**
+A: H0tCh0coL@t3_02
+===
+Q: Case 3: What is the 1st part of the vault’s password?
+**
+A: N3w4nd1m
+===
+Q: Case 3: What is the 2nd part of the vault’s password?
+**
+A: Pr0v3dV@ultPW
+===
+Q: Case 3: What is the password for Santa’s Vault?
+**
+A: N3w4nd1mPr0v3dV@ultPW
+===
+Q: Case 3: What is the Flag?
+**
+A: THM{B@d_Y3t1_1s_n@u6hty}
+===
+Q: What is Santa's Code?
+** 
+A: 2845
+===
+Q: Mission ELFPossible: What is the Abominable for a Day Flag?
+**
+A: THM{D3f3n5e_1n_D3pth_1s_k00L!!}
+===
+Additional flags /if any/
+
+Please help us improve by answering this 5-minute survey. Make sure to grab the flag before you click "Submit"!
+
+THM{AoC2022!thank_you!}
 
 
 
 
+####
+AoC Sigma Hunting /Task 23/ - Rules
 
+///
+#1
+///
+title: Local Account Creation Detection
+id: 1 
+status: experimental
+description: Detects the creation of a local user account on a computer.
+author: dd
+date: today
+modified: 1
+
+logsource: 
+  product: windows 
+  service: security 
+  category: # firewall, web, antivirus, process_creation, network_connection, file_access.
+detection:
+  selection:
+    EventID: 4720
+
+  condition: selection # Action to be taken. Can use condition operators such as OR, AND, NOT when using multiple search identifiers.
+
+falsepositives: 
+- unknown # Legitimate services or use.
+
+level:  low # informational, low, medium, high or critical.
+
+tags:
+   - attack.persistence # Points to the MITRE Tactic
+   - attack.T1136.001 # Points to the MITRE Technique
+
+///
+#2
+///
+title: Software Discovery
+id: 2
+status: experimental
+description: Software Diswcovery
+author: dd
+date: today
+modified: 1
+
+logsource: 
+  product: windows 
+  service: sysmon 
+  category: process_creation # firewall, web, antivirus, process_creation, network_connection, file_access.
+detection:
+  selection:
+    EventID: 
+    - 1
+    Image|endswith: 
+    - reg.exe
+    CommandLine|contains|all: 
+    - reg 
+    - query 
+    - /v
+    - svcVersion
+
+
+  condition: selection # Action to be taken. Can use condition operators such as OR, AND, NOT when using multiple search identifiers.
+
+falsepositives: 
+- unknown # Legitimate services or use.
+
+level:  low # informational, low, medium, high or critical.
+
+tags:
+   - attack.persistence # Points to the MITRE Tactic
+   - attack.T1136.001 # Points to the MITRE Technique
+
+///
+#3
+///
