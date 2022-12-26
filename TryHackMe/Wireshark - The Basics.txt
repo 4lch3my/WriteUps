@@ -1,0 +1,81 @@
+///TASK 1///
+===
+Q: Which file is used to simulate the screenshots?
+** 
+A: http1.pcapng
+===
+Q: Which file is used to answer the questions?
+**
+A: Exercise.pcapng
+===
+///TASK 2///
+===
+Q: Read the "capture file comments". What is the flag?
+** Statistics > Capture File Properties > Capture File comments
+A: TryHackMe_Wireshark_Demo 
+===
+Q: What is the total number of packets?
+** scroll to end
+A: 58620
+===
+Q: What is the SHA256 hash value of the capture file?
+** Statistics > Capture File Properties > Details > Hash (SHA256)
+A: f446de335565fb0b0ee5e5a3266703c778b2f3dfad7efeaeccb2da5641a6d6eb
+===
+///TASK 3///
+===
+Q: View packet number 38. Which markup language is used under the HTTP protocol?
+** pkt 38 > eXtensible markup language
+A: extensible markup language
+===
+Q: What is the arrival date of the packet? (Answer format: Month/Day/Year)
+** pkt 38 > Hyper Transfer Protocol > Date:
+A: 05/13/2004
+===
+Q: What is the TTL value?
+** pkt 38 > Internet Protocol Version 4 > Time to Live
+A: 47
+===
+Q: What is the TCP payload size?
+** pkt 38 > Transmission Control Protocol > TCP Segment Len:
+A: 424
+===
+Q: What is the e-tag value?
+** pkt 38 > Hyper Transfer Protocol > ETag:
+A: 9a01a-4696-7e354b00
+===
+///TASK 4///
+===
+Q: Search the "r4w" string in packet details. What is the name of artist 1?
+** Edit > Find packet
+A: r4w8173
+===
+Q: Go to packet 12 and read the comments. What is the answer?
+** pkt 12 > read comment > go to pkt 39765 > Jpeg > right-click > export > open terminal > md5sum "filename" > hash is the key
+A: 911cd574a42865a956ccde2d04495ebf
+===
+Q: There is a ".txt" file inside the capture file. Find the file and read it; what is the alien's name?
+** search .txt > "File>Export Objects>HTTP"
+A: packetmaster
+===
+Q: Look at the expert info section. What is the number of warnings?
+** 
+A: 1636
+===
+///TASK 5///
+Q: Go to packet number 4. Right-click on the "Hypertext Transfer Protocol" and apply it as a filter. Now, look at the filter pane. What is the filter query?
+** 
+A: http
+===
+Q: What is the number of displayed packets?
+** 
+A: 1089
+===
+Q: Go to packet number 33790 and follow the stream. What is the total number of artists?
+** 
+A: 3
+===
+Q: What is the name of the second artist?
+** Exported file > opened .php in editor
+A: Blad3
+===
