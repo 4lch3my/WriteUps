@@ -1,9 +1,51 @@
-///TASK ///
-Q: 
+///TASK 4///
+Q: What is the total number of frames?
+** Case panel > right clk > metadata
+A: 460
+===
+Q: How many IP addresses use the same MAC address with host 145.253.2.203?
+** unfold IP > MAc addresses
+A: 2
+===
+Q: How many packets were sent from host 65.208.228.223?
+** unfold IP > Sent:
+A: 72
+===
+Q: What is the name of the webserver banner under host 65.208.228.223?
+** unfold IP > Host Details
+A: Apache
+===
+Q: What is the extracted username?
+** Credentials tab
+A: #B\Administrator
+===
+Q: What is the extracted password?
+** 
+A: NTLM Challenge: 136B077D942D9A63 - LAN Manager Response: 000000000000000000000000000000000000000000000000 - NTLM Response: FBFF3C253926907AAAAD670A9037F2A501010000000000000094D71AE38CD60170A8D571127AE49E00000000020004003300420001001E003000310035003600360053002D00570049004E00310036002D004900520004001E0074006800720065006500620065006500730063006F002E0063006F006D0003003E003000310035003600360073002D00770069006E00310036002D00690072002E0074006800720065006500620065006500730063006F002E0063006F006D0005001E0074006800720065006500620065006500730063006F002E0063006F006D00070008000094D71AE38CD601060004000200000008003000300000000000000000000000003000009050B30CECBEBD73F501D6A2B88286851A6E84DDFAE1211D512A6A5A72594D340A001000000000000000000000000000000000000900220063006900660073002F003100370032002E00310036002E00360036002E0033003600000000000000000000000000
+===
+///TASK 5///
+Q: What is the name of the Linux distro mentioned in the file associated with frame 63075? 
 ** 
 A: 
 ===
-Q: 
+Q: What is the header of the page associated with frame 75942?
 ** 
 A: 
 ===
+Q: What is the source address of the image "ads.bmp.2E5F0FD9.bmp"?
+** 
+A: 
+===
+Q: What is the frame number of the possible TLS anomaly?
+** 
+A: 
+===
+Q: Look at the messages. Which platform sent a password reset email?
+** 
+A: 
+===
+Q: What is the email address of Branson Matheson?
+**
+A: 
+===
+///TASK 6///
