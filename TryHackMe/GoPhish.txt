@@ -1,0 +1,67 @@
+///TASK 2///
+Q: What type of psychological manipulation is phishing part of?
+** 
+A: social engineering
+===
+Q: What type of phishing campaign do red teams get involved in?
+** 
+A: spear-phishing
+===
+///TASK 3///
+Q: What tactic can be used to find brands or people a victim interacts with?
+** 
+A: OSINT
+===
+Q: What should be changed on an HTML anchor tag to disguise a link?
+** 
+A: anchor text
+===
+///TASK 4///
+Q: What part of a red team infrastructure can make a website look more authentic?
+** 
+A: SSL/TLS Certificates
+===
+Q: What protocol has TXT records that can improve email deliverability?
+** 
+A: DNS
+===
+Q: What tool can automate a phishing campaign and include analytics?
+** 
+A: GoPhish
+===
+///TASK 5///
+Q: What is the password for Brian?
+** 
+A: p4$$w0rd!
+===
+///TASK 6///
+Q: Do droppers tend to be malicious?
+** 
+A: nay
+===
+///TASK 7///
+Q: What is better, using an expired or new domain? (old/new)
+** 
+A: old
+===
+Q: What is the term used to describe registering a similar domain name with a spelling error?
+** 
+A: Typosquatting
+===
+///TASK 8///
+Q: What can Microsoft Office documents contain, which, when executed can run computer commands?
+** 
+A: macros
+===
+///TASK 9///
+Q: Which recent CVE caused remote code execution?
+** 
+A: CVE-2021-40444
+===
+///TASK 10///
+Q: What is the flag from the challenge?
+**
+A: THM{I_CAUGHT_ALL_THE_PHISH}
+===
+
+
