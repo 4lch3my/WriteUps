@@ -1,0 +1,59 @@
+///TASK 6///
+Q: After finding Santa's account, what is their position in the company?
+** https://inventory-management.thm/activity?user_id=1
+A: The Boss!
+===
+Q: After finding McStocker's account, what is their position in the company?
+** https://inventory-management.thm/activity?user_id=3
+A: Build Manager
+===
+Q: After finding the account responsible for tampering, what is their position in the company?
+** https://inventory-management.thm/activity?user_id=9
+A: Mischief Manager
+===
+Q: What is the received flag when McSkidy fixes the Inventory Management System?
+** 
+A: THM{AOC_IDOR_2B34BHI3}
+===
+///TASK 7///
+Q: What is the name of the new cookie that was created for your account?
+** 
+A: user-auth
+===
+Q: What encoding type was used for the cookie value?
+** CyberChef
+A: Hexadecimal
+===
+Q: What object format is the data of the cookie stored in?
+** 
+A: JSON
+===
+Q: What is the value of the administrator cookie? (username = admin)
+** {company: "The Best Festival Company", isregistered:"True", username:"admin"}
+A: 7b636f6d70616e793a2022546865204265737420466573746976616c20436f6d70616e79222c206973726567697374657265643a2254727565222c20757365726e616d653a2261646d696e227d
+===
+Q: What team environment is not responding?
+** After changing the cookie to above, go to https://static-labs.tryhackme.cloud/sites/aoc-cookies/monitor.html
+A: hr
+===
+Q: What team environment has a network warning?
+** 
+A: Application
+===
+///TASK 8///
+Q: Using a common wordlist for discovering content, enumerate http://10.10.241.164 to find the location of the administrator dashboard. What is the name of the folder?
+** dirb http://10.10.241.164/ /root/Tools/wordlists/dirb/common.txt 
+A: admin
+===
+Q: In your web browser, try some default credentials on the newly discovered login form for the "administrator" user. What is the password?
+** 
+A: administrator
+===
+Q: Access the admin panel. What is the value of the flag?
+** 
+A: THM{ADM1N_AC3SS} 
+===
+///TASK 9///
+
+
+
