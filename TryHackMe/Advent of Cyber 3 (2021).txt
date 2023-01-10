@@ -54,6 +54,34 @@ Q: Access the admin panel. What is the value of the flag?
 A: THM{ADM1N_AC3SS} 
 ===
 ///TASK 9///
-
+Q: What valid password can you use to access the "santa" account?
+** 
+A: 
+===
+Q: What is the flag in Santa's itinerary?
+** 
+A: 
+===
+///TASK 10///
+Q: 
+** 
+A: 
+===
+Q: 
+** 
+A: 
+===
+Q: 
+** 
+A: 
+===
+Q: 
+** 
+A: 
+===
+Q: 
+** 
+A: 
+===
 
 
