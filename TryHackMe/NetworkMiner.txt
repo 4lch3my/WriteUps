@@ -21,31 +21,84 @@ A: #B\Administrator
 ===
 Q: What is the extracted password?
 ** 
-A: NTLM Challenge: 136B077D942D9A63 - LAN Manager Response: 000000000000000000000000000000000000000000000000 - NTLM Response: FBFF3C253926907AAAAD670A9037F2A501010000000000000094D71AE38CD60170A8D571127AE49E00000000020004003300420001001E003000310035003600360053002D00570049004E00310036002D004900520004001E0074006800720065006500620065006500730063006F002E0063006F006D0003003E003000310035003600360073002D00770069006E00310036002D00690072002E0074006800720065006500620065006500730063006F002E0063006F006D0005001E0074006800720065006500620065006500730063006F002E0063006F006D00070008000094D71AE38CD601060004000200000008003000300000000000000000000000003000009050B30CECBEBD73F501D6A2B88286851A6E84DDFAE1211D512A6A5A72594D340A001000000000000000000000000000000000000900220063006900660073002F003100370032002E00310036002E00360036002E0033003600000000000000000000000000
+A: $NETNTLMv2$#B$136B077D942D9A63$FBFF3C253926907AAAAD670A9037F2A5$01010000000000000094D71AE38CD60170A8D571127AE49E00000000020004003300420001001E003000310035003600360053002D00570049004E00310036002D004900520004001E0074006800720065006500620065006500730063006F002E0063006F006D0003003E003000310035003600360073002D00770069006E00310036002D00690072002E0074006800720065006500620065006500730063006F002E0063006F006D0005001E0074006800720065006500620065006500730063006F002E0063006F006D00070008000094D71AE38CD601060004000200000008003000300000000000000000000000003000009050B30CECBEBD73F501D6A2B88286851A6E84DDFAE1211D512A6A5A72594D340A001000000000000000000000000000000000000900220063006900660073002F003100370032002E00310036002E00360036002E0033003600000000000000000000000000
 ===
 ///TASK 5///
 Q: What is the name of the Linux distro mentioned in the file associated with frame 63075? 
-** 
-A: 
+** ONLY load "mx-7 pcap" > file > search
+A: centos
 ===
 Q: What is the header of the page associated with frame 75942?
-** 
-A: 
+** ONLY load "mx-7 pcap" > file > search > right click > Open file
+A: Password-Ned AB
 ===
 Q: What is the source address of the image "ads.bmp.2E5F0FD9.bmp"?
-** 
-A: 
+** File tab > add file name > select File name attribute
+A: 80.239.178.187
 ===
 Q: What is the frame number of the possible TLS anomaly?
-** 
-A: 
+** ONLY load "mx-7 pcap" > Anomalies
+A: 36255
 ===
 Q: Look at the messages. Which platform sent a password reset email?
-** 
-A: 
+** Load pcap > messages 
+A: facebook
 ===
 Q: What is the email address of Branson Matheson?
-**
-A: 
+** Load pcap > messages 
+A: branson@sandsite.org
 ===
 ///TASK 6///
+Q: Which version can detect duplicate MAC addresses?
+**
+A: 2.7
+===
+Q: Which version can handle frames?
+**
+A: 1.6
+===
+Q: Which version can provide more details on packet details?
+**
+A: 1.6
+===
+///TASK 7///
+Q: What is the OS name of the host 131.151.37.122?
+** Host > OS > dropdown for more details
+A: Windows - Windows NT 4
+===
+Q: How many data bytes were received from host 131.151.32.91 to host 131.151.37.122 through port 1065:
+** Host > Outgoing > Check sent bytes data
+A: 192
+===
+Q: How many data bytes were received from host 131.151.37.122 to host 131.151.32.21 through port 143:
+** Host > Outgoing > Check sent bytes data
+A: 20769
+===
+Q: What is the sequence number of frame 9?
+** Networkminer 1.6 > Frames 9 > TCP > Sequence number
+A: 2AD77400
+===
+Q: What is the number of the detected "content types"?
+** Networkminer 2.7 > Parameters > content-types
+A: 2
+===
+Q: What is the USB product's brand name?
+** Parameters > filter for: USB > look for local file paths
+A: ASIX
+===
+Q: What is the name of the phone model?
+** check photo with view file
+A: lumia 535
+===
+Q: What is the source IP of the fish image?
+** Images > find whale/fish > hover > IP
+A: 50.22.95.9
+===
+Q: What is the password of the "homer.pwned.se@gmx.com"?
+** Credentials > passwords columb
+A: spring2015
+===
+Q: What is the DNS Query of frame 62001?
+** 
+A: pop.gmx.com
+===

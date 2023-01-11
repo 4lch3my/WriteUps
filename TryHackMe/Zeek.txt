@@ -1,0 +1,30 @@
+///TASK 2///
+Q: What is the installed Zeek instance version number?
+** 
+A: 
+===
+Q: What is the version of the ZeekControl module?
+** 
+A: 
+===
+Q: Investigate the "sample.pcap" file. What is the number of generated alert files?
+** 
+A: 
+===
+///TASK 3///
+Q: 
+** 
+A: 
+===
+Q: 
+** 
+A: 
+===
+Q: 
+** 
+A: 
+===
+Q: 
+** 
+A: 
+===
