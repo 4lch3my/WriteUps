@@ -1,14 +1,87 @@
-///TASK ///
-Q:
-**
-A:
+###All the event logs that we are going to investigate are present in index=botsv1###
+==========================================
+///TASK 4///
+Q: One suricata alert highlighted the CVE value associated with the attack attempt. What is the CVE value?
+** index=botsv1 imreallynotbatman.com src_ip="40.80.148.42" sourcetype=suricata >> alert signature field
+A: CVE-2014-6271
 ===
-Q:
-**
-A:
+Q: What is the CMS our web server is using?
+** fileinfo.filename
+A: joomla
 ===
-Q:
-**
-A:
+Q: What is the web scanner, the attacker used to perform the scanning attempts?
+** src_headers
+A: Acunetix
 ===
-///TASK ///
+Q: What is the IP address of the server imreallynotbatman.com?
+** dest_ip
+A: 192.168.250.70
+===
+///TASK 5///
+Q: What IP address is likely attempting a brute force password attack against imreallynotbatman.com?
+** 
+A: 23.22.63.114
+===
+Q: What was the URI which got multiple brute force attempts?
+** 
+A: /joomla/administrator/index.php
+===
+Q: Against which username was the brute force attempt made?
+** 
+A: admin
+===
+Q: What was the correct password for admin access to the content management system running imreallynotbatman.com?
+** auth seen from IP 40.80.148.42
+A: batman
+===
+Q: How many unique passwords were attempted in the brute force attempt?
+** index=botsv1 sourcetype=stream:http dest_ip="192.168.250.70" http_method=POST form_data=*username*passwd* | rex field=form_data "passwd=(?<creds>\w+)"  | table src_ip creds
+A: 412
+===
+Q: After finding the correct password, which IP did the attacker use to log in to the admin panel?
+** 
+A: 	40.80.148.42
+===
+///TASK 6///
+Q: Sysmon also collects the Hash value of the processes being created. What is the MD5 HASH of the program 3791.exe?
+** 
+A: AAE3F5A29935E6ABCC2C2754D12A9AF0
+===
+Q: Looking at the logs, which user executed the program 3791.exe on the server?
+** 
+A: NT AUTHORITY\IUSR
+===
+Q: Search hash on the virustotal. What other name is associated with this file 3791.exe?
+** 
+A: ab.exe
+///TASK 7///
+Q: What is the name of the file that defaced the imreallynotbatman.com website ?
+** index=botsv1 src=192.168.250.70 sourcetype=suricata dest_ip=23.22.63.114  >> URL
+A: poisonivy-is-coming-for-you-batman.jpeg
+===
+Q: Fortigate Firewall 'fortigate_utm' detected SQL attempt from the attacker's IP 40.80.148.42. What is the name of the rule that was triggered during the SQL Injection attempt?
+** index=botsv1 sourcetype=fortigate_utm src_ip=40.80.148.42 >> category
+A: HTTP.URI.SQL.Injection
+///TASK 8///
+Q: This attack used dynamic DNS to resolve to the malicious IP. What fully qualified domain name (FQDN) is associated with this attack?
+** index=botsv1 sourcetype=stream:http dest_ip=23.22.63.114 "poisonivy-is-coming-for-you-batman.jpeg" src_ip=192.168.250.70
+A: prankglassinebracket.jumpingcrab.com
+===
+///TASK 9///
+Q: What IP address has P01s0n1vy tied to domains that are pre-staged to attack Wayne Enterprises?
+** 
+A: 23.22.63.114
+===
+Q: Based on the data gathered from this attack and common open-source intelligence sources for domain names, what is the email address that is most likely associated with the P01s0n1vy APT group?
+** 
+A: lillian.rose@po1s0nvy.com
+===
+///TASK 10///
+Q: What is the HASH of the Malware associated with the APT group?
+** 
+A: c99131e0169171935c5ac32615ed6261
+===
+Q: What is the name of the Malware associated with the Poison Ivy Infrastructure?
+** 
+A: MirandaTateScreensaver.scr.exe
+===

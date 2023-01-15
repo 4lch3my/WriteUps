@@ -1,7 +1,5 @@
 SPLUNK things:
 
-https://tryhackme.com/room/splunk201
-https://tryhackme.com/room/investigatingwithsplunk
 https://tryhackme.com/room/splunk2gcd5
 https://tryhackme.com/room/splunk3zs
 https://tryhackme.com/room/contiransomwarehgh
