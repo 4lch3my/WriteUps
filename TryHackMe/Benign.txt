@@ -1,0 +1,41 @@
+/// TASK 2 ///
+Q: How many logs are ingested from the month of March?
+** index=*
+A: 13959
+===
+Q: Imposter Alert: There seems to be an imposter account observed in the logs, what is the name of that user?
+** 
+A: Amel1a
+===
+Q: Which user from the HR department was observed to be running scheduled tasks?
+** 
+A: Chris.fort
+===
+Q: Which user from the HR department executed a system process (LOLBIN) to download a payload from a file-sharing host.
+** index=* UserName haroon OR Chris.fort OR Daina  >> look at process names > order in unique names >> certutil.exe"
+A: haroon
+===
+Q: To bypass the security controls, which system process (lolbin) was used to download a payload from the internet?
+** #copy from above# > https://lolbas-project.github.io/
+A: certutil.ex
+===
+Q: What was the date that this binary was executed by the infected host? format (YYYY-MM-DD)
+** index=* UserName haroon ProcessName="C:\\Windows\\System32\\certutil.exe" >> EventTime
+A: 2022-03-04
+===
+Q: Which third-party site was accessed to download the malicious payload?
+** #copy from above# > CommandLine
+A: controlc.com
+===
+Q: What is the name of the file that was saved on the host machine from the C2 server during the post-exploitation phase?
+** CommandLine
+A: benign.exe 
+===
+Q: The suspicious file downloaded from the C2 server contained malicious content with the pattern THM{..........}; what is that pattern?
+** Visit site
+A: THM{KJ&*H^B0}
+===
+Q: What is the URL that the infected host connected to?
+** CommandLine
+A: https://controlc.com/548ab556
+===

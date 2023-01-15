@@ -4,4 +4,4 @@ https://tryhackme.com/room/splunk2gcd5
 https://tryhackme.com/room/splunk3zs
 https://tryhackme.com/room/contiransomwarehgh
 https://tryhackme.com/room/posheclipse
-https://tryhackme.com/room/benign
+https://tryhackme.com/room/newhireoldartifacts
