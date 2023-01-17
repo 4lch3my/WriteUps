@@ -1,0 +1,74 @@
+/// TASK 2 ///
+Q: In the LinkedIn breach (Jun 2021), how many million records (sample) were posted by a hacker on the dark web?
+** 
+A: 1
+===
+Q: Is the API documentation a trivial item and not used after API development (yea/nay)?
+** 
+A: nay
+===
+/// TASK 3 ///
+Q: Suppose the employee ID is an integer with incrementing value. Can you check through the vulnerable API endpoint the total number of employees in the company?
+** 
+A: 3
+===
+Q: What is the flag associated with employee ID 2?
+** 
+A: THM{838123}
+===
+Q: What is the username of employee ID 3?
+** 
+A: Bob
+/// TASK 4 ///
+===
+Q: Can you find the token of hr@mht.com?
+** 
+A: cOC%Aonyis%H)mZ&uJkuI?_W#4&m>Y
+===
+Q: To which country does sales@mht.com belong?
+** 
+A: China
+===
+Q: Is it a good practice to send a username and password in a GET request (yea/nay)?
+** 
+A: nay
+===
+/// TASK 5 ///
+Q: What is the device ID value for post-ID 2?
+** 
+A: iOS15.411
+===
+Q: What is the username value for post-ID 3?
+** 
+A: hacker#!
+===
+Q: Should we use network-level devices for controlling excessive data exposure instead of managing it through APIs (programmatically) - (yea/nay)?
+** 
+A: nay
+===
+/// TASK 6 ///
+Q: Can rate limiting be carried out at the network level through firewall etc. (yea/nay)?
+** 
+A: yea
+===
+Q: What is the HTTP response code when you send a POST request to /apirule4/sendOTP_s using the email address hr@mht.com?
+** 
+A: 200
+===
+Q: What is the "msg key" value after an HTTP POST request to /apirule4/sendOTP_s using the email address sale@mht.com?
+** 
+A: Invalid Email
+===
+/// TASK 6 ///
+Q: What is the mobile number for the username Alice?
+** 
+A: +1235322323
+===
+Q: Is it a good practice to send isAdmin value through the hidden fields in form requests - yea/nay?
+** 
+A: nay
+===
+Q: What is the address flag of username admin?
+** 
+A: THM{3432$@#2!}
+===
