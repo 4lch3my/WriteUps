@@ -1,0 +1,78 @@
+///TASK 2///
+Q: Investigate the resolved addresses. What is the IP address of the hostname starts with "bbc"?
+** 
+A: 199.232.24.81
+===
+Q: What is the number of IPv4 conversations?
+** 
+A: 435
+===
+Q: How many bytes (k) were transferred from the "Micro-St" MAC address
+** 
+A: 7474
+===
+Q: What is the number of IP addresses linked with "Kansas City"?
+** 
+A: 4
+===
+Q: Which IP address is linked with "Blicnet" AS Organisation?
+** 
+A: 188.246.82.7
+===
+///TASK 3///
+Q: What is the most used IPv4 destination address?
+** 
+A: 10.100.1.33
+===
+Q: What is the max service request-response time of the DNS packets?
+** 
+A: 0.467897
+===
+Q: What is the number of HTTP Requests accomplished by "rad[.]msn[.]com?
+** 
+A: 39
+===
+///TASK 4///
+Q: What is the number of IP packets?
+** 
+A: 81420
+===
+Q: What is the number of packets with a "TTL value less than 10"?
+** 
+A: 66
+===
+Q: What is the number of packets which uses "TCP port 4444"?
+** 
+A: 632
+===
+Q: What is the number of "HTTP GET" requests sent to port "80"?
+** 
+A: 527
+===
+Q: What is the number of "type A DNS Queries"?
+** 
+A: 
+===
+///TASK 5///
+Q: What is the number of IP packets?
+** 
+A: 
+===
+Q: 
+** 
+A: 
+===
+Q: 
+** 
+A: 
+===
+Q: 
+** 
+A: 
+===
+Q: 
+** 
+A: 
+===
+
+
