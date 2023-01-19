@@ -1,5 +1,5 @@
 ///TASK2///
-Q:Scan the box, how many ports are open?
+Q: Scan the box, how many ports are open?
 ** nmap  -sC -sV 10.10.144.193
 A: 6
 ===
@@ -39,7 +39,4 @@ A: bill
 Q: What is the user flag?
 **
 A: 8bd7992fbe8a6ad22a63361004cfcedb
-
-
 ===
-

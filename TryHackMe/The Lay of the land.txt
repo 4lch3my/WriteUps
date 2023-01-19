@@ -1,0 +1,42 @@
+///TASK4///
+Q: Before going any further, ensure the attached machine is deployed and try what we discussed. Is the attached machine part of the AD environment? (Y|N)
+**  
+A:  Y
+===
+Q: If it is part of an AD environment, what is the domain name of the AD?
+**  systeminfo | findstr Domain
+A:  thmredteam.com
+===
+///TASK5///
+Q: Use the Get-ADUser -Filter * -SearchBase command to list the available user accounts within THM OU in the thmredteam.com domain. How many users are available?
+** 
+A: 6
+===
+Q: Once you run the previous command, what is the UserPrincipalName (email) of the admin account?
+**  
+A: thmadmin@thmredteam.com
+===
+Q: 
+** 
+A: 
+===
+Q: 
+** 
+A: 
+===
+Q: 
+** 
+A: 
+===
+Q:
+** 
+A: 
+===
+Q:
+** 
+A: 
+===
+Q:
+** 
+A: 
+===
