@@ -1,60 +1,60 @@
 ///TASK 3///
 Q: Amber Turing was hoping for Frothly to be acquired by a potential competitor which fell through, but visited their website to find contact information for their executive team. What is the website domain that she visited?
-** 
-A: 
+** index="botsv2" 10.0.2.101 sourcetype="stream:HTTP" *beer*
+A: www.berkbeer.com 
 ===
 Q: Amber found the executive contact information and sent him an email. What image file displayed the executive's contact information? Answer example: /path/image.ext
-** 
-A: 
+** index="botsv2" 10.0.2.101 sourcetype="stream:HTTP" www.berkbeer.com
+A: /images/ceoberk.png
 ===
 Q: What is the CEO's name? Provide the first and last name.
-** 
-A: 
+** index="botsv2" sourcetype="stream:SMTP" aturing@froth.ly berkbeer.com
+A: Martin Berk
 ===
 Q: What is the CEO's email address?
-** 
-A: 
+** index="botsv2" sourcetype="stream:SMTP" aturing@froth.ly berkbeer.com
+A: mberk@berkbeer.com
 ===
 Q: After the initial contact with the CEO, Amber contacted another employee at this competitor. What is that employee's email address?
-** 
-A: 
+** index="botsv2" sourcetype="stream:SMTP" aturing@froth.ly berkbeer.com
+A: hbernhard@berkbeer.com 
 ===
 Q: What is the name of the file attachment that Amber sent to a contact at the competitor?
-** 
-A: 
+** index="botsv2" sourcetype="stream:SMTP" aturing@froth.ly berkbeer.com >> attach_filename
+A: Saccharomyces_cerevisiae_patent.docx
 ===
 Q: What is Amber's personal email address?
-** 
-A: 
+** index="botsv2" sourcetype="stream:SMTP" aturing@froth.ly berkbeer.com >> content_body > base64
+A: ambersthebest@yeastiebeastie.com
 ///TASK 4///
 ===
-Q: What version of TOR Browser did Amber install to obfuscate her web browsing? Answer guidance: Numeric with one or more delimiter.
-** 
-A: 
+Q: What version of TOR Browser did Amber install to obfuscate her web browsing?
+** index="botsv2" amber tor.exe > process
+A: 7.0.4
 ===
 Q: What is the public IPv4 address of the server running www.brewertalk.com?
-** 
-A: 
+** index="botsv2" www.brewertalk.com > look at packet > dest_ip (172 is internal!)
+A: 52.42.208.228 
 ===
 Q: Provide the IP address of the system used to run a web vulnerability scan against www.brewertalk.com.
-** 
-A: 
+** index="botsv2" www.brewertalk.com >> src_ip >> high number
+A: 45.77.65.211
 ===
 Q: The IP address from Q#2 is also being used by a likely different piece of software to attack a URI path. What is the URI path? Answer guidance: Include the leading forward slash in your answer. Do not include the query string or other parts of the URI. Answer example: /phpinfo.php
-** 
-A: 
+** index="botsv2" src_ip=45.77.65.211Magic
+A: /member.php
 ===
 Q: What SQL function is being abused on the URI path from the previous question?
-** 
-A: 
+** index="botsv2" src_ip=45.77.65.211 uri_path="/member.php" > form_data
+A: updatexml
 ===
 Q: What was the value of the cookie that Kevin's browser transmitted to the malicious URL as part of an XSS attack? Answer guidance: All digits. Not the cookie name or symbols like an equal sign.
-** 
-A: 
+** index=botsv2 sourcetype="stream:http" "kevin" > search: cookie
+A: 1502408191
 ===
 Q: What brewertalk.com username was maliciously created by a spear phishing attack?
-** 
-A: 
+** index=botsv2 sourcetype="stream:http" "kevin" 1bc3eab741900ab25c98eee86bf20feb >> username field in dest_content
+A: kIagerfield
 ===
 ///TASK 5///
 Q: Mallory's critical PowerPoint presentation on her MacBook gets encrypted by ransomware on August 18. What is the name of this file after it was encrypted
