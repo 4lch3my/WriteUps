@@ -1,0 +1,23 @@
+///TASK 2///
+Q: What port does IPP run on?
+** 
+A: 613
+===
+///TASK 3///
+Q: How would a simple printer TCP DoS attack look as a one-line command?
+** http://hacking-printers.net/wiki/index.php/Printer_Security_Testing_Cheat_Sheet
+A: while true; do nc printer 9100; done
+===
+Q: Review the cheat sheet provided in the task reading above. What attack are printers often vulnerable to which involves sending more and more information until a pre-allocated buffer size is surpassed?
+** http://hacking-printers.net/wiki/index.php/Printer_Security_Testing_Cheat_Sheet
+A: Buffer overflows
+===
+Q: Connect to the printer per the instructions above. Where's the Fox_Printer located?
+** 
+A: Skidy's basement
+===
+Q: What is the size of a test sheet?
+** 
+A: 1k
+===
+

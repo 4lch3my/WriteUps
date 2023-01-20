@@ -16,27 +16,29 @@ Q: Once you run the previous command, what is the UserPrincipalName (email) of t
 **  
 A: thmadmin@thmredteam.com
 ===
-Q: 
+///TASK 6///
+Q: Enumerate the attached Windows machine and check whether the host-based firewall is enabled or not! (Y|N)
 ** 
-A: 
+A: N
 ===
-Q: 
-** 
-A: 
+Q: Using PowerShell cmdlets such Get-MpThreat can provide us with threats details that have been detected using MS Defender. Run it and answer the following: What is the file name that causes this alert to record?
+** Get-MpThreat
+A: PowerView.ps1
 ===
-Q: 
-** 
-A: 
+Q: Enumerate the firewall rules of the attached Windows machine. What is the port that is allowed under the THM-Connection rule?
+** 17337
+A: Get-NetFirewallRule | select DisplayName, Enabled, Description
 ===
-Q:
-** 
-A: 
+///TASK 9///
+Q: What is the port number?
+** wmic service where "name like 'THM Service'" get Name,PathName >> netstat -noa |findstr "LISTENING" |findstr "2512"
+A: 13337
 ===
-Q:
-** 
-A: 
+Q: Visit the localhost on the port you found in Question #1. What is the flag?
+** http://localhost:13337/
+A: THM{S3rv1cs_1s_3numerat37ed}
 ===
-Q:
-** 
-A: 
+Q: What is the flag for one of the records?
+**  nslookup.exe >> ls -d THMredteam.com
+A: THM{DNS-15-Enumerated!}
 ===
