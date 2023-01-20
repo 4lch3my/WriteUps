@@ -1,17 +1,30 @@
 ///TASK 2///
 Q: What is the installed Zeek instance version number?
 ** 
-A: 
+A: 4.2.1
 ===
 Q: What is the version of the ZeekControl module?
 ** 
-A: 
+A: 2.4.0
 ===
 Q: Investigate the "sample.pcap" file. What is the number of generated alert files?
 ** 
-A: 
+A: 8
 ===
 ///TASK 3///
+Q: Investigate the sample.pcap file. Investigate the dhcp.log file. What is the available hostname?
+** 
+A: Microknoppix
+===
+Q: Investigate the dns.log file. What is the number of unique DNS queries?
+** 
+A: 2
+===
+Q: Investigate the conn.log file. What is the longest connection duration?
+** cat conn.log | zeek-cut duration
+A: 332.319364
+===
+///TASK 4///
 Q: 
 ** 
 A: 
@@ -28,3 +41,100 @@ Q:
 ** 
 A: 
 ===
+Q: 
+** 
+A: 
+===
+Q: 
+** 
+A: 
+===
+Q: 
+** 
+A: 
+===
+Q: 
+** 
+A: 
+===
+Q: 
+** 
+A: 
+===
+Q: 
+** 
+A: 
+===
+Q: 
+** 
+A: 
+===
+Q: 
+** 
+A: 
+===
+Q: 
+** 
+A: 
+===
+Q: 
+** 
+A: 
+===
+
+______________________________________
+Parameter	Description
+-r	        read/process a pcap file.
+-C	        Ignoring checksum errors.
+-v	        Version information.
+zeekctl	    ZeekControl module.
+
+______________________________________
+Zeek logs in a nutshell
+https://bit.ly/3wfkeLJ
+
+______________________________________
+Usefull Linux commands
+
+Parameter	            Description
+history                 history
+!10                     execute 10th
+!!                      execute previous
+cat s.txt               read file
+head s.txt              first 10 lines
+tail s.txt              last 10 lines
+cat t.txt | cut -f 1    cut 1st field
+cat t.txt | cut -c1     cut 1st columb
+cat t.txt | grep 'keywords'  find word
+cat t.txt | sort        alphabeticelly
+cat t.txt | sort -n     numerically
+cat t.txt | uniq        remove dup. line
+cat t.txt | nl          show line numbers
+cat t.txt | wc -l       count line numbers
+cat t.txt | sed -n '11p'    show line 11
+cat t.txt | sed -n '10,15p' show line 10-15
+cat t.txt | awk 'NR < 11 {print $0}' < 11
+cat t.txt | awk 'NR == 11 {print $0}' =11
+cat s.log | zeek-cut uid    search fields
+sort | uniq             remove duplicates
+sort | uniq -c          rem. dup. + count
+sort -nr     > numerically and recursively.
+rev          > Reverse string characters.
+cut -f 1     > Cut field 1.
+cut -d '.' -f 1-2       
+grep -v 'test'             
+grep -v -e 'test1' -e 'test2'   
+file        
+grep -rin Testvalue1 * | column -t | less -S            
+
+
+
+
+
+
+
+
+
+
+
+
