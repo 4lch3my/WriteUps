@@ -47,24 +47,24 @@ A: Maximum number of events to read.
 ===
 ///TASK 4///
 Q: What are the names of the logs related to OpenSSH?
-** 
-A: 
+** Get-WinEvent -ListLog *
+A: OpenSSH/Admin,OpenSSH/Operational
 ===
 Q: What is the name of the 3rd log provider?
-** 
-A: 
+** https://bit.ly/3j6JBwa > Example 8
+A: Microsoft-Windows-PowerShell-DesiredStateConfiguration-FileDownloadManager
 ===
 Q: ow many event ids are displayed for this event provider?
-** 
-A: 
+** (Get-WinEvent -ListProvider Microsoft-Windows-PowerShell).Events | Format-Table Id, Description | Measure-Object
+A: 192
 ===
 Q: How do you specify the number of events to display?
-** 
-A: 
+** https://bit.ly/3j6JBwa
+A: -MaxEvents
 ===
 Q: When using the FilterHashtable parameter and filtering by level, what is the value for Informational?
 ** 
-A: 
+A: 4
 ===
 ///TASK 5///
 Q: Using Get-WinEvent and XPath, what is the query to find WLMS events with a System Time of 2020-12-15T01:09:08.940277500Z?
