@@ -56,17 +56,18 @@ A: THM{ADM1N_AC3SS}
 ///TASK 9///
 Q: What valid password can you use to access the "santa" account?
 ** 
-A: 
+A: cookie
 ===
 Q: What is the flag in Santa's itinerary?
 ** 
-A: 
+A: THM{SANTA_DELIVERS}
 ===
 ///TASK 10///
-Q: 
+Q: What flag did you get when you disabled the plugin?
 ** 
-A: 
+A: THM{NO_MORE_BUTTMAS}
 ===
+///TASK 11///
 Q: 
 ** 
 A: 

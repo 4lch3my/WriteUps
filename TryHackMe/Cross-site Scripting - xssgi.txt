@@ -1,0 +1,43 @@
+///TASK 2///
+Q: Which document property could contain the user's session token?
+** 
+A: document.cookie
+===
+Q: Which JavaScript method is often used as a Proof Of Concept?
+** 
+A: alert
+===
+///TASK 3///
+Q: Where in an URL is a good place to test for reflected XSS:
+** 
+A: Parameters
+===
+///TASK 4///
+Q: How are stored XSS payloads usually stored on a website?
+** 
+A: database
+===
+///TASK 5///
+Q: What unsafe JavaScript method is good to look for in source code?
+** 
+A: eval()
+===
+///TASK 6///
+Q: What tool can you use to test for Blind XSS?
+** 
+A: xsshunter
+===
+Q: What type of XSS is very similar to Blind XSS?
+** 
+A: stored xss
+===
+///TASK 7///
+Q: What is the flag you received from level six?
+** 
+A: THM{XSS_MASTER}
+===
+///TASK 8///
+Q: What is the value of the staff-session cookie?
+** 
+A: 4AB305E55955197693F01D6F8FD2D321
+===

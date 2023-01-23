@@ -1,0 +1,27 @@
+///TASK 3///
+Q: Doing so will reveal the answer to this question.
+** <h1>This is a Heading</h1>
+A: HTML_T4gs
+===
+Q: Create an alert popup box appear on the page with your document cookies.
+** <script>alert(document.cookies)</script>
+A: W3LL_D0N3_LVL2s
+===
+Q: Change "XSS Playground" to "I am a hacker" by adding comments and using Javascript.
+** 
+A: 
+===
+///TASK 4///
+Q: 
+** 
+A: 
+===
+Q: 
+** 
+A: 
+===
+Q: 
+** 
+A: 
+===
+

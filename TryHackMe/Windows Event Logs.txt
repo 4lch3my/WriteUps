@@ -1,0 +1,115 @@
+### C:\Windows\System32\winevt\Logs ###
+///TASK 2///
+Q: What is the Event ID for the first recorded event?
+** 
+A: 40961
+===
+Q: Filter on Event ID 4104. What was the 2nd command executed in the PowerShell session?
+** Double click event
+A: whoami
+===
+Q: What is the Task Category for Event ID 4104?
+** 
+A: Execute a Remote Command
+===
+Q: Analyze the Windows PowerShell log. What is the Task Category for Event ID 800?
+** 
+A: Pipeline Execution Details
+===
+///TASK 3///
+Q: How many log names are in the machine? 
+** wevtutil.exe el | Measure-Object
+A: 1071
+===
+Q: What event files would be read when using the query-events command?
+** wevtutil.exe qe /?
+A: event log, log file, structured query
+===
+Q: What option would you use to provide a path to a log file?
+** wevtutil.exe qe /?
+A: /lf:true
+===
+Q: What is the VALUE for /q:
+** wevtutil.exe qe /?
+A: XPATH query
+===
+Q: What is the log name?
+** wevtutil qe Application /c:3 /rd:true /f:text
+A: Application
+===
+Q: What is the /rd option for?
+** 
+A: event read direction
+===
+Q: What is the /c option for?
+** 
+A: Maximum number of events to read.
+===
+///TASK 4///
+Q: What are the names of the logs related to OpenSSH?
+** 
+A: 
+===
+Q: What is the name of the 3rd log provider?
+** 
+A: 
+===
+Q: ow many event ids are displayed for this event provider?
+** 
+A: 
+===
+Q: How do you specify the number of events to display?
+** 
+A: 
+===
+Q: When using the FilterHashtable parameter and filtering by level, what is the value for Informational?
+** 
+A: 
+===
+///TASK 5///
+Q: Using Get-WinEvent and XPath, what is the query to find WLMS events with a System Time of 2020-12-15T01:09:08.940277500Z?
+** 
+A: 
+===
+Q: Using Get-WinEvent and XPath, what is the query to find a user named Sam with an Logon Event ID of 4720?
+** 
+A: 
+===
+Q: Based on the previous query, how many results are returned?
+** 
+A: 
+===
+Q: Based on the output from the question #2, what is Message?
+** 
+A: 
+===
+Q: Still working with Sam as the user, what time was Event ID 4724 recorded? (MM/DD/YYYY H:MM:SS [AM/PM])
+** 
+A: 
+===
+Q: What is the Provider Name?
+** 
+A: 
+===
+///TASK 6///
+Q: 
+** 
+A: 
+===
+: 
+** 
+A: 
+===
+Q: 
+** 
+A: 
+===
+Q: 
+** 
+A: 
+===
+Q: 
+** 
+A: 
+===
+
