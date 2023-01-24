@@ -1,0 +1,30 @@
+/// TASK 2 ///
+Q: How much more does it cost to identify vulnerabilities during the testing phase?
+** 
+A: 15
+===
+/// TASK 3 ///
+Q: 
+** 
+A: 
+===
+Q: 
+** 
+A: 
+===
+Q: 
+** 
+A: 
+===
+Q: 
+** 
+A: 
+===
+Q: 
+** 
+A: 
+===
+Q: 
+** 
+A: 
+===

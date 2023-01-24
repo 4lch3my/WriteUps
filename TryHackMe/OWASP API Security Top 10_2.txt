@@ -1,0 +1,57 @@
+/// TASK 2 ///
+Q: Is it a good practice to blindly insert/update user-provided data in the database (yea/nay)?
+** 
+A: nay
+===
+Q: What would be the returned credit value after performing Question#2?
+** 
+A: 50
+===
+/// TASK 3 ///
+Q: Is it an excellent approach to show error logs from the stack trace to general visitors (yea/nay)?
+** 
+A: nay
+===
+Q: What is the HTTP response code:
+** 
+A: 500
+===
+Q: What is the Error ID number in the HTTP response message?
+** 
+A: 1401
+===
+/// TASK 4 ///
+Q: Can injection attacks be carried out to extract data from the database (yea/nay)?
+** 
+A: yea
+===
+Q: Can injection attacks result in remote code execution (yea/nay)?
+** 
+A: yea
+===
+Q: What is the HTTP response code if a user enters an invalid username or password?
+** 
+A: 403
+===
+/// TASK 5 ///
+Q: Is it good practice to host all APIs on the same server (yea/nay)?
+** 
+A: nay
+===
+Q: What is the amount of balance associated with user Alice?
+** 
+A: 100
+===
+Q: What is the country of the user Alice?
+** 
+A: USA
+===
+/// TASK 6 ///
+Q: Should the API logs be publically accessible so that the attacker must know they are being logged (yea/nay)?
+** 
+A: nay
+===
+Q: What is the HTTP response code in case of successful logging of user information?
+** 
+A: 200
+===
