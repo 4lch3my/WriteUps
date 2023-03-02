@@ -1,0 +1,31 @@
+task 2
+
+What is the number of detected packets?
+Add to local.rules:
+#HTTP Rules
+alert tcp any 80 <> any any (msg: "HTTP FOUND"; sid: 100001; rev: 1;)
+alert tcp any any <> any 80 (msg: "HTTP FOUND"; sid: 100002; rev: 1;)
+RUN: sudo snort -c local.rules -A full -l . -r ftp-png-gif.pcap 
+
+What is the destination address of packet 63?
+sudo snort -r snort.log.1677787286 -n 63
+
+What is the ACK number of packet 64?
+sudo snort -r snort.log.1677787286 -n 64
+
+What is the SEQ number of packet 62?
+sudo snort -r snort.log.1677787286 -n 62
+
+What is the TTL of packet 65?
+sudo snort -r snort.log.1677787286 -n 65
+
+What is the source IP of packet 65?
+sudo snort -r snort.log.1677787286 -n 65
+
+What is the source port of packet 65?
+sudo snort -r snort.log.1677787286 -n 65
+
+task 3
+What is the number of detected packets?
+udo snort -c local.rules -A full -l . -r ftp-png-gif.pcap 
+
