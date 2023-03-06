@@ -179,7 +179,8 @@ Finding `user.txt` can be done easily enough
 
 `ls` >> cat `user.txt`
 
-![alt text](https://github.com/4lch3my/WriteUps/tree/main/TryHackMe/TryHackMe%20-%20Bounty%20Hacker/images/user.png?raw=true)
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Bounty%20Hacker/images/user.png?raw=true)
+
 
 ##### 7. root.txt
 
