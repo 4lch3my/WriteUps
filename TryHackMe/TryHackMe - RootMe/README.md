@@ -1,53 +1,81 @@
-This is where the basics of recon come into play. To start, I use [nmap] which is default option on the perosnal Kali install I have. We start with a basic command
-  ` nmap -sC -sV -A -v MACHINE_IP `
+# RootMe
+> 4lch3my | March 07, 2023
+-------------------
+#### This is a machine that allows you to practise web app hacking and privilege escalation
+#### [Room Link](https://tryhackme.com/room/rrootme)
+
+## Tasks
+##### 1. Deploy the machine
+  Deploy the machine with the Start Machine button, also either deploy your [Attack Box](https://tryhackme.com/access) OR Connect to [OpenVPN](https://tryhackme.com/access) and deploy your personal KALI machine.
+
+##### 2. Reconnaissance -
+
+This is where the basics of recon comes into play. To start, I use [nmap] which is default option on the perosnal Kali install I have. We start with a basic command
+  `nmap -sC -sV -A MACHINE_IP `
+The -sC flag runs scripts against open ports as well to determine if there are external/common vulnerabilities that we can use outright. The -sV probes all open ports it finds to determine if we can get the service/version information. -A outputs in agressive mode, so we can follow along with the commands and enumeration.
+  In our NMAP results we get:
 ```
-Starting Nmap 7.93 ( https://nmap.org ) at 2023-03-06 18:34 CET
-NSE: Loaded 155 scripts for scanning.
-NSE: Script Pre-scanning.
-Initiating NSE at 18:34
-Completed NSE at 18:34, 0.00s elapsed
-Initiating NSE at 18:34
-Completed NSE at 18:34, 0.00s elapsed
-Initiating NSE at 18:34
-Completed NSE at 18:34, 0.00s elapsed
-Initiating Ping Scan at 18:34
-Scanning 10.10.13.131 [2 ports]
-Completed Ping Scan at 18:34, 0.06s elapsed (1 total hosts)
-Initiating Parallel DNS resolution of 1 host. at 18:34
-Completed Parallel DNS resolution of 1 host. at 18:34, 1.03s elapsed
-Initiating Connect Scan at 18:34
-Scanning 10.10.13.131 [1000 ports]
-Discovered open port 22/tcp on 10.10.13.131
-Completed Connect Scan at 18:34, 2.88s elapsed (1000 total ports)
-Initiating Service scan at 18:34
-Scanning 1 service on 10.10.13.131
-Completed Service scan at 18:34, 0.59s elapsed (1 service on 1 host)
-NSE: Script scanning 10.10.13.131.
-Initiating NSE at 18:34
-Completed NSE at 18:34, 3.97s elapsed
-Initiating NSE at 18:34
-Completed NSE at 18:34, 0.00s elapsed
-Initiating NSE at 18:34
-Completed NSE at 18:34, 0.00s elapsed
-Nmap scan report for 10.10.13.131
-Host is up (0.078s latency).
-Not shown: 999 closed tcp ports (conn-refused)
+Starting Nmap 7.93 ( https://nmap.org ) at 2023-03-06 19:52 CET
+Nmap scan report for 10.10.117.20
+Host is up (0.050s latency).
+Not shown: 998 closed tcp ports (conn-refused)
 PORT   STATE SERVICE VERSION
 22/tcp open  ssh     OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
 | ssh-hostkey:
 |   2048 4ab9160884c25448ba5cfd3f225f2214 (RSA)
 |   256 a9a686e8ec96c3f003cd16d54973d082 (ECDSA)
 |_  256 22f6b5a654d9787c26035a95f3f9dfcd (ED25519)
+80/tcp open  http    Apache httpd 2.4.29 ((Ubuntu))
+|_http-title: HackIT - Home
+|_http-server-header: Apache/2.4.29 (Ubuntu)
+| http-cookie-flags:
+|   /:
+|     PHPSESSID:
+|_      httponly flag not set
 Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
-NSE: Script Post-scanning.
-Initiating NSE at 18:34
-Completed NSE at 18:34, 0.00s elapsed
-Initiating NSE at 18:34
-Completed NSE at 18:34, 0.00s elapsed
-Initiating NSE at 18:34
-Completed NSE at 18:34, 0.00s elapsed
-Read data files from: /usr/bin/../share/nmap
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-Nmap done: 1 IP address (1 host up) scanned in 8.82 seconds
-  ```
+Nmap done: 1 IP address (1 host up) scanned in 11.96 seconds
+```
+From this [nmap] scan we can determine that 2 port are open: [SSH] on port 22 and a [http] webserver on port 80. Lets start with the webserver enumeration.
+<br>
+
+Gobuster is my go-to enum tool, the setup instructions for it can be found [here]. Let's run a basic scan against our machine: `gobuster dir -u http://MACHINE_IP/ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt`
+This might take a while to run, but we can see the outpot below:
+```
+===============================================================
+Gobuster v3.5
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://MACHINE_IP/
+[+] Method:                  GET
+[+] Threads:                 10
+[+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.5
+[+] Timeout:                 10s
+===============================================================
+2023/03/06 19:54:35 Starting gobuster in directory enumeration mode
+===============================================================
+/uploads              (Status: 301) [Size: 314] [--> http://MACHINE_IP/uploads/]
+/css                  (Status: 301) [Size: 310] [--> http://MACHINE_IP/css/]
+/js                   (Status: 301) [Size: 309] [--> http://MACHINE_IP/js/]
+/panel                (Status: 301) [Size: 312] [--> http://MACHINE_IP/panel/]
+Progress: 35498 / 220561 (16.09%)^C
+[!] Keyboard interrupt detected, terminating.
+
+===============================================================
+2023/03/06 19:57:33 Finished
+===============================================================
+```
+We have found multiple directory listings from the [gobuster] search. Let's look at them one by one:
+<br>
+
+`/panel` contains an upload form where we can choose a file, and upload it.
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20RootMe/images/upload.png?raw=true)
+Let's try to upload a [PHP reverse shell](https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php). In the default configuration I have set the `$port` to `1234` and the `$ip` to the IP of our connection IP (this can be seen in the top right corner on the TryHackMe room page in a green bubble). In the mean time, we will open a [netcat] listener with option `-lvp` in a new terminal tab: `nc -lvp 1234`. 
+
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20RootMe/images/fail.png?raw=true)
+
+Hmmm, it seems like no PHP files can be uploaded. We can either manually test with other file types (example: .php5, .phphtml, .php.html) or we can use [sAjibuu's Upload Bypass](https://github.com/sAjibuu/upload_bypass/) repo to automate the process. If manually uploadign we can visit `MACHINE_IP/uploads/` to see the uplaoded files and if we use the automated process, we see that our [netcat] listener has cought a shell by itself.
+
