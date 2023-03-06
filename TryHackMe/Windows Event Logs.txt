@@ -13,7 +13,7 @@ Q: What is the Task Category for Event ID 4104?
 A: Execute a Remote Command
 ===
 Q: Analyze the Windows PowerShell log. What is the Task Category for Event ID 800?
-** 
+** e
 A: Pipeline Execution Details
 ===
 ///TASK 3///
