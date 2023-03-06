@@ -130,6 +130,8 @@ Now we know that python can be run on this machine and maybe we can use it to es
 Now let's run it against the root user: `python -c ‘import os; os.execl(“/bin/sh”, “sh”, “-p”)’`
 <br>
 
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20RootMe/images/root.png?raw=true)
+
 And there we go, we are `root` ! We can grab the flag now!
 
 
