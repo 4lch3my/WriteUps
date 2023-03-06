@@ -9,9 +9,9 @@
   Deploy the machine with the Start Machine button, also either deploy your [Attack Box](https://tryhackme.com/access) OR Connect to [OpenVPN](https://tryhackme.com/access) and deploy your personal KALI machine.
 
 ##### 2. Find open ports on the machine
-This is where the basics of recon comes into play. To start, I use [nmap] which is default option on the perosnal Kali install I have. We start with a basic command
+This is where the basics of recon comes into play. To start, I use [nmap] which is default option on the personal Kali install I have. We start with a basic command
   ` nmap -sC -sV -A MACHINE_IP `
-The -sC flag runs scripts against open ports as well to determine if there are external/common vulnerabilities that we can use outright. The -sV probes all open ports it finds to determine if we can get the service/version information. -A outputs in agressive mode, so we can follow along with the commands and enumeration.
+The -sC flag runs scripts against open ports as well to determine if there are external/common vulnerabilities that we can use outright. The -sV probes all open ports it finds to determine if we can get the service/version information. -A outputs in aggressive mode, so we can follow along with the commands and enumeration.
   In our NMAP results we get:
 ```
 Starting Nmap 7.93 ( https://nmap.org ) at 2023-03-06 18:41 CET
@@ -55,7 +55,7 @@ Let's FTP in to the machine:
 `ftp MACHINE_IP`
 <br>
 
-When propted with the Username, we can use `anonymous` user to log-in without a password.
+When prompted with the Username, we can use `anonymous` user to log-in without a password.
   ```
 Connected to MACHINE_IP.
 220 (vsFTPd 3.0.3)
@@ -150,10 +150,10 @@ Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2023-03-06 18:49:
 Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2023-03-06 18:49:54
 ```
 
-##### 5. What is the users password? 
+##### 5. What is the user's password? 
 ` [22][ssh] host: MACHINE_IP   login: lin   password: [REDACTED]`
 
-And there we go, after just a few minutes we where able to find the correct password for the user `lin`. We can now SSH in to the machine: `ssh lin@MACHINE_IP`
+And there we go, after just a few minutes we were able to find the correct password for the user `lin`. We can now SSH in to the machine: `ssh lin@MACHINE_IP`
 
 ```
 The authenticity of host '10.10.84.240 (10.10.84.240)' can't be established.
@@ -206,6 +206,6 @@ tar: Removing leading `/' from member names
 # whoami
 root
 ```
-And there we go! We are sucessfully root on the machine!
+And there we go! We are successfully root on the machine!
 
- #### Thank you for checking out my writeup about the THM room: Bounty Hacker! If you are interested in other writeups of mine or interetsed in some of my codeing work, please feel free to look around my GitHub page! Happy hacking! - 4lch3my
+ #### Thank you for checking out my write-up about the THM room: Bounty Hacker! If you are interested in other write-ups of mine or interested in some of my coding work, please feel free to look around my GitHub page! Happy hacking! - 4lch3my
