@@ -172,9 +172,11 @@ We know from the `hint` provided by TryHackMe that this might be a steganography
 ![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Easy%20Peasy/images/steg1.PNG?raw=true)
 
 When propted for the passphrase, paste the one what we just decoded above. This should generate a `secrettext.txt` file
+
 ![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Easy%20Peasy/images/steg2.PNG?raw=true)
 
 The file contains the following:
+
 ![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Easy%20Peasy/images/secrettext.PNG?raw=true)
 
 A quick binary to text search on [CyberChef] will reveal the password for the user `boring`:
