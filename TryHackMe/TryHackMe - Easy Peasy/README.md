@@ -105,7 +105,7 @@ Commercial support is available at
 ```
 Welp, it seems like this is a bust, nothing on the first page. Time to move on to the other one over at port `65524`:
 
-![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Easy%20Peasy/images/simple_apache.png?raw=true)
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Easy%20Peasy/images/simple_apache.PNG?raw=true)
 
 Seems like the generic Apache 2 setup page, but with a twist. If we read over it very carefully, we will see the default text has been modified a bit. It has the 3rd flag hidden in plain sight!
 
