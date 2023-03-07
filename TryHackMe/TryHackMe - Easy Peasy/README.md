@@ -134,15 +134,6 @@ Let's look at the source code of this page while we are at it:
         <div class="table_of_contents_item floating_element">
           <a href="#flag">hi</a>
         </div>
-        <div class="table_of_contents_item floating_element">
-          <a href="#scope">Scope</a>
-        </div>
-        <div class="table_of_contents_item floating_element">
-          <a href="#files">Config files</a>
-        </div>
-      </div>
--->
-      <div class="content_section floating_element">
 ```
 Would you look at that! We have found `Ob[REDACTED]Vu` what is a string that seems to be encoded. Time to decode. One of my favourite tools is [dcode's cipher identifier](https://www.dcode.fr/cipher-identifier) for this kind of task. After adding the string, we can see most likely it is Base62 encoded.
 
