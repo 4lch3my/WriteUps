@@ -327,7 +327,7 @@ Seem's like we have just found another md5 hash. Let's use `md5hashing.net` agai
 WOW! That took much longer than expected... Finally on the way to get the main flags! SSH time... We are use the `username:password` combination from the `secrettext.txt` file what we got from the image. Note: SSH was moved to port `6498`.
 <br>
 
-`ssh -p 6498 boring@10.10.183.242`
+`ssh -p 6498 boring@MACHINE_IP`
 
 ![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Easy%20Peasy/images/ssh_login.PNG?raw=true)
 As requested, let's rotate it with our favourite tools: [dcode's cipher identifier](https://www.dcode.fr/rot-cipher). And Bammm, there we have it, the user.txt flag:
@@ -335,3 +335,46 @@ As requested, let's rotate it with our favourite tools: [dcode's cipher identifi
 ![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Easy%20Peasy/images/user.PNG?raw=true)
 
 Only one more to go, the crown jewel: `root.txt`
+<br>
+
+If we look at the description text of the room, we will note it mentions `"...Then escalate your privileges through a vulnerable cronjob."` I guess it's time for this part then. Starting out, we will list out the `crontab` file: `cat /etc/crontab`
+
+```
+boring@kral4-PC:~$ cat /etc/crontab
+# /etc/crontab: system-wide crontab
+# Unlike any other crontab you don't have to run the `crontab'
+# command to install the new version when you edit this file
+# and files in /etc/cron.d. These files also have username fields,
+# that none of the other crontabs do.
+
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+# m h dom mon dow user  command
+17 *    * * *   root    cd / && run-parts --report /etc/cron.hourly
+25 6    * * *   root    test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.daily )
+47 6    * * 7   root    test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.weekly )
+52 6    1 * *   root    test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.monthly )
+#
+* *    * * *   root    cd /var/www/ && sudo bash .mysecretcronjob.sh
+```
+At the bottom we can see our suspected cron job: `.mysecretcronjob.sh`. If we open it and see the contents it will say: 
+
+```
+#!/bin/bash
+# i will run as root
+```
+
+Clearly stating it will run as root user. Time to upload a reverse shell. Edit the file with nano `/var/www/.mysecretcronjob.sh` and upload a reverseshell script generated at [revshells](https://www.revshells.com/). I have choosen `port 4545` at random for this:
+
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Easy%20Peasy/images/rev_shell.PNG?raw=true)
+
+Save and exit from the file. In a new terminal, open a netcat listener on `port 4545` as instructed on the above mentioned image: `nc -lvnp 4545`. After waiting for a few seconds, the shell spawns and we can confirm we are root! 
+
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Easy%20Peasy/images/root.PNG?raw=true)
+
+Last thing to do in this room is to find the root flag! Usually it is stored in the `/root`, so let's move to that folder and search for the flag file with `ls -la`. And there we go, we have found it: `.root.txt`!
+
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Easy%20Peasy/images/root_flag.PNG?raw=true)
+
+#### Thank you for checking out my writeup about the THM room: RootMe! If you are interested in other writeups of mine or interetsed in some of my codeing work, please feel free to look around my GitHub page! Happy hacking! - 4lch3my
