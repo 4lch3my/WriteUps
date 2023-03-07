@@ -371,7 +371,7 @@ Clearly stating it will run as root user. Time to upload a reverse shell. Edit t
 
 Save and exit from the file. In a new terminal, open a netcat listener on `port 4545` as instructed on the above mentioned image: `nc -lvnp 4545`. After waiting for a few seconds, the shell spawns and we can confirm we are root! 
 
-![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Easy%20Peasy/images/root.PNG?raw=true)
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Easy%20Peasy/images/root.png?raw=true)
 
 Last thing to do in this room is to find the root flag! Usually it is stored in the `/root`, so let's move to that folder and search for the flag file with `ls -la`. And there we go, we have found it: `.root.txt`!
 
