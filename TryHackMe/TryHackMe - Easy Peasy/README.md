@@ -71,7 +71,7 @@ Much better! Now we can see all the service running `80 - http - nginx 1.16.1`, 
 ##### 2. Compromising the machine
 Before we do anything else, let's inspect both pages to see if we find anything interesting. Starting with port `80`:
 
-![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Easy%20Peasy/images/simple_nginx.png?raw=true)
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Easy%20Peasy/images/simple_nginx.PNG?raw=true)
 
 Hmmm, it seems like there is nothing here. Let's look at the source code of the page:
 
