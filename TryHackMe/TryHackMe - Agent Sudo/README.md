@@ -112,6 +112,95 @@ Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2023-03-07 20:20:
 1 of 1 target successfully completed, 1 valid password found
 Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2023-03-07 20:21:00
 ```
-Only in a few minuites we where able to find the `password` for the user `chris`. On to login-in to `SSH`.
+Only in a few minuites we where able to find the `password` for the user `chris`. Time to log-in!.
 <br> 
 
+```
+ftp 10.10.233.10
+Connected to 10.10.233.10.
+220 (vsFTPd 3.0.3)
+Name (10.10.233.10:elliot): chris
+331 Please specify the password.
+Password:
+230 Login successful.
+Remote system type is UNIX.
+Using binary mode to transfer files.
+```
+Let's list out the files and copy them over to our machine:
+
+```
+ftp> ls
+229 Entering Extended Passive Mode (|||34903|)
+150 Here comes the directory listing.
+-rw-r--r--    1 0        0             217 Oct 29  2019 To_agentJ.txt
+-rw-r--r--    1 0        0           33143 Oct 29  2019 cute-alien.jpg
+-rw-r--r--    1 0        0           34842 Oct 29  2019 cutie.png
+226 Directory send OK.
+ftp> get To_agentJ.txt
+local: To_agentJ.txt remote: To_agentJ.txt
+229 Entering Extended Passive Mode (|||21405|)
+150 Opening BINARY mode data connection for To_agentJ.txt (217 bytes).
+100% |***************************************************************************|   217      179.89 KiB/s    00:00 ETA
+226 Transfer complete.
+217 bytes received in 00:00 (3.73 KiB/s)
+ftp> get cutie.png
+local: cutie.png remote: cutie.png
+229 Entering Extended Passive Mode (|||49292|)
+150 Opening BINARY mode data connection for cutie.png (34842 bytes).
+100% |***************************************************************************| 34842      309.59 KiB/s    00:00 ETA
+226 Transfer complete.
+34842 bytes received in 00:00 (210.67 KiB/s)
+ftp> get cute-alien.jpg
+local: cute-alien.jpg remote: cute-alien.jpg
+229 Entering Extended Passive Mode (|||16442|)
+150 Opening BINARY mode data connection for cute-alien.jpg (33143 bytes).
+100% |***************************************************************************| 33143      296.55 KiB/s    00:00 ETA
+226 Transfer complete.
+33143 bytes received in 00:00 (197.78 KiB/s)
+ftp> quit
+221 Goodbye.
+```
+Time to view the files. Starting with `To_agentJ.txt`:
+```
+Dear agent J,
+All these alien like photos are fake! Agent R stored the real picture inside your directory. Your login password is somehow stored in the fake picture. It shouldn't be a problem for you.
+From,
+Agent C
+```
+This is a hint towards that we need to do some `steganography`. We can use the tool `binwalk` to look for anything interesting inside of these files and extact them, if they exist. 
+
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Agent%20Sudo/images/binwalk.PNG?raw=true)
+
+Aaannndd there we go, let's extract the contens from the `cutie.png` file:
+
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Agent%20Sudo/images/extract.PNG?raw=true)
+
+Let's switch to the `_cutie.png.extracted` and view the files. As we can see we have a few files,some are empty and we are really only interested in the `8702.zip` file:
+```
+$ ls -la
+total 324
+drwxr-xr-x  2 elliot elliot   4096 Mar  7 21:01 .
+drwx------ 15 elliot elliot   4096 Mar  7 20:57 ..
+-rw-r--r--  1 elliot elliot 279312 Mar  7 20:55 365
+-rw-r--r--  1 elliot elliot  33973 Mar  7 20:55 365.zlib
+-rw-r--r--  1 elliot elliot    280 Mar  7 20:55 8702.zip
+-rw-r--r--  1 elliot elliot      0 Oct 29  2019 To_agentR.txt
+```
+If we try to open it, we can see it is password locked:
+
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Agent%20Sudo/images/extract.PNG?raw=true)
+
+Time to brute force again. We will use `John The Ripper` for this task, but first we need to convert this file to a readable format for `John The Ripper`. Let's use: `zip2john 8702.zip > file.hash` and then `john --wordlist=/usr/share/wordlists/rockyou.txt file.hash` to crack this!
+
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Agent%20Sudo/images/zip_crack.PNG?raw=true)
+
+With this password we can log in to the ZIP file:
+
+```
+Agent C,
+
+We need to send the picture to 'QXJlYTUx' as soon as possible!
+
+By,
+Agent R
+```
