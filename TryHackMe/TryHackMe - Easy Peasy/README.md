@@ -377,4 +377,7 @@ Last thing to do in this room is to find the root flag! Usually it is stored in 
 
 ![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Easy%20Peasy/images/root_flag.PNG?raw=true)
 
+
+This was a long room and I would not list it under easy due to the amoutn of digging what needs to be done! Although I really enjoyed it, but took me way longer then it had should have for sure!
+
 #### Thank you for checking out my writeup about the THM room: RootMe! If you are interested in other writeups of mine or interetsed in some of my codeing work, please feel free to look around my GitHub page! Happy hacking! - 4lch3my
