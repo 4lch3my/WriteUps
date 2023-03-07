@@ -375,7 +375,7 @@ Save and exit from the file. In a new terminal, open a netcat listener on `port 
 
 Last thing to do in this room is to find the root flag! Usually it is stored in the `/root`, so let's move to that folder and search for the flag file with `ls -la`. And there we go, we have found it: `.root.txt`!
 
-![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Easy%20Peasy/images/root_flag.PNG?raw=true)
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Easy%20Peasy/images/root_flag.png?raw=true)
 
 
 This was a long room and I would not list it under easy due to the amoutn of digging what needs to be done! Although I really enjoyed it, but took me way longer then it had should have for sure!
