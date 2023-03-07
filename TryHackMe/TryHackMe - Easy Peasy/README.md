@@ -262,3 +262,80 @@ Again, we only see an image on the page, but when looking at the source code, we
 After decoding in [CyberChef] using base64, we get the 1st flag:
 
 ![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Easy%20Peasy/images/1st.PNG?raw=true)
+
+It seems we are only missing one more flag before we move can move on to the user enumeration. Let's use [nicto] for a final scan on the machine: nikto -h `http://MACHINE_IP/` & `nikto -h http://MACHINE_IP:65524/`
+```
+root@ip-MACHINE_IP:~# nikto -h http://MACHINE_IP/
+- Nikto v2.1.5
+---------------------------------------------------------------------------
++ Target IP:          MACHINE_IP
++ Target Hostname:    ip-MACHINE_IP.eu-west-1.compute.internal
++ Target Port:        80
++ Start Time:         2023-03-07 03:37:05 (GMT0)
+---------------------------------------------------------------------------
++ Server: nginx/1.16.1
++ Server leaks inodes via ETags, header found with file /, fields: 0x5ee6ba8b 0x264 
++ The anti-clickjacking X-Frame-Options header is not present.
++ No CGI Directories found (use '-C all' to force check all possible dirs)
++ File/dir '/' in robots.txt returned a non-forbidden or redirect HTTP code (200)
++ "robots.txt" contains 2 entries which should be manually viewed.
++ OSVDB-3092: /hidden/: This might be interesting...
++ 6544 items checked: 0 error(s) and 5 item(s) reported on remote host
++ End Time:           2023-03-07 03:37:15 (GMT0) (10 seconds)
+---------------------------------------------------------------------------
++ 1 host(s) tested
+root@ip-10-10-180-222:~# nikto -h http://MACHINE_IP:65524/
+- Nikto v2.1.5
+---------------------------------------------------------------------------
++ Target IP:          MACHINE_IP
++ Target Hostname:    ip-MACHINE_IP.eu-west-1.compute.internal
++ Target Port:        65524
++ Start Time:         2023-03-07 03:37:52 (GMT0)
+---------------------------------------------------------------------------
++ Server: Apache/2.4.43 (Ubuntu)
++ Server leaks inodes via ETags, header found with file /, fields: 0x2a42 0x5a81aca26e817 
++ The anti-clickjacking X-Frame-Options header is not present.
++ No CGI Directories found (use '-C all' to force check all possible dirs)
++ File/dir '/' in robots.txt returned a non-forbidden or redirect HTTP code (200)
++ "robots.txt" contains 3 entries which should be manually viewed.
++ Allowed HTTP Methods: HEAD, GET, POST, OPTIONS 
++ 6544 items checked: 0 error(s) and 5 item(s) reported on remote host
++ End Time:           2023-03-07 03:38:01 (GMT0) (9 seconds)
+---------------------------------------------------------------------------
++ 1 host(s) tested
+root@ip-MACHINE_IP:~# 
+```
+Both searches revealed the [robots.txt] file. Let's view both of them:
+
+```
+:80
+User-Agent:*
+Disallow:/
+Robots Not Allowed
+```
+AND
+```
+:65524
+User-Agent:*
+Disallow:/
+Robots Not Allowed
+User-Agent:a18672860d0510e5ab6699730763b250
+Allow:/
+This Flag Can Enter But Only This Flag No More Exceptions
+```
+Seem's like we have just found another md5 hash. Let's use `md5hashing.net` again to decrypt this message:
+
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Easy%20Peasy/images/2nd.PNG?raw=true)
+<br>
+
+WOW! That took much longer than expected... Finally on the way to get the main flags! SSH time... We are use the `username:password` combination from the `secrettext.txt` file what we got from the image. Note: SSH was moved to port `6498`.
+<br>
+
+`ssh -p 6498 boring@10.10.183.242`
+
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Easy%20Peasy/images/ssh_login.PNG?raw=true)
+As requested, let's rotate it with our favourite tools: [dcode's cipher identifier](https://www.dcode.fr/rot-cipher). And Bammm, there we have it, the user.txt flag:
+
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Easy%20Peasy/images/user.PNG?raw=true)
+
+Only one more to go, the crown jewel: `root.txt`
