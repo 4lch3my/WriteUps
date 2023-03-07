@@ -105,11 +105,11 @@ Commercial support is available at
 ```
 Welp, it seems like this is a bust, nothing on the first page. Time to move on to the other one over at port `65524`:
 
-![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Easy%20Peasy/images/simple_apache.PNG?raw=true)
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Easy%20Peasy/images/apache_simple.PNG?raw=true)
 
 Seems like the generic Apache 2 setup page, but with a twist. If we read over it very carefully, we will see the default text has been modified a bit. It has the 3rd flag hidden in plain sight!
 
-![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Easy%20Peasy/images/3rd.png?raw=true)
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Easy%20Peasy/images/3rd.PNG?raw=true)
 
 Let's look at the source code of this page while we are at it:
 ```
@@ -146,11 +146,11 @@ Let's look at the source code of this page while we are at it:
 ```
 Would you look at that! We have found `Ob[REDACTED]Vu` what is a string that seems to be encoded. Time to decode. One of my favourite tools is [dcode's cipher identifier](https://www.dcode.fr/cipher-identifier) for this kind of task. After adding the string, we can see most likely it is Base62 encoded.
 
-![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Easy%20Peasy/images/base62.png?raw=true)
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Easy%20Peasy/images/base62.PNG?raw=true)
 
 And wow, we actually get a new hidden directory:
 
-![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Easy%20Peasy/images/nothing.png?raw=true)
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Easy%20Peasy/images/nothing.PNG?raw=true)
 
 On this page, we only see an image, lets look at the source-code again:
 ```
@@ -162,21 +162,21 @@ On this page, we only see an image, lets look at the source-code again:
 </body>
 ```
 Looking at the encoded text and the hint provided by TryHackMe, it seems this is a GOST MD5 hash. The first google for this sends us to `md5hashing.net` where we can enter the hash.
-![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Easy%20Peasy/images/gost.png?raw=true)
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Easy%20Peasy/images/gost.PNG?raw=true)
 
 Success!
 <br>
 
 We know from the `hint` provided by TryHackMe that this might be a steganography challange. So lets dowload the linked image `binarycodepixabay.jpg` and use a new tool to decode it. We are using [steghide] to see what the image is really hiding: `steghide extract -sf image_name.jpg`
-![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Easy%20Peasy/images/steg1.png?raw=true)
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Easy%20Peasy/images/steg1.PNG?raw=true)
 When propted for the passphrase, paste the one what we just decoded above. This should generate a `secrettext.txt` file
-![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Easy%20Peasy/images/steg2.png?raw=true)
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Easy%20Peasy/images/steg2.PNG?raw=true)
 The file contains the following:
-![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Easy%20Peasy/images/secrettext.png?raw=true)
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Easy%20Peasy/images/secrettext.PNG?raw=true)
 
 A quick binary to text search on [CyberChef] will reveal the password for the user `boring`:
 
-![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Easy%20Peasy/images/password_ssh.png?raw=true)
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Easy%20Peasy/images/password_ssh.PNG?raw=true)
 <br>
 
 Time to fire up good ol' [GoBuster] to look for some more hidden directorys. We will run 2 scans for the 2 http ports, you never know what can be hiding where in CTF's... 
@@ -261,4 +261,4 @@ Again, we only see an image on the page, but when looking at the source code, we
 ```
 After decoding in [CyberChef] using base64, we get the 1st flag:
 
-![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Easy%20Peasy/images/1st.png?raw=true)
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Easy%20Peasy/images/1st.PNG?raw=true)
