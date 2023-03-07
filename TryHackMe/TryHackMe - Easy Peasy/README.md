@@ -1,4 +1,4 @@
-# RootMe
+# Easy Peasy
 > 4lch3my | March 07, 2023
 -------------------
 #### Practice using tools such as Nmap and GoBuster to locate a hidden directory to get initial access to a vulnerable machine. Then escalate your privileges through a vulnerable cronjob.
