@@ -168,9 +168,12 @@ Success!
 <br>
 
 We know from the `hint` provided by TryHackMe that this might be a steganography challange. So lets dowload the linked image `binarycodepixabay.jpg` and use a new tool to decode it. We are using [steghide] to see what the image is really hiding: `steghide extract -sf image_name.jpg`
+
 ![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Easy%20Peasy/images/steg1.PNG?raw=true)
+
 When propted for the passphrase, paste the one what we just decoded above. This should generate a `secrettext.txt` file
 ![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Easy%20Peasy/images/steg2.PNG?raw=true)
+
 The file contains the following:
 ![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Easy%20Peasy/images/secrettext.PNG?raw=true)
 
@@ -259,11 +262,11 @@ Again, we only see an image on the page, but when looking at the source code, we
 </body>
 </html>
 ```
-After decoding in [CyberChef] using base64, we get the 1st flag:
+After decoding in `CyberChef` using base64, we get the 1st flag:
 
 ![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Easy%20Peasy/images/1st.PNG?raw=true)
 
-It seems we are only missing one more flag before we move can move on to the user enumeration. Let's use [nicto] for a final scan on the machine: nikto -h `http://MACHINE_IP/` & `nikto -h http://MACHINE_IP:65524/`
+It seems we are only missing one more flag before we move can move on to the user enumeration. Let's use [nicto] for a final scan on the machine: `nikto -h http://MACHINE_IP/` & `nikto -h http://MACHINE_IP:65524/`
 ```
 root@ip-MACHINE_IP:~# nikto -h http://MACHINE_IP/
 - Nikto v2.1.5
@@ -305,7 +308,7 @@ root@ip-10-10-180-222:~# nikto -h http://MACHINE_IP:65524/
 + 1 host(s) tested
 root@ip-MACHINE_IP:~# 
 ```
-Both searches revealed the [robots.txt] file. Let's view both of them:
+Both searches revealed the `robots.txt` file. Let's view both of them:
 
 ```
 :80
