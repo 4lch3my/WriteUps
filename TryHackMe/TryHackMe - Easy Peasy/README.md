@@ -367,7 +367,7 @@ At the bottom we can see our suspected cron job: `.mysecretcronjob.sh`. If we op
 
 Clearly stating it will run as root user. Time to upload a reverse shell. Edit the file with nano `/var/www/.mysecretcronjob.sh` and upload a reverseshell script generated at [revshells](https://www.revshells.com/). I have choosen `port 4545` at random for this:
 
-![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Easy%20Peasy/images/rev_shell.PNG?raw=true)
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Easy%20Peasy/images/rev_shell.png?raw=true)
 
 Save and exit from the file. In a new terminal, open a netcat listener on `port 4545` as instructed on the above mentioned image: `nc -lvnp 4545`. After waiting for a few seconds, the shell spawns and we can confirm we are root! 
 
