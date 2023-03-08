@@ -208,9 +208,6 @@ This seems to be encoded, lets fire up [CyberChef](https://gchq.github.io/CyberC
 
 And there we go the password was encoded in `Base64`. On to the other file `cute-alien.jpg` using `steghide`: `steghide extract -sf cute-alien.jpg`. When prompted with a passphare we can add the newly generated Base64 decoded password from the image above.
 
-```
-wrote extracted data to "message.txt".
-```
 Let's read the file contens with `cat message.txt`:
 
 ```
