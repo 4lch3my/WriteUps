@@ -188,11 +188,11 @@ drwx------ 15 elliot elliot   4096 Mar  7 20:57 ..
 ```
 If we try to open it, we can see it is password locked:
 
-![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Agent%20Sudo/images/extract.PNG?raw=true)
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Agent%20Sudo/images/extract.png?raw=true)
 
 Time to brute force again. We will use `John The Ripper` for this task, but first we need to convert this file to a readable format for `John The Ripper`. Let's use: `zip2john 8702.zip > file.hash` and then `john --wordlist=/usr/share/wordlists/rockyou.txt file.hash` to crack this!
 
-![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Agent%20Sudo/images/zip_crack.PNG?raw=true)
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Agent%20Sudo/images/zip_crack.png?raw=true)
 
 With this password we can log in to the ZIP file and view the hidden message:
 
