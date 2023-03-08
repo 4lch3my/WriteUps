@@ -84,7 +84,7 @@ This does not result in anything either. I guess it's time to visit the webpage 
 
 ![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Agent%20Sudo/images/page.png?raw=true)
 
-Ahhh, so we need to use a custom user-agent to enter the "secret" page. I'm personally using Chrome and following along [THIS GUIDE](https://www.searchenginejournal.com/change-user-agent/368448/) on how to change the user-agent. For me it will be: `Inspect > More Tools > Network Conditions`, here I can deselect: `Use browser default`, add `Custom` and add the agent I want to use. The text on the website is signed by `Agent R`, so let's start with `R` nad refresh the page.
+Ahhh, so we need to use a custom user-agent to enter the "secret" page. I'm personally using Chrome and following along [THIS GUIDE](https://www.searchenginejournal.com/change-user-agent/368448/) on how to change the user-agent. For me it will be: `Inspect > More Tools > Network Conditions`, here I can deselect: `Use browser default`, add `Custom` and add the agent I want to use. The text on the website is signed by `Agent R`, so let's start with `R` and refresh the page.
 
 ![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Agent%20Sudo/images/agent_r.png?raw=true)
 
