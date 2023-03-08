@@ -204,7 +204,7 @@ Agent R
 ```
 This seems to be encoded, lets fire up [CyberChef](https://gchq.github.io/CyberChef/#recipe=From_Base64('A-Za-z0-9%2B/%3D',true,false)&input=UVhKbFlUVXg) to find out if we are right:
 
-![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Agent%20Sudo/images/51.png?raw=true)
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Agent%20Sudo/images/51.PNG?raw=true)
 
 And there we go the password was encoded in `Base64`. On to the other file `cute-alien.jpg` using `steghide`: `steghide extract -sf cute-alien.jpg`. When prompted with a passphare we can add the newly generated Base64 decoded password from the image above.
 
@@ -227,14 +227,14 @@ With this we have the other user and the password for SSH as well. Talking about
 
 Now we can login as the user `james` with the newly found password over SSH: `ssh james@MACHINE_IP`. Now we have `user.txt`
 
-![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Agent%20Sudo/images/user.png?raw=true)
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Agent%20Sudo/images/user.PNG?raw=true)
 
 On to the other file on the machine `Alien_autospy.jpg`. We will copy this file to our own host machine with `scp`: `scp james@MACHINE_IP:Alien_autospy.jpg /root/Desktop`.
 <br> 
 
 Now that is a bizarre looking image. Trying to look for clues via `steghide` and `binwalk` does not show aynthing, so I needed to look at the HINT provided by TryHackMe. A simple google search... Anyway moving on...
 
-##### 5. Capture the user flagPrivilege escalation
+##### 5. Privilege escalation
 
 Time to check what accesses we have as sudo on this machine
 
@@ -249,7 +249,7 @@ User james may run the following commands on agent-sudo:
 
 Let's do a quick Google search for `(ALL, !root) /bin/bash`. Would you look at that. A known CVE from 2019:
 
-![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Agent%20Sudo/images/cve.png?raw=true)
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Agent%20Sudo/images/cve.PNG?raw=true)
 
 With this info, we can navigate to the [MITRE](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-14287) to learn more about this vulnerability. On this site in the first paragraph, we can see this:
 
