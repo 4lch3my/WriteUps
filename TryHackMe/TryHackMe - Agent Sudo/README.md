@@ -169,11 +169,11 @@ Agent C
 ```
 This is a hint towards that we need to do some `steganography`. We can use the tool `binwalk` to look for anything interesting inside of these files and extact them, if they exist. 
 
-![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Agent%20Sudo/images/binwalk.PNG?raw=true)
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Agent%20Sudo/images/binwalk.png?raw=true)
 
 Aaannndd there we go, let's extract the contens from the `cutie.png` file:
 
-![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Agent%20Sudo/images/extract.PNG?raw=true)
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Agent%20Sudo/images/extract.őng?raw=true)
 
 Let's switch to the `_cutie.png.extracted` and view the files. As we can see we have a few files,some are empty and we are really only interested in the `8702.zip` file:
 ```
