@@ -1,7 +1,7 @@
 # ToolsRus
 > 4lch3my | March 09, 2023
 -------------------
-#### This is a machine that allows you to practise web app hacking and privilege escalation
+#### Practise using tools such as dirbuster, hydra, nmap, nikto and metasploit
 #### [Room Link](https://tryhackme.com/room/toolsrus)
 
 ## Tasks
@@ -99,7 +99,7 @@ Time to visit all the directorys. Let's go!
 
 Fist the main page: `http://MACHINE_IP/`. Empty!
 
-![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20ToolsRUS/images/ToolsRUs.PNG?raw=true)
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20ToolsRUs/images/ToolsRUs.PNG.PNG?raw=true)
 
 Next will be: `http://MACHINE_IP/guidelines/`. And we found our username!
 
@@ -123,7 +123,7 @@ Hydra (http://www.thc.org/thc-hydra) finished at 2023-03-09 00:11:17
 
 Only after a few seconds we find our `password` for the user `bob`. Time to log in to the password protected section of this web server.
 
-![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20ToolsRUS/images/rabbit_hole.PNG?raw=true)
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20ToolsRUs/images/rabbit_hole.PNG?raw=true)
 
 And that's the end of that page. Moving on to the `http://MACHINE_IP:1234/`, where we are greated with the `Apache Tomcat/7.0.88` default page.
 
