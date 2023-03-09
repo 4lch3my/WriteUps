@@ -127,7 +127,7 @@ Only after a few seconds we find our `password` for the user `bob`. Time to log 
 
 And that's the end of that page. Moving on to the `http://MACHINE_IP:1234/`, where we are greated with the `Apache Tomcat/7.0.88` default page.
 
-![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20ToolsRUS/images/TomCat.PNG?raw=true)
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20ToolsRUs/images/Tomcat.PNG?raw=true)
 
 After a quick `Google` or `ChatGPT` seearch we can see that this app is quite old and has multiple `CVE's` dedicated to it. Seems like the website admin did not update this for a long time. Making our lifes easier I see... Moving on to actually getting on to this machine and grabing the final flag. As instructed by the box, we will use `Metasploit` to answer the last two questions. 
 <br>
