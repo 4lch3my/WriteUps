@@ -9,7 +9,9 @@
   Deploy the machine with the Start Machine button, also either deploy your [Attack Box](https://tryhackme.com/access) OR Connect to [OpenVPN](https://tryhackme.com/access) and deploy your personal KALI machine.
 <br>
 
-To start, I use [nmap] which is default option on the perosnal Kali install I have. We start with a basic command `nmap -sC -sV -A MACHINE_IP `
+To start, I use [nmap] which is default option on the perosnal Kali install I have. We start with a basic command `nmap -sC -sV -A MACHINE_IP`.
+<br>
+
 The -sC flag runs scripts against open ports as well to determine if there are external/common vulnerabilities that we can use outright. The -sV probes all open ports it finds to determine if we can get the service/version information. -A outputs in agressive mode, so we can follow along with the commands and enumeration.
 In our NMAP results we get:
 
