@@ -99,11 +99,11 @@ Time to visit all the directorys. Let's go!
 
 Fist the main page: `http://MACHINE_IP/`. Empty!
 
-![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20ToolsRUS/images/ToolsRUs.png?raw=true)
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20ToolsRUS/images/ToolsRUs.PNG?raw=true)
 
 Next will be: `http://MACHINE_IP/guidelines/`. And we found our username!
 
-![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20ToolsRUS/images/bob.png?raw=true)
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20ToolsRUS/images/bob.PNG?raw=true)
 
 And finally: `http://MACHINE_IP/protected`. We get stopped by an authentication popup asking for a username:password combination. Time for some good old bruteforcing with `hydra`.
 <br>
@@ -123,11 +123,11 @@ Hydra (http://www.thc.org/thc-hydra) finished at 2023-03-09 00:11:17
 
 Only after a few seconds we find our `password` for the user `bob`. Time to log in to the password protected section of this web server.
 
-![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20ToolsRUS/images/rabbit_hole.png?raw=true)
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20ToolsRUS/images/rabbit_hole.PNG?raw=true)
 
 And that's the end of that page. Moving on to the `http://MACHINE_IP:1234/`, where we are greated with the `Apache Tomcat/7.0.88` default page.
 
-![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20ToolsRUS/images/TomCat.png?raw=true)
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20ToolsRUS/images/TomCat.PNG?raw=true)
 
 After a quick `Google` or `ChatGPT` seearch we can see that this app is quite old and has multiple `CVE's` dedicated to it. Seems like the website admin did not update this for a long time. Making our lifes easier I see... Moving on to actually getting on to this machine and grabing the final flag. As instructed by the box, we will use `Metasploit` to answer the last two questions. 
 <br>
@@ -186,6 +186,6 @@ meterpreter >
 
 Success we have access! We can now grab the flag and complete this room!
 
-![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20ToolsRUS/images/TomCat.png?raw=true)
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20ToolsRUS/images/flag.PNG?raw=true)
 
 #### Thank you for checking out my writeup about the THM room: RootMe! If you are interested in other writeups of mine or interetsed in some of my codeing work, please feel free to look around my GitHub page! Happy hacking! - 4lch3myí
