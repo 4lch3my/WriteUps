@@ -99,7 +99,7 @@ Time to visit all the directorys. Let's go!
 
 Fist the main page: `http://MACHINE_IP/`. Empty!
 
-![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20ToolsRUs/images/ToolsRUs.PNG.PNG?raw=true)
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20ToolsRUs/images/ToolsRUs.PNG?raw=true)
 
 Next will be: `http://MACHINE_IP/guidelines/`. And we found our username!
 
