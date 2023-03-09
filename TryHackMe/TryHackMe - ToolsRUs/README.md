@@ -103,7 +103,7 @@ Fist the main page: `http://MACHINE_IP/`. Empty!
 
 Next will be: `http://MACHINE_IP/guidelines/`. And we found our username!
 
-![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20ToolsRUS/images/bob.PNG?raw=true)
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20ToolsRUs/images/bob.PNG?raw=true)
 
 And finally: `http://MACHINE_IP/protected`. We get stopped by an authentication popup asking for a username:password combination. Time for some good old bruteforcing with `hydra`.
 <br>
@@ -186,6 +186,6 @@ meterpreter >
 
 Success we have access! We can now grab the flag and complete this room!
 
-![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20ToolsRUS/images/flag.PNG?raw=true)
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20ToolsRUs/images/flag.PNG?raw=true)
 
 #### Thank you for checking out my writeup about the THM room: RootMe! If you are interested in other writeups of mine or interetsed in some of my codeing work, please feel free to look around my GitHub page! Happy hacking! - 4lch3myí
