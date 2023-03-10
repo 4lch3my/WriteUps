@@ -135,4 +135,4 @@ Now let's run it against the root user: `python -c ‘import os; os.execl(“/bi
 And there we go, we are `root` ! We can grab the flag now!
 
 
-#### Thank you for checking out my writeup about the THM room: RootMe! If you are interested in other writeups of mine or interetsed in some of my codeing work, please feel free to look around my GitHub page! Happy hacking! - 4lch3my
+#### Thank you for checking out my writeup about the THM room: RootMe! If you are interested in other writeup's of mine or interested in some of my coding work, please feel free to look around my GitHub page! Happy hacking! - 4lch3my
