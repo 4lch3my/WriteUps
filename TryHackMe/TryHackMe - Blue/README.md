@@ -1,5 +1,5 @@
 # BLUE
-> 4lch3my | March 26, 2023
+> 4lch3my | March 27, 2023
 -------------------
 #### This is a machine that allows you to practise web app hacking and privilege escalation
 #### [Room Link](https://tryhackme.com/room/blue)
