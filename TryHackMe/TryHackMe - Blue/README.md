@@ -98,7 +98,7 @@ And now we will convert our shell to a `meterpreter shell` right inside of `meta
 
 Run the command `search shell_to_meterpreter`:
 
-![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Blue/images/mmfs6_shell_to_met.PNG?raw=true)
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Blue/images/mmfs6_shell_to_met.png?raw=true)
 
 Then `use post/multi/manage/shell_to_meterpreter` & list the sessions with `sessions`:
 
@@ -106,27 +106,27 @@ Then `use post/multi/manage/shell_to_meterpreter` & list the sessions with `sess
 
 Switch:
 
-![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Blue/images/mfs6_sessions.PNG?raw=true)
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Blue/images/mfs6_sessions.png?raw=true)
 
 And listing sessions: 
 
-![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Blue/images/mfs6_sessions2.PNG?raw=true)
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Blue/images/mfs6_sessions2.png?raw=true)
 
 Then `show options`:
 
-![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Blue/images/mfs6_show_options.PNG?raw=true)
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Blue/images/mfs6_show_options.png?raw=true)
 
 Then `set SESSION 1` & run this upgraded exploit:
 
-![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Blue/images/mfs6_upgrade.PNG?raw=true)
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Blue/images/mfs6_upgrade.png?raw=true)
 
 Verify that it was successfull:
 
-![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Blue/images/mfs6_upgrade_sessions.PNG?raw=true)
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Blue/images/mfs6_upgrade_sessions.png?raw=true)
 
 And the last step, to actually switch to this upgraded `meterpreter` shell:
 
-![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Blue/images/mfs6_upgrade_sessions_verify.PNG?raw=true)
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Blue/images/mfs6_upgrade_sessions_verify.png?raw=true)
 
 If you want to switch to a Powershell/Windows CMD shell, you can do by simple running: `shell`.
 
@@ -138,7 +138,7 @@ WOW! That was a mouthfull of infornmation! We can switch to the service `conhost
 
 After migration to one of the following services `conhost.exe` OR `cmd.exe` in task 3, we can now dump the passwords using the `hashdump` command:
 
-![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Blue/images/mfs5_hash.PNG?raw=true)
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Blue/images/mfs5_hash.png?raw=true)
 
 To crack our users password we can use a site like [THIS ONE](https://crackstation.net/) to do the task for us automatically.
 
