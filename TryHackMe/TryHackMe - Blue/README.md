@@ -148,7 +148,7 @@ To crack our users password we can use a site like [THIS ONE](https://crackstati
 
 Let's run the command `search -f flag*txt` in the meterpreter session to list all files what are text files `.txt` and have the word `flag` in them:
 
-![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Blue/images/flags.png?raw=true)
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Blue/images/flags.PNG?raw=true)
 
 And as you can see, we have found all 3 flags located on this machine.
 
