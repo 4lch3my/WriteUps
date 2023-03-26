@@ -72,7 +72,7 @@ msf exploit(ms17_010_eternalblue) > options
 As we can see, we need to set the `RHOSTS` option, so the exploit can run automatically. We can do this by simply adding:
 
 ``` 
-set RHOSTS 10.10.182.90
+set RHOSTS MACHINE_IP
 ``` 
 
 Also, as requested by the room owner, we will set the paylod to `reverese_tcp`:
@@ -146,12 +146,10 @@ To crack our users password we can use a site like [THIS ONE](https://crackstati
 
 ##### 5. Find flags!
 
-1st flag
+Let's run the command `search -f flag*txt` in the meterpreter session to list all files what are text files `.txt` and have the word `flag` in them:
 
-A of description > C:\Windows\System32
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Blue/images/flags.png?raw=true)
 
-2nd flag
+And as you can see, we have found all 3 flags located on this machine.
 
-
-
-3rd flag
+ #### Thank you for checking out my write-up about the THM room: Blue! If you are interested in other write-ups of mine or interested in some of my coding work, please feel free to look around my GitHub page! Happy hacking! - 4lch3my
