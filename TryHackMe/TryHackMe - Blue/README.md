@@ -142,7 +142,7 @@ After migration to one of the following services `conhost.exe` OR `cmd.exe` in t
 
 To crack our users password we can use a site like [THIS ONE](https://crackstation.net/) to do the task for us automatically.
 
-![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Blue/images/pasword.PNG?raw=true)
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Blue/images/pasword.png?raw=true)
 
 ##### 5. Find flags!
 
