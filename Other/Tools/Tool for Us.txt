@@ -128,3 +128,7 @@ VULNERABILITY & VULNERABILITY DATABASES
 
 (p) = Paid
 (/p) = Has Paid Part
+
+
+Look over this and make it
+https://github.com/Shockp/Cheatsheets
