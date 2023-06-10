@@ -15,7 +15,7 @@ The -sC flag runs scripts against open ports as well to determine if there are e
   In our NMAP results we get:
 
 ```
-Starting Nmap 7.93 ( https://nmap.org ) at 2023-06-10 21:45 CEST
+Starting Nmap 7.93 ( https://nmap.org ) at 2023-06-10 21:45 CEST 
 Nmap scan report for thetoppers.htb (10.129.125.146)
 Host is up (0.040s latency).
 Not shown: 998 closed tcp ports (conn-refused)
