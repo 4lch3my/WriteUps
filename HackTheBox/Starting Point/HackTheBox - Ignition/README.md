@@ -62,7 +62,7 @@ We can do a simple `curl -v http://MACHINE_IP` command to see the websites conte
 As we now have the `MACHINE_IP` and the `domain`, we are ready to do some further enumeration. But before we do that, we need to add the `.htb` domain to our local DNS records of our OS. If you are using a local version of Linux (like a VM, Hosted, Desktop or CLI) you can simple run `echo "MACHINE_IP ignition.htb" | sudo tee -a /etc/hosts` to add it. If you are using [Linux WSL](https://www.kali.org/docs/wsl/wsl-preparations/#install-wsl-1) instead, you will need to add the domain to your host files in Windows and **NOT** in the WSL client itself what can be found at `c:\Windows\System32\Drivers\etc\hosts`. 
 But, as I'm not a fan of editing my personal machines local DNS services, I'll be using my Pi-Hole setup to forward the traffic to HTB instead over [oVPN](https://openvpn.net/).
 
-![alt text](https://github.com/4lch3my/WriteUps/blob/main/HackTheBox/HackTheBox%20-%20Ignition/images/pi_hole.png?raw=true)
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/HackTheBox/Starting%20Point/HackTheBox%20-%20Ignition/images/pi_hole.png?raw=true)
 
 Add host to PiHole or /etc/hosts
 
