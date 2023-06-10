@@ -7,10 +7,10 @@
 ## Tasks
 ##### 1. Which service version is found to be running on port 80?
 
-Deploy the machine with the Spawn Machine button, also either deploy your [PWNBox](https://help.hackthebox.com/en/articles/5185608-introduction-to-pwnbox) OR Connect to [OpenVPN](https://help.hackthebox.com/en/articles/5185687-introduction-to-lab-access) and deploy your personal KALI machine.
+> Deploy the machine with the Spawn Machine button, also either deploy your [PWNBox](https://help.hackthebox.com/en/articles/5185608-introduction-to-pwnbox) OR Connect to [OpenVPN](https://help.hackthebox.com/en/articles/5185687-introduction-to-lab-access) and deploy your personal KALI machine.
 
 To start, I will use [nmap] which is default option on the personal Kali install I have. We start with a basic command
-  `nmap -sC -sV -A MACHINE_IP `
+  `nmap -sC -sV -A MACHINE_IP`
 The -sC flag runs scripts against open ports as well to determine if there are external/common vulnerabilities that we can use outright. The -sV probes all open ports it finds to determine if we can get the service/version information. -A uses agressive mode, so we can follow along with the commands and enumeration.
   In our NMAP results we get:
 
@@ -33,7 +33,7 @@ What is the 3-digit HTTP status code returned when you visit http://{machine IP}
 
 curl -v http://10.129.177.50
 
-
+```
 *   Trying 10.129.177.50:80...
 * Connected to 10.129.177.50 (10.129.177.50) port 80 (#0)
 > GET / HTTP/1.1
@@ -58,6 +58,7 @@ curl -v http://10.129.177.50
 < X-Frame-Options: SAMEORIGIN
 <
 * Connection #0 to host 10.129.177.50 left intact
+```
 
 Add host to PiHole or /etc/hosts
 
