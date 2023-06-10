@@ -5,9 +5,9 @@
 #### [Room Link](https://app.hackthebox.com/starting-point)
 
 ## Tasks
-##### 1. Which service version is found to be running on port 80?
+##### Task 1. Which service version is found to be running on port 80?
 
-_  Deploy the machine with the Spawn Machine button, also either deploy your [PWNBox](https://help.hackthebox.com/en/articles/5185608-introduction-to-pwnbox) OR Connect to [OpenVPN](https://help.hackthebox.com/en/articles/5185687-introduction-to-lab-access) and deploy your personal KALI machine. _
+*Deploy the machine with the Spawn Machine button, also either deploy your [PWNBox](https://help.hackthebox.com/en/articles/5185608-introduction-to-pwnbox) OR Connect to [OpenVPN](https://help.hackthebox.com/en/articles/5185687-introduction-to-lab-access) and deploy your personal KALI machine.*
 
 To start, I will use [nmap] which is default option on the personal Kali install I have. We start with a basic command
   `nmap -sC -sV -A MACHINE_IP`
@@ -28,16 +28,15 @@ PORT   STATE SERVICE VERSION
 As we can see there is only one port open `80 - HTTP` running [nginx](https://www.nginx.com/) a popular website manager and load balancer.
 
 
+##### Task 2 & 3. What is the 3-digit HTTP status code returned when you visit http://{machine IP}/?
 
-What is the 3-digit HTTP status code returned when you visit http://{machine IP}/?
-
-curl -v http://10.129.177.50
+We can do a simple `curl -v http://MACHINE_IP` command to see the websites content and responce, where the `-v` options "makes the operation more talkative", giving us all the information what we need for this task:
 
 ```
-*   Trying 10.129.177.50:80...
-* Connected to 10.129.177.50 (10.129.177.50) port 80 (#0)
+*   Trying MACHINE_IP...
+* Connected to MACHINE_IP (MACHINE_IP) port 80 (#0)
 > GET / HTTP/1.1
-> Host: 10.129.177.50
+> Host: MACHINE_IP
 > User-Agent: curl/7.88.1
 > Accept: */*
 >
@@ -47,18 +46,23 @@ curl -v http://10.129.177.50
 < Content-Type: text/html; charset=UTF-8
 < Transfer-Encoding: chunked
 < Connection: keep-alive
-< Set-Cookie: PHPSESSID=u9bglb2fp6gjpmhib9h1c09tv6; expires=Sat, 10-Jun-2023 18:50:23 GMT; Max-Age=3600; path=/; domain=10.129.177.50; HttpOnly; SameSite=Lax
+< Set-Cookie: PHPSESSID=hidden_cookie; expires=Sat, 10-Jun-2023 18:50:23 GMT; Max-Age=3600; path=/; domain=10.MACHINE_IP; HttpOnly; SameSite=Lax
 < Location: http://ignition.htb/
 < Pragma: no-cache
 < Cache-Control: max-age=0, must-revalidate, no-cache, no-store
 < Expires: Fri, 10 Jun 2022 17:50:23 GMT
-< Content-Security-Policy-Report-Only: font-src data: 'self' 'unsafe-inline'; form-action secure.authorize.net test.authorize.net geostag.cardinalcommerce.com geo.cardinalcommerce.com 1eafstag.cardinalcommerce.com 1eaf.cardinalcommerce.com centinelapistag.cardinalcommerce.com centinelapi.cardinalcommerce.com 'self' 'unsafe-inline'; frame-ancestors 'self' 'unsafe-inline'; frame-src fast.amc.demdex.net secure.authorize.net test.authorize.net geostag.cardinalcommerce.com geo.cardinalcommerce.com 1eafstag.cardinalcommerce.com 1eaf.cardinalcommerce.com centinelapistag.cardinalcommerce.com centinelapi.cardinalcommerce.com www.paypal.com www.sandbox.paypal.com player.vimeo.com *.youtube.com 'self' 'unsafe-inline'; img-src assets.adobedtm.com amcglobal.sc.omtrdc.net dpm.demdex.net cm.everesttech.net widgets.magentocommerce.com data: www.googleadservices.com www.google-analytics.com www.paypalobjects.com t.paypal.com www.paypal.com fpdbs.paypal.com fpdbs.sandbox.paypal.com *.vimeocdn.com i.ytimg.com s.ytimg.com data: 'self' 'unsafe-inline'; script-src assets.adobedtm.com secure.authorize.net test.authorize.net www.googleadservices.com www.google-analytics.com www.paypalobjects.com js.braintreegateway.com www.paypal.com geostag.cardinalcommerce.com 1eafstag.cardinalcommerce.com geoapi.cardinalcommerce.com 1eafapi.cardinalcommerce.com songbird.cardinalcommerce.com includestest.ccdc02.com www.sandbox.paypal.com t.paypal.com s.ytimg.com www.googleapis.com vimeo.com www.vimeo.com *.vimeocdn.com www.youtube.com video.google.com 'self' 'unsafe-inline' 'unsafe-eval'; style-src getfirebug.com 'self' 'unsafe-inline'; object-src 'self' 'unsafe-inline'; media-src 'self' 'unsafe-inline'; manifest-src 'self' 'unsafe-inline'; connect-src dpm.demdex.net amcglobal.sc.omtrdc.net www.google-analytics.com geostag.cardinalcommerce.com geo.cardinalcommerce.com 1eafstag.cardinalcommerce.com 1eaf.cardinalcommerce.com centinelapistag.cardinalcommerce.com centinelapi.cardinalcommerce.com 'self' 'unsafe-inline'; child-src http: https: blob: 'self' 'unsafe-inline'; default-src 'self' 'unsafe-inline' 'unsafe-eval'; base-uri 'self' 'unsafe-inline';
+...
 < X-Content-Type-Options: nosniff
 < X-XSS-Protection: 1; mode=block
 < X-Frame-Options: SAMEORIGIN
-<
-* Connection #0 to host 10.129.177.50 left intact
+* Connection #0 to host MACHINE_IP left intact
 ```
+##### Task 4 & 5. What is the full path to the file on a Linux computer that holds a local list of domain name to IP address pairs?
+
+As we now have the `MACHINE_IP` and the `domain`, we are ready to do some further enumeration. But before we do that, we need to add the `.htb` domain to our local DNS records of our OS. If you are using a local version of Linux (like a VM, Hosted, Desktop or CLI) you can simple run `echo "MACHINE_IP ignition.htb" | sudo tee -a /etc/hosts` to add it. If you are using [Linux WSL](https://www.kali.org/docs/wsl/wsl-preparations/#install-wsl-1) instead, you will need to add the domain to your host files in Windows and **NOT** in the WSL client itself what can be found at `c:\Windows\System32\Drivers\etc\hosts`. 
+But, as I'm not a fan of editing my personal machines local DNS services, I'll be using my Pi-Hole setup to forward the traffic to HTB instead over [oVPN](https://openvpn.net/).
+
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/HackTheBox/HackTheBox%20-%20Ignition/images/pi_hole.png?raw=true)
 
 Add host to PiHole or /etc/hosts
 
