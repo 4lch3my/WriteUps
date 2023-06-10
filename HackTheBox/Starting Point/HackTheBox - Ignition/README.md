@@ -57,14 +57,30 @@ We can do a simple `curl -v http://MACHINE_IP` command to see the websites conte
 < X-Frame-Options: SAMEORIGIN
 * Connection #0 to host MACHINE_IP left intact
 ```
-##### Task 4 & 5. What is the full path to the file on a Linux computer that holds a local list of domain name to IP address pairs?
+##### Task 4. What is the full path to the file on a Linux computer that holds a local list of domain name to IP address pairs?
 
 As we now have the `MACHINE_IP` and the `domain`, we are ready to do some further enumeration. But before we do that, we need to add the `.htb` domain to our local DNS records of our OS. If you are using a local version of Linux (like a VM, Hosted, Desktop or CLI) you can simple run `echo "MACHINE_IP ignition.htb" | sudo tee -a /etc/hosts` to add it. If you are using [Linux WSL](https://www.kali.org/docs/wsl/wsl-preparations/#install-wsl-1) instead, you will need to add the domain to your host files in Windows and **NOT** in the WSL client itself what can be found at `c:\Windows\System32\Drivers\etc\hosts`. 
 But, as I'm not a fan of editing my personal machines local DNS services, I'll be using my Pi-Hole setup to forward the traffic to HTB instead over [oVPN](https://openvpn.net/).
 
+This can be done in the following way:
+
+1, Log in to your PiHole and go to `Local DNS`
+2, Select `DNS records`
+3, Add the `Domain` you want to add
+4, Add the `MACHINE_IP` you want to add and click `ADD`
+5, You will see your `location DNS` updated.
+
 ![alt text](https://github.com/4lch3my/WriteUps/blob/main/HackTheBox/Starting%20Point/HackTheBox%20-%20Ignition/images/pi_hole.png?raw=true)
 
-Add host to PiHole or /etc/hosts
+To test this you can try to `ping` your domain with `ping domain_name.htb` and if you get a ping back, you are all set.
+
+##### Task 5.
+
+
+
+
+
+
 
 Testing admin page: http://ignition.htb/admin
 
