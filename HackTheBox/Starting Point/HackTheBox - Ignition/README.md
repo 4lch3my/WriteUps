@@ -7,7 +7,7 @@
 ## Tasks
 ##### 1. Which service version is found to be running on port 80?
 
-> Deploy the machine with the Spawn Machine button, also either deploy your [PWNBox](https://help.hackthebox.com/en/articles/5185608-introduction-to-pwnbox) OR Connect to [OpenVPN](https://help.hackthebox.com/en/articles/5185687-introduction-to-lab-access) and deploy your personal KALI machine.
+_  Deploy the machine with the Spawn Machine button, also either deploy your [PWNBox](https://help.hackthebox.com/en/articles/5185608-introduction-to-pwnbox) OR Connect to [OpenVPN](https://help.hackthebox.com/en/articles/5185687-introduction-to-lab-access) and deploy your personal KALI machine. _
 
 To start, I will use [nmap] which is default option on the personal Kali install I have. We start with a basic command
   `nmap -sC -sV -A MACHINE_IP`
