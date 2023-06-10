@@ -138,5 +138,7 @@ Time to log-in with one of these to find our flag:
 
 ![alt text](https://github.com/4lch3my/WriteUps/blob/main/HackTheBox/Starting%20Point/HackTheBox%20-%20Ignition/images/flag.png?raw=true)
 
+The flag has been found 79*************************7e0 !!
+
 
 #### Thank you for checking out my write-up about the HTB room: Ignition! If you are interested in other write-ups of mine or interetsed in some of my codeing work, please feel free to look around my GitHub page! Happy hacking! - 4lch3my
