@@ -153,13 +153,31 @@ But, if we look at the `file.txt` file, we have some usefull information for fur
 ![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/Advent%20of%20Cyber%201%20%5B2019%5D/images/Day_11_file.PNG?raw=true)
 
 
-nfs
+##### NFS
 
+Moving on to `port 2049`: `NFS`. [NFS](https://en.wikipedia.org/wiki/Network_File_System) 
+stands for `Network File System` what gives us an idea on what this application might be used for. Let's see what data we can grab from here.
+To start we can list all the folders (mount points) on this `NFS` instance:
+
+```
 root@ip-10-10-240-134:~# showmount -e MACHINE_IP
 Export list for MACHINE_IP:
 /opt/files *
+```
+There seems to be only one folder/file listed: `/opt/files`. Time to mount it to our machine:
 
-mount MACHINE_IP:/opt/files /root/Desktop/
+```
+root@ip-10-10-240-134:~# mount MACHINE_IP:/opt/files /root/Desktop/
+```
+
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/Advent%20of%20Cyber%201%20%5B2019%5D/images/Day_11_creds.PNG?raw=true)
+
+And taking a look at the file, we see a password. Yay!
+
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/Advent%20of%20Cyber%201%20%5B2019%5D/images/Day_11_creds_data.PNG?raw=true)
+
+
+
 
 sql
 
