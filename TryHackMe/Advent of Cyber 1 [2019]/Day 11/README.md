@@ -145,10 +145,12 @@ local: welcome.msg remote: welcome.msg
 
 Looking at the `welcome.msg` file, we see nothing of interest, it is simply a file to show us some default data about the ftp page where we logged into.
 
-IMAGE
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/Advent%20of%20Cyber%201%20%5B2019%5D/images/Day_11_welcome.PNG?raw=true)
+
 
 But, if we look at the `file.txt` file, we have some usefull information for further enumeration on this machine.
 
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/Advent%20of%20Cyber%201%20%5B2019%5D/images/Day_11_file.PNG?raw=true)
 
 
 nfs
@@ -209,3 +211,6 @@ mysql> SELECT * FROM USERS;
 1 row in set (0.00 sec)
 
 mysql> 
+
+
+https://dev.mysql.com/doc/refman/8.0/en/getting-information.html
