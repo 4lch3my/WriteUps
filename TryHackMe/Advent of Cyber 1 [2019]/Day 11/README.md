@@ -181,7 +181,7 @@ And taking a look at the file, we see a password. Yay!
 And finally, we have an `MySQL` database running on `port 3306`. If you need a MySQL database reader software for your machine, you can install the official MySQL client like this: `sudo apt-get install mysql-client-core-5.7`. 
 As we recall, we already found the username/password combination for this service in the `message.txt` file from the `FTP` section.
 
-![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/Advent%20of%20Cyber%201%20%5B2019%5D/images/Day_11_file.PNG?raw=true
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/Advent%20of%20Cyber%201%20%5B2019%5D/images/Day_11_file.PNG?raw=true)
 
 Now let's login. 
 
