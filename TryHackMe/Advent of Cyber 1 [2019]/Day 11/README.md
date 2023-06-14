@@ -176,17 +176,25 @@ And taking a look at the file, we see a password. Yay!
 
 ![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/Advent%20of%20Cyber%201%20%5B2019%5D/images/Day_11_creds_data.PNG?raw=true)
 
+##### SQL
 
+And finally, we have an `MySQL` database running on `port 3306`. If you need a MySQL database reader software for your machine, you can install the official MySQL client like this: `sudo apt-get install mysql-client-core-5.7`. 
+As we recall, we already found the username/password combination for this service in the `message.txt` file from the `FTP` section.
 
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/Advent%20of%20Cyber%201%20%5B2019%5D/images/Day_11_file.PNG?raw=true
 
-sql
+Now let's login. 
 
-if no sql reader, install: mysql-client-core-5.7
+```
+root@ip-10-10-240-134:~# mysql -u root -pPassword -h MACHINE_IP
+```
 
-mysql -u root -pff912ABD* -h MACHINE_IP
+YES! You wrote in correctly, the `-p` in the `-pPassword` is all in ONE WORD!
+If you want to brush up on your MySQL database querys, you cna do that [HERE](https://dev.mysql.com/doc/refman/8.0/en/getting-information.html).
 
-(-pPassword, yes! -p is WITH password!, all one word)
+To verify that the MySQL and the Databse is working correctly we can run: 
 
+```
 mysql> SELECT VERSION(), CURRENT_DATE;
 +-----------+--------------+
 | VERSION() | CURRENT_DATE |
@@ -194,7 +202,11 @@ mysql> SELECT VERSION(), CURRENT_DATE;
 | 5.7.28    | 2023-06-14   |
 +-----------+--------------+
 1 row in set (0.00 sec)
+```
 
+To show all the databases on this server: 
+
+```
 mysql> show databases;
 +--------------------+
 | Database           |
@@ -205,11 +217,18 @@ mysql> show databases;
 | performance_schema |
 | sys                |
 +--------------------+
+```
 
+Selecting the first "real" database, `data` can be done like this:
+
+```
 mysql> use data;
 Reading table information for completion of table and column names
+```
 
+On to listing it: 
 
+```
 mysql> show tables;
 +----------------+
 | Tables_in_data |
@@ -217,18 +236,27 @@ mysql> show tables;
 | USERS          |
 +----------------+
 1 row in set (0.00 sec)
+```
 
+Listing the `USERS` table:
 
-
+```
 mysql> SELECT * FROM USERS;
 +-------+--------------+
 | name  | password     |
 +-------+--------------+
-| admin | bestpassword |
+| admin | b*********d  |
 +-------+--------------+
 1 row in set (0.00 sec)
+```
 
-mysql> 
+And there we go! We have all the passwords and answers to Day 11's questions!
 
 
-https://dev.mysql.com/doc/refman/8.0/en/getting-information.html
+ #### Thank you for checking out my write-up for Advent of Cyber [2019] - Day 11! See you on Day 12!
+ <br>
+ 
+ #### If you are interested in other write-ups of mine or interested in some of my coding work, please feel free to look around my GitHub page! Happy hacking! - 4lch3my
+
+
+
