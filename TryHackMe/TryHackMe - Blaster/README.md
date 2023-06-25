@@ -64,27 +64,22 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)
 
 Time to look at both of these pages. After a few minutes of looking at both of them I can safely say, they are an exact copy of each other, so I will be focusing on `/retro` on the rest of the writeup. The webpage presented is as seen below, a blog style website.
 
-IMAGE: retro.PNG
 ![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Blaster/images/retro.PNG?raw=true)
 
 It seems to be written in cronological order, so let's scroll to the bottom of the main page, and see who the author might be.
 
-IMAGE: wade.PNG
 ![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Blaster/images/wade.PNG?raw=true)
 
 Crawling through the posts, we can find one called `Ready Player One` where he is reffering to an issue with login. 
 
-IMAGE: palyer_one.PNG
 ![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Blaster/images/palyer_one.PNG?raw=true)
 
 Clicking the post and reading the comment section, we get a hint at what migth the users password be:
 
-IMAGE: maybe_password.PNG
 ![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Blaster/images/maybe_password.PNG?raw=true)
 
 With this info we can try to log in to the machine. Open RDP or Remmina on your host machine, use the provided settings to access it:
 
-IMAGE: remmina.PNG
 ![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Blaster/images/remmina.PNG?raw=true)
 
 And we have access! Read the user.txt on the Desktop for the first flag!
@@ -96,34 +91,28 @@ This is one of the easiest bypasses out there, so time to run over this as fast 
 
 On the Host machine, double-click/run the `hhupd` application. You will get prompted to provide an administrator password. 
 
-IMAGE: admin.PNG
 ![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Blaster/images/admin.PNG?raw=true)
 
 As we do not have one, we can try to exploit this. Click the `Show more details` option, then the `Show information about the publisher's certificate`.
 
-IMAGE: certification.PNG
 ![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Blaster/images/certification.PNG?raw=true)
 
 After this, click on the `Issued by` URL link, it may seem nothin is happening at first, but it will prompt a browser window to open (Internet Explorer in our case) in the background. Close the `Certification popup` (top right X), close the `User Account Control` popup (top right X), and the mentioned Internet Explorer Windows show be visible.
 
-IMAGE: ie.PNG
 ![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Blaster/images/ie.PNG?raw=true)
 
 Don't worry if you get the error: `"This page can't be displayed"`, as the machine has no internet access, this will never load, so you can ignore it!
 In the next step, we need to "save the webpage to our machine". Hit `Control+S` to get the following prompt:
 
-IMAGE: ie_2.PNG
 ![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Blaster/images/ie_2.PNG?raw=true)
 
 Click `OK`, and save the file to the location: `C:\WINDOWS\system32\cmd.exe`
 
-IMAGE: explorer.PNG
 ![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Blaster/images/explorer.PNG?raw=true)
 
 Click `SAVE` and you will notice a CMD prompt windows appear. After writing the command `whoami`, we can see we are `nt authority\system` also knwon as `root`. 
 To grab the admin flag, we can visit: `C:\Users\Administrator\Desktop` and get the flag
 
-IMAGE: root_flag.PNG
 ![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Blaster/images/root_flag.PNG?raw=true)
 
 ## Reverse shell
@@ -135,7 +124,6 @@ Then we can set the `lhost` to our exploiting machine and `lport` to something w
 Then we can set our payload to `set payload windows/meterpreter/reverse_http` to get a reverse http shell. And finally we can run our exploit against the target machine with `run -j`.
 You will get a command specially crafted for you from the console, something like this:
 
-IMAGE: metasploit.PNG
 ![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Blaster/images/metasploit.PNG?raw=true)
 
 Copy and Paste this to the Windows machine CMD terminal what we opened in the previous task. After you execute it, you will see a session created in your `metasploit console`. To make sure it worked, you can use the `sessions` command to list sessions. To use the session, use the command: `sessions SESSION_NUMBER`.
