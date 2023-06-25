@@ -64,15 +64,13 @@ We can now view what the `.txt` file contains:
 
 We can decode this with [CyberChef](https://gchq.github.io/CyberChef/) and we get:
 
-
 ![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Chocolate%20Factory/images/password.png?raw=true)
-IMAGE:
 
 Time to crack it! After a quick Google we can see the [HashType](https://hashcat.net/wiki/doku.php?id=example_hashes) is most likely `sha512crypt`. It's time for hashcat!
 Grab your has, add it to a `.txt` file and run the following command on it: `hashcat -a 0 -m 1800 password.txt /usr/share/wordlists/rockyou.txt`.
 The overall purpose of this command is to attempt to crack the hashed passwords contained in the `password.tx`t file using the `dictionary attack mode (-a 0)` with the `SHA-512(Unix) hash type (-m 1800)`. The tool will try passwords from the `rockyou.txt` wordlist file and compare them against the hashed passwords to find matches.
 
-IMAGE:cracked.png
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Chocolate%20Factory/images/cracked.png?raw=true)
 
 And there we have charlies password.
 
