@@ -14,7 +14,7 @@ Now is where the basics of recon comes into play. To start, I use [nmap] which i
 The -sC flag runs scripts against open ports as well to determine if there are external/common vulnerabilities that we can use outright. The -sV probes all open ports it finds to determine if we can get the service/version information. -A outputs in agressive mode, so we can follow along with the commands and enumeration.
 The command was suspiciously taking a lot of time on my machine, so I did a quick [masscan](https://www.kalilinux.in/2020/09/masscan-1000-times-faster-than-nmap.html#:~:text=Masscan%20is%20the%20fastest%20network,per%20second%20data%20transmitting%20speed.) in the background just to verify that it was actually working. I used the following command: `sudo masscan MACHINE_IP -p0-65535 --rate 2500` This found 29 open ports, so I knew I would need to wait a little longer for the nmap results, but after a few minutes I received this:
 
-IMAGE: nmap_1.png
+![alt text](ttps://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Chocolate%20Factory/images/nmap_1.png?raw=true)
 
 Wow that is a lot of ports open. Time to dig.
 
@@ -117,7 +117,6 @@ What to add?
 | fingerprint-strings:
 |   GetRequest, NotesRPC:
 |_    http://localhost/key_rev_key <- You will find the key here!!!
-
 
 
 Enter your name:  laksdhfas
