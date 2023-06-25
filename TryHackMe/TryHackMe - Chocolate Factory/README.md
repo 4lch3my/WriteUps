@@ -4,8 +4,7 @@
 #### A Charlie And The Chocolate Factory themed room, revisit Willy Wonka's chocolate factory!
 #### [Room Link](https://tryhackme.com/room/chocolatefactory)
 
-## Steps
-##### 1.  Enumeration 
+## Enumeration 
   Deploy the machine with the Start Machine button, also either deploy your [Attack Box](https://tryhackme.com/access) OR Connect to [OpenVPN](https://tryhackme.com/access) and deploy your personal KALI machine.
 <br>
 
@@ -52,20 +51,22 @@ ftp>
 ftp> quit
 221 Goodbye.
 ```
-
-IMAGE: gumroad.png
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Chocolate%20Factory/images/gumroad.png?raw=true)
 
 Taking a look at this image we do not see anything interesting, but some data might be hidden inside, so let's get `steghide` fired up: `steghide extract -sf gum_room.jpg`. As we don't have a passphrase, we can hit Enter and hope it was not encrypted.
 
-IMAGE:steghide.png
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Chocolate%20Factory/images/steghide.png?raw=true)
 
 We can now view what the `.txt` file contains:
 
-IMAGE:b64.png
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Chocolate%20Factory/images/b64.png?raw=true)
+
 
 We can decode this with [CyberChef](https://gchq.github.io/CyberChef/) and we get:
 
-IMAGE:password.png
+
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Chocolate%20Factory/images/password.png?raw=true)
+IMAGE:
 
 Time to crack it! After a quick Google we can see the [HashType](https://hashcat.net/wiki/doku.php?id=example_hashes) is most likely `sha512crypt`. It's time for hashcat!
 Grab your has, add it to a `.txt` file and run the following command on it: `hashcat -a 0 -m 1800 password.txt /usr/share/wordlists/rockyou.txt`.
@@ -121,4 +122,4 @@ What to add?
 
 Enter your name:  laksdhfas
 
-IMAGE:new_password.png
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Chocolate%20Factory/images/new_password.png?raw=true)
