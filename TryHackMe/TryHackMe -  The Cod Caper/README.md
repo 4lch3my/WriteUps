@@ -12,7 +12,7 @@
 
 ##### 2. Host Enumeration
 To start, I will use [nmap] which is default option on the personal Kali install I have. We start with a basic command
-  `nmap -sC -sV -A MACHINE_IP `
+  `nmap -sC -sV -A MACHINE_IP`
 The -sC flag runs scripts against open ports as well to determine if there are external/common vulnerabilities that we can use outright. The -sV probes all open ports it finds to determine if we can get the service/version information. -A uses agressive mode, so we can follow along with the commands and enumeration.
   In our NMAP results we get:
 
@@ -75,7 +75,7 @@ Gobuster v3.0.1
 
 ##### 4. Web Exploitation
 
-sqlmap -u http://MACHINE_IP/administrator.php --forms --dump
+Now, we can use `SQLmap` to locate any SQL files/folders on this machine. To do this, we can run the follwing command: `sqlmap -u http://MACHINE_IP/administrator.php --forms --dump`. The `-u http://MACHINE_IP/administrator.php` option specifies the target URL of the web application. Replace `MACHINE_IP` with the actual IP address or hostname of the machine hosting the web application. The `/administrator.php` represents the specific page or endpoint being targeted for the SQL injection attack. The `--forms` option instructs sqlmap to identify and analyze HTML forms on the target page. And the `--dump` option tells sqlmap to retrieve and dump the data from the database tables that are vulnerable to the SQL injection attack. The tool will attempt to extract sensitive information such as usernames, passwords, and other data stored in the vulnerable database.
 
 ```
        ___
@@ -124,11 +124,16 @@ Table: users
 [*] shutting down at 23:40:09
 ```
 
+And there we go. We have a found suspected admin username/password pair.
 
-TASK5
+##### 5. Command Execution
 
 Log in with credentials above to /administrator.php
 Run: ls
 run: find / 2>>/dev/null | grep -i shadow
 run: find / 2>>/dev/null | grep -i pass
 run: cat /var/hidden/pass
+
+##### 10. Finishing the job
+
+hashcat -m 1800 -a 0 password_hash1 /usr/share/wordlists/rockyou.txt
