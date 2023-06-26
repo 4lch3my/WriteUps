@@ -51,6 +51,7 @@ ftp>
 ftp> quit
 221 Goodbye.
 ```
+
 ![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20Chocolate%20Factory/images/gumroad.png?raw=true)
 
 Taking a look at this image we do not see anything interesting, but some data might be hidden inside, so let's get `steghide` fired up: `steghide extract -sf gum_room.jpg`. As we don't have a passphrase, we can hit Enter and hope it was not encrypted.
