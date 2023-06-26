@@ -208,4 +208,4 @@ root
 ```
 And there we go! We are successfully root on the machine!
 
- #### Thank you for checking out my write-up about the THM room: Bounty Hacker! If you are interested in other write-ups of mine or interested in some of my coding work, please feel free to look around my GitHub page! Happy hacking! - 4lch3my
+#### Thank you for checking out my write-up about the THM room: Bounty Hacker! If you are interested in other write-ups of mine or interested in some of my coding work, please feel free to look around my GitHub page! Happy hacking! - 4lch3my
