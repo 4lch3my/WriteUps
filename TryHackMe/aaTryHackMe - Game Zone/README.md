@@ -1,5 +1,5 @@
 # Game Zone
-> 4lch3my | June 27, 2023
+> 4lch3my | June 28, 2023
 -------------------
 #### Learn to hack into this machine. Understand how to use SQLMap, crack some passwords, reveal services using a reverse SSH tunnel and escalate your privileges to root!
 #### [Room Link](https://tryhackme.com/room/gamezone)
