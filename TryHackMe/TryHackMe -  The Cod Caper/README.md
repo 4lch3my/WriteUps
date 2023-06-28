@@ -130,23 +130,22 @@ And there we go. We have a found suspected admin username/password pair.
 
 Time to log-in. If you recall, we have previously found the "/administrator.php" page in our `GoBuster` scan. Let's visit it and try to login!
 
-![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20The%20Cod%20Caper/images/admin_login.PNG?raw=true)
-
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20%20The%20Cod%20Caper/images/admin_login.PNG?raw=true)
 
 After we have successfully logged in, we are greated with a `command prompt` area.
 Let's see, what secrets we can find. First we can run a basic "ls" command to list all files:
 
-IMAGE: ls
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20%20The%20Cod%20Caper/images/ls.PNG?raw=true)
 
 Nothing interesting here. Moving on to `shadow` files. A shadow password file, also known as `/etc/shadow`, is a system file in Linux that stores encrypted user passwords and is accessible only to the root user, preventing unauthorized users or malicious actors from breaking into the system.
 To list these out, we can use the `find / 2>>/dev/null | grep -i shadow` command:
 
-IMAGE: shadow
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20%20The%20Cod%20Caper/images/shadow.PNG?raw=true)
 
 This gives as a good idea, on how high priveledges does Pingu's Dad have on this system. It seems like they have full access. Time to look at some password files on the system.
 To start off, we can list all the files on the system containing the phrase `pass` and then if we need, we can narrow it down later. To do this, we run the command `find / 2>>/dev/null | grep -i pass`
 
-IMAGE: password
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20%20The%20Cod%20Caper/images/password.PNG?raw=true)
 
 Wow, that is a lot of files, but if we take a very close look at files, we can see at the bottom a document called `/var/hidden/pass`. We can now `cat` this file, to find the ssh password. 
 
@@ -156,7 +155,7 @@ After the successfull login the server using `SSH` and grabing the password, we 
 When you run this command, hashcat will perform a dictionary attack using the `rockyou.txt` wordlist. It will compare the hashed passwords in the `password_hash1.txt` file with the passwords in the wordlist, attempting to find a match.
 If a match is found, hashcat will display the cracked password on the screen. However, if the password hash is strong or not present in the wordlist, the cracking process may not be successful.
 
-IMAGE:CRACKED
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20%20The%20Cod%20Caper/images/cracked.PNG?raw=true)
 
 And there we go! We have succesfully found the root password for the server!
 
