@@ -159,4 +159,4 @@ If a match is found, hashcat will display the cracked password on the screen. Ho
 
 And there we go! We have succesfully found the root password for the server!
 
-#### Thank you for checking out my write-up about the THM room: Agent Sudo! If you are interested in other write-ups of mine or interetsed in some of my codeing work, please feel free to look around my GitHub page! Happy hacking! - 4lch3my
+#### Thank you for checking out my write-up about the THM room: The Cod Caper! If you are interested in other write-ups of mine or interetsed in some of my codeing work, please feel free to look around my GitHub page! Happy hacking! - 4lch3my
