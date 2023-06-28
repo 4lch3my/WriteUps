@@ -151,7 +151,7 @@ Wow, that is a lot of files, but if we take a very close look at files, we can s
 
 ##### 10. SSH & Password Cracking
 
-After the successfull login the server using `SSH` and grabing the password, we can try to crack it. First we need to determine the hash type, what can be done [HERE](https://hashcat.net/wiki/doku.php?id=example_hashes). Then we can actually crack it. We can use `John the Ripper` or `HashCat` for this task. I'll be using the later one: `hashcat -m 1800 -a 0 password_hash1.txt /usr/share/wordlists/rockyou.txt`
+After the successfull login the server using `SSH` and grabing the password, we can try to crack it. First we need to determine the hash type, what can be done [HERE](https://hashcat.net/wiki/doku.php?id=example_hashes). Then we can actually crack it. We can use `John the Ripper` or `HashCat` for this task. I'll be using the later one for this with the following command: `hashcat -m 1800 -a 0 password_hash1.txt /usr/share/wordlists/rockyou.txt`
 When you run this command, hashcat will perform a dictionary attack using the `rockyou.txt` wordlist. It will compare the hashed passwords in the `password_hash1.txt` file with the passwords in the wordlist, attempting to find a match.
 If a match is found, hashcat will display the cracked password on the screen. However, if the password hash is strong or not present in the wordlist, the cracking process may not be successful.
 
