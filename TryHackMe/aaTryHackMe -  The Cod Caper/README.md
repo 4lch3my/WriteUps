@@ -128,9 +128,10 @@ And there we go. We have a found suspected admin username/password pair.
 
 ##### 5. Command Execution
 
-Time to log-in. If you recall, we have previously found the "/administrator.php" page in our GoBuster scan. Let's visit it and try to login!
+Time to log-in. If you recall, we have previously found the "/administrator.php" page in our `GoBuster` scan. Let's visit it and try to login!
 
-IMAGE:admin_login
+![alt text](https://github.com/4lch3my/WriteUps/blob/main/TryHackMe/TryHackMe%20-%20The%20Cod%20Caper/images/admin_login.PNG?raw=true)
+
 
 After we have successfully logged in, we are greated with a `command prompt` area.
 Let's see, what secrets we can find. First we can run a basic "ls" command to list all files:
