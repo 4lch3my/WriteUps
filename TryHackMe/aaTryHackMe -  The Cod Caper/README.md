@@ -1,5 +1,5 @@
 # The Cod Caper
-> 4lch3my | June 27, 2023
+> 4lch3my | June 28, 2023
 -------------------
 #### A guided room taking you through infiltrating and exploiting a Linux system.
 #### [Room Link](https://tryhackme.com/room/thecodcaper)
@@ -128,12 +128,35 @@ And there we go. We have a found suspected admin username/password pair.
 
 ##### 5. Command Execution
 
-Log in with credentials above to /administrator.php
-Run: ls
-run: find / 2>>/dev/null | grep -i shadow
-run: find / 2>>/dev/null | grep -i pass
-run: cat /var/hidden/pass
+Time to log-in. If you recall, we have previously found the "/administrator.php" page in our GoBuster scan. Let's visit it and try to login!
 
-##### 10. Finishing the job
+IMAGE:admin_login
 
-hashcat -m 1800 -a 0 password_hash1 /usr/share/wordlists/rockyou.txt
+After we have successfully logged in, we are greated with a `command prompt` area.
+Let's see, what secrets we can find. First we can run a basic "ls" command to list all files:
+
+IMAGE: ls
+
+Nothing interesting here. Moving on to `shadow` files. A shadow password file, also known as `/etc/shadow`, is a system file in Linux that stores encrypted user passwords and is accessible only to the root user, preventing unauthorized users or malicious actors from breaking into the system.
+To list these out, we can use the `find / 2>>/dev/null | grep -i shadow` command:
+
+IMAGE: shadow
+
+This gives as a good idea, on how high priveledges does Pingu's Dad have on this system. It seems like they have full access. Time to look at some password files on the system.
+To start off, we can list all the files on the system containing the phrase `pass` and then if we need, we can narrow it down later. To do this, we run the command `find / 2>>/dev/null | grep -i pass`
+
+IMAGE: password
+
+Wow, that is a lot of files, but if we take a very close look at files, we can see at the bottom a document called `/var/hidden/pass`. We can now `cat` this file, to find the ssh password. 
+
+##### 10. SSH & Password Cracking
+
+After the successfull login the server using `SSH` and grabing the password, we can try to crack it. First we need to determine the hash type, what can be done [HERE](https://hashcat.net/wiki/doku.php?id=example_hashes). Then we can actually crack it. We can use `John the Ripper` or `HashCat` for this task. I'll be using the later one: `hashcat -m 1800 -a 0 password_hash1.txt /usr/share/wordlists/rockyou.txt`
+When you run this command, hashcat will perform a dictionary attack using the `rockyou.txt` wordlist. It will compare the hashed passwords in the `password_hash1.txt` file with the passwords in the wordlist, attempting to find a match.
+If a match is found, hashcat will display the cracked password on the screen. However, if the password hash is strong or not present in the wordlist, the cracking process may not be successful.
+
+IMAGE:CRACKED
+
+And there we go! We have succesfully found the root password for the server!
+
+#### Thank you for checking out my write-up about the THM room: Agent Sudo! If you are interested in other write-ups of mine or interetsed in some of my codeing work, please feel free to look around my GitHub page! Happy hacking! - 4lch3my
