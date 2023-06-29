@@ -130,4 +130,4 @@ Copy and Paste this to the Windows machine CMD terminal what we opened in the pr
 
 And there we go. We have a full terminal with `elevated priveledges`.
 
-#### Thank you for checking out my writeup about the THM room: RootMe! If you are interested in other writeup's of mine or interested in some of my coding work, please feel free to look around my GitHub page! Happy hacking! - 4lch3my
+#### Thank you for checking out my writeup about the THM room: Blaster! If you are interested in other writeup's of mine or interested in some of my coding work, please feel free to look around my GitHub page! Happy hacking! - 4lch3my
