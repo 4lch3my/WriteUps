@@ -58,3 +58,24 @@ Login with SSH:
 Make and name file "ssh", copy key from above, save it, modify with "chmod 600 ssh" then login with ssh -i ssh root@MACHINE_IP
 
 TASK-9
+Scanning can be performed with "for i in {1..256}; do (ping -c 1 172.16.0.${i} | grep "bytes from" &); done" << local scannin g without nmap on any machine (linux)
+
+TASK-10
+Proxychains 
+"Comment out the proxy_dns line using a hashtag (#) when performing a scan through the proxy! << cp /etc/proxychains.conf . << edit flocale file NOT master!
+Only TCP scans. Use -Pn (no ping) in nmap as ICMP does not work either
+
+TASK-11
+Forward Connections
+    Port forwarding 
+    SSH access to 172.16.0.5 and there's a webserver running on 172.16.0.10, we use command to create a link to the server on 172.16.0.10:
+    ssh -L 8000:172.16.0.10:80 user@172.16.0.5 -fN
+    Proxies
+    SSH connection : ssh -D 1337 user@172.16.0.5 -fN
+Reverse Connections
+    if we have a shell on 172.16.0.5 and want to give our attacking box (172.16.0.20) access to the webserver on 172.16.0.10, we could use this command on the 172.16.0.5 machine:
+    ssh -R 8000:172.16.0.10:80 kali@172.16.0.20 -i KEYFILE -fN
+    To close any connection: ps aux | grep ssh > sudo kill PID << then DELETE KEY!
+
+TASK-12
+SOCAT - Pivoting
