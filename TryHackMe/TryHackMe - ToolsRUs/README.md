@@ -49,7 +49,7 @@ OS:%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T7
 OS:(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=Y%DF=N%T=40%IPL=164%UN=
 OS:0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=40%CD=S)
 ```
-We see 4 open ports: `22 - SSH`, `80 - HTTP`, `1234 - HTTP` & `8009 - ajp13` what is an Apache service running. Before we visit the webpages lets run a quick adn dirty `GoBuster` scan with: `gobuster dir -u http://MACHINE_IP/ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt`on port 80:
+We see 4 open ports: `22 - SSH`, `80 - HTTP`, `1234 - HTTP` & `8009 - ajp13` what is an Apache service running. Before we visit the webpages lets run a quick and dirty `GoBuster` scan with: `gobuster dir -u http://MACHINE_IP/ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt`on port 80:
 
 ```
 ===============================================================
