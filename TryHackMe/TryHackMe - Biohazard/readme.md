@@ -8,9 +8,24 @@ also      >> /barRoom357162e3db904857963e6e0b64b96ba7/barRoomHidden.php AND user
 /diningRoom2F/ >> BluGem
 /tigerStatusRoom/ >> CREST1:RlRQIHVzZXI6IG
 /galleryRoom/ >> /note.txt >> CREST2:h1bnRlciwgRlRQIHBh
-/studyRoom/
+/studyRoom/ >> helmetsymbol >> door.tar.gz >> SSH user
 /armorRoom/ >> /armorRoom547845982c18936a25a9b37096b21fc1/ >> /note.txt >> CREST3:c3M6IHlvdV9jYW50X2h
 /attic/ >> /attic909447f184afdfb352af8b8a25ffff1d/ >> CREST4: pZGVfZm9yZXZlcg==
+/hidden_closet/ >> helmet_pass >> MO1 disk/SSH_password
+
 
 
 blue_jewel{e1d457e96cac640f863ec7bc475d48aa} 
+
+image1: steghide
+image2: comments
+image3: binwalk
+
+
+		    wpbwbxr wpkzg pltwnhro, txrks_xfqsxrd_bvv_fy_rvmexa_ajk
+MO1 disk: 	weasker login password, stars_members_are_my_guinea_pig
+MO disk 2: 	albert
+
+SSH password: T_virus_rules
+SSH user: umbrella_guest
+
